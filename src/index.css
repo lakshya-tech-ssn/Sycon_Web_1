@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Poppins", system-ui, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Sora", "Poppins", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  /* Core palette: dark ink + orange accent. No purple/gradient soup. */
+  --color-ink: #0b0e14;
+  --color-navy-950: #0b0f19;
+  --color-navy-900: #10141f;
+  --color-navy-800: #171c2b;
+  --color-navy-700: #232941;
+  --color-navy-600: #333c5c;
+
+  --color-accent-400: #ff8a4c;
+  --color-accent-500: #f9622c;
+  --color-accent-600: #e0491a;
+  --color-accent-700: #b83814;
+
+  --color-paper: #faf8f4;
+  --color-line: #e7e2d8;
+
+  --animate-marquee: marquee 38s linear infinite;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-paper);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: var(--color-accent-500);
+  color: white;
+}
+
+/* Editorial numeral / label style used across the site for section markers */
+.kicker {
+  font-family: var(--font-mono);
+  letter-spacing: 0.08em;
+}
+
+/* Hairline rule, used instead of soft drop-shadow cards in several spots */
+.hairline {
+  border-color: var(--color-line);
+}
+
+/* Flip card 3D utilities */
+.perspective {
+  perspective: 1400px;
+}
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+.backface-hidden {
+  backface-visibility: hidden;
+}
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+/* Custom scrollbar for carousels */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Fine halftone-style grain texture for dark sections — avoids flat AI-gradient look */
+.grain-dark {
+  position: relative;
+}
+.grain-dark::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
