@@ -58,11 +58,28 @@ export default function Committee() {
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         className="mx-auto max-w-6xl px-6 pt-16 sm:px-8 sm:pt-20"
       >
-        <div className="mb-8 flex items-baseline justify-between border-b border-line pb-4">
+        <div className="mb-12 flex items-baseline justify-between border-b border-line pb-4">
           <h3 className="font-display text-2xl font-bold text-ink">Vertical Heads</h3>
           <span className="kicker text-xs text-navy-700/50">{COMMITTEE.vertical?.length || 0} members</span>
         </div>
-        <AutoCarousel items={COMMITTEE.vertical} renderItem={renderItem} />
+
+        <div className="flex flex-col gap-20">
+          {Array.from(new Set(COMMITTEE.vertical.map(v => v.domain))).map(domain => {
+            const heads = COMMITTEE.vertical.filter(v => v.domain === domain)
+            return (
+              <div key={domain} className="flex flex-col gap-8">
+                <h4 className="kicker text-center text-sm font-bold tracking-widest text-accent-500 uppercase flex items-center justify-center gap-4">
+                  <span className="h-px w-8 bg-line" />
+                  {domain}
+                  <span className="h-px w-8 bg-line" />
+                </h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto w-full">
+                  {heads.map(renderItem)}
+                </div>
+              </div>
+            )
+          })}
+        </div>
       </motion.section>
 
       <motion.section
