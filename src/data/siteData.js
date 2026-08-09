@@ -163,6 +163,9 @@ export const SPONSORS = [
 ]
 
 // 20-30 committee members, split into Senior Core (SC) and Junior Core (JC)
+const verticalHeadsNames = [
+  'Simran Gujral', 'Karan Malhotra', 'Sneha Kapoor', 'Rahul Khanna'
+]
 const seniorNames = [
   'Aarav Sharma', 'Meera Pillai', 'Vikram Rao', 'Ishita Bose', 'Rohan Desai',
   'Ananya Menon', 'Kabir Singh', 'Divya Ramesh', 'Nikhil Chandran', 'Tara Nambiar',
@@ -174,6 +177,13 @@ const juniorNames = [
 ]
 
 export const COMMITTEE = {
+  vertical: verticalHeadsNames.map((name, i) => ({
+    id: `vh-${i + 1}`,
+    name,
+    role: i === 0 ? 'Design Head' : i === 1 ? 'Tech Head' : i === 2 ? 'Marketing Head' : 'Finance Head',
+    photo: `https://placehold.co/300x300/171c2b/f9622c?text=${encodeURIComponent(name.split(' ')[0])}`,
+    linkedin: 'https://linkedin.com/in/placeholder',
+  })),
   senior: seniorNames.map((name, i) => ({
     id: `sc-${i + 1}`,
     name,
