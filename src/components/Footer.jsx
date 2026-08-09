@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="mx-auto grid max-w-6xl gap-10 px-6 py-16 sm:px-8 md:grid-cols-[1.3fr_1fr_1fr]">
         <div>
           <div className="flex items-baseline gap-2">
-            <span className="font-display text-2xl font-bold text-white">SYcon</span>
+            <span className="font-display text-2xl font-bold text-white">SYCON</span>
             <span className="kicker text-xs text-accent-500">/26</span>
           </div>
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-slate-400">
@@ -28,7 +28,7 @@ export default function Footer() {
         <div>
           <h4 className="kicker text-xs font-medium text-slate-500">Reach us</h4>
           <ul className="mt-4 space-y-2.5 text-sm text-slate-400">
-            <li><a href="mailto:sycon26@ssn.edu.in" className="hover:text-accent-400">sycon26@ssn.edu.in</a></li>
+            <li><a href="mailto:sycon26@ssn.edu.in" className="hover:text-accent-400">lakshya@ssn.edu.in</a></li>
             <li>SSN College of Engineering, Kalavakkam</li>
             <li className="flex gap-4 pt-1">
               <a href="#" className="hover:text-accent-400">Instagram</a>
@@ -39,8 +39,8 @@ export default function Footer() {
       </div>
       <div className="border-t border-white/10 px-6 py-5 text-xs text-slate-500 sm:px-8">
         <div className="mx-auto flex max-w-6xl items-center justify-between">
-          <span>SYcon'26 — Nov 6, 2026</span>
-          <span>Built by the SYcon web team</span>
+          <span>SYCON'26 — Sep 1, 2026</span>
+          <span>Built with 🧡 by SSN Lakshya Tech Team</span>
         </div>
       </div>
     </footer>
