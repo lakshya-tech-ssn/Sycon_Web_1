@@ -64,8 +64,10 @@ body {
 .preserve-3d {
   transform-style: preserve-3d;
 }
-.backface-hidden {
+.backface-hidden,
+.backface-hidden > * {
   backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 .rotate-y-180 {
   transform: rotateY(180deg);
@@ -91,4 +93,10 @@ body {
   pointer-events: none;
   opacity: 0.05;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Subtle dot-grid pattern for editorial heroes */
+.bg-grid-pattern {
+  background-image: radial-gradient(#d5cfc2 1px, transparent 1px);
+  background-size: 24px 24px;
 }
