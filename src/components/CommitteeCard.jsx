@@ -1,56 +1,67 @@
 import { useState } from 'react'
+import { motion } from 'framer-motion'
 import { Icon } from './icons'
 
 export default function CommitteeCard({ member }) {
-    const [isFlipped, setIsFlipped] = useState(false)
+    const [isHovered, setIsHovered] = useState(false)
 
     return (
         <div
-            className="group perspective h-[360px] w-full cursor-pointer"
-            onClick={() => setIsFlipped(!isFlipped)}
+            className="group perspective h-[420px] w-full"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
         >
-            <div
-                className={`relative h-full w-full preserve-3d transition-transform duration-700 ease-[cubic-bezier(0.2,0.8,0.2,1)] ${isFlipped ? 'rotate-y-180' : ''
-                    }`}
+            <motion.div
+                className="relative h-full w-full preserve-3d"
+                initial={false}
+                animate={{ rotateY: isHovered ? 180 : 0 }}
+                transition={{ type: 'spring', stiffness: 70, damping: 20, mass: 1 }}
             >
-                {/* Front */}
-                <div className="absolute inset-0 flex flex-col overflow-hidden border border-line backface-hidden bg-paper shadow-sm transition-shadow group-hover:shadow-md">
+                {/* Front - Styled distinctly mapping SpeakerCard.jsx */}
+                <div className="absolute inset-0 flex flex-col overflow-hidden border border-line backface-hidden bg-paper">
                     <div className="relative flex-1 overflow-hidden bg-navy-900">
                         <img
                             src={member.photo}
                             alt={member.name}
-                            className="h-full w-full object-cover grayscale transition duration-700 group-hover:scale-105 group-hover:grayscale-0"
+                            className="h-full w-full object-cover grayscale transition duration-500 group-hover:grayscale-0"
                         />
-                        {/* Subtle gradient overlay to premium-ize */}
-                        <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-ink/30 to-transparent opacity-0 transition-opacity duration-500 hover:opacity-100" />
+                        {/* Ambient hover effect over the image */}
+                        <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-ink/40 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 pointer-events-none" />
 
-                        <div className="absolute top-3 right-3 bg-paper/90 backdrop-blur px-2.5 py-1 text-[10px] font-bold tracking-widest uppercase text-accent-500 border border-line opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                            Tap to view
-                        </div>
+                        <span className="kicker absolute left-0 top-0 bg-ink px-2 py-1 text-[10px] text-accent-400 border-b border-r border-ink shadow-sm opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                            Hover to Reveal
+                        </span>
                     </div>
-                    <div className="flex flex-col justify-center border-t border-line bg-paper px-5 py-4 transition-colors group-hover:bg-white">
-                        <h3 className="font-display text-lg font-bold text-ink truncate">{member.name}</h3>
+                    <div className="border-t border-line bg-paper p-5 transition-colors group-hover:bg-white">
+                        <h3 className="font-display text-base font-bold text-ink">{member.name}</h3>
+                        <p className="mt-0.5 text-sm text-navy-700/70">{member.role}</p>
                     </div>
                 </div>
 
-                {/* Back */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center border border-ink bg-ink p-6 text-center backface-hidden rotate-y-180 shadow-2xl">
-                    <h3 className="font-display text-2xl font-bold text-white mb-2 leading-tight">{member.name}</h3>
-                    <div className="w-8 h-px bg-accent-500 mx-auto mb-4" />
-                    <p className="text-accent-400 font-medium tracking-widest mb-8 uppercase text-xs">{member.role}</p>
-
-                    <a
-                        href={member.linkedin}
-                        target="_blank"
-                        rel="noreferrer"
-                        onClick={(e) => e.stopPropagation()}
-                        className="inline-flex h-11 items-center justify-center gap-2 bg-white px-6 text-sm font-semibold text-ink transition hover:bg-accent-500 hover:text-white w-full max-w-[200px]"
-                    >
-                        <Icon name="linkedin" className="h-4 w-4" />
-                        Connect
-                    </a>
+                {/* Back - Retains framer-motion utility but themed perfectly cleanly */}
+                <div className="absolute inset-0 flex flex-col justify-between border border-ink bg-ink p-6 backface-hidden rotate-y-180 shadow-[0_10px_30px_-5px_rgba(0,0,0,0.3)]">
+                    <div>
+                        <span className="kicker text-[10px] text-accent-500">SYCON'26</span>
+                        <h3 className="mt-2 font-display text-lg font-bold text-white">{member.name}</h3>
+                        <p className="text-sm text-slate-400">{member.role}</p>
+                        <p className="mt-4 border-l-2 border-accent-500 pl-3 text-sm font-medium leading-snug text-slate-300">
+                            Connect to chat about my vertical and opportunities.
+                        </p>
+                    </div>
+                    <div className="flex gap-3 border-t border-white/10 pt-4">
+                        <a
+                            href={member.linkedin}
+                            target="_blank"
+                            rel="noreferrer"
+                            onClick={(e) => e.stopPropagation()}
+                            aria-label={`${member.name} on LinkedIn`}
+                            className="grid h-10 w-10 place-items-center border border-white/15 text-white transition hover:border-accent-500 hover:text-accent-500"
+                        >
+                            <Icon name="linkedin" className="h-5 w-5" />
+                        </a>
+                    </div>
                 </div>
-            </div>
+            </motion.div>
         </div>
     )
 }
