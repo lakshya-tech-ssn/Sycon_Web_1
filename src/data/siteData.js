@@ -152,14 +152,96 @@ export const SPEAKERS = [
 ]
 
 export const SPONSORS = [
-  { id: 1, name: 'Xylotech', tier: 'Title Sponsor', logo: 'https://placehold.co/240x120/faf8f4/10141f?text=Xylotech' },
-  { id: 2, name: 'Nimbus Systems', tier: 'Platinum', logo: 'https://placehold.co/240x120/faf8f4/10141f?text=Nimbus' },
-  { id: 3, name: 'StackForge', tier: 'Platinum', logo: 'https://placehold.co/240x120/faf8f4/10141f?text=StackForge' },
-  { id: 4, name: 'Loop Studio', tier: 'Gold', logo: 'https://placehold.co/240x120/faf8f4/10141f?text=Loop+Studio' },
-  { id: 5, name: 'FinEdge', tier: 'Gold', logo: 'https://placehold.co/240x120/faf8f4/10141f?text=FinEdge' },
-  { id: 6, name: 'VoltCore', tier: 'Gold', logo: 'https://placehold.co/240x120/faf8f4/10141f?text=VoltCore' },
-  { id: 7, name: 'ByteWave', tier: 'Silver', logo: 'https://placehold.co/240x120/faf8f4/10141f?text=ByteWave' },
-  { id: 8, name: 'Nexora', tier: 'Silver', logo: 'https://placehold.co/240x120/faf8f4/10141f?text=Nexora' },
+  {
+    id: 1,
+    name: 'Xylotech',
+    tier: 'Title Sponsor',
+    tagline: 'Engineering the Future',
+    // deep ink bg, vivid orange text — brand-true
+    logo: 'https://placehold.co/320x140/0b0e14/f9622c?text=XYLOTECH',
+  },
+  {
+    id: 2,
+    name: 'Nimbus Systems',
+    tier: 'Co-Sponsor',
+    tagline: 'Cloud at Scale',
+    // white bg, deep teal text
+    logo: 'https://placehold.co/280x120/ffffff/0e7490?text=NIMBUS',
+  },
+  {
+    id: 3,
+    name: 'StackForge',
+    tier: 'Co-Sponsor',
+    tagline: 'Build. Deploy. Repeat.',
+    // white bg, deep indigo text
+    logo: 'https://placehold.co/280x120/ffffff/3730a3?text=STACKFORGE',
+  },
+  {
+    id: 4,
+    name: 'Loop Studio',
+    tier: 'Gold',
+    logo: 'https://placehold.co/320x130/faf8f4/b45309?text=Loop+Studio',
+  },
+  {
+    id: 5,
+    name: 'FinEdge',
+    tier: 'Gold',
+    logo: 'https://placehold.co/320x130/faf8f4/0369a1?text=FinEdge',
+  },
+  {
+    id: 6,
+    name: 'VoltCore',
+    tier: 'Gold',
+    logo: 'https://placehold.co/320x130/faf8f4/059669?text=VoltCore',
+  },
+  {
+    id: 7,
+    name: 'ByteWave',
+    tier: 'Silver',
+    logo: 'https://placehold.co/280x120/faf8f4/7c3aed?text=ByteWave',
+  },
+  {
+    id: 8,
+    name: 'Nexora',
+    tier: 'Silver',
+    logo: 'https://placehold.co/280x120/faf8f4/db2777?text=Nexora',
+  },
+  {
+    id: 9,
+    name: 'Orbitron Labs',
+    tier: 'Silver',
+    logo: 'https://placehold.co/280x120/faf8f4/0e7490?text=Orbitron',
+  },
+  {
+    id: 10,
+    name: 'DataSync',
+    tier: 'Bronze',
+    logo: 'https://placehold.co/260x110/faf8f4/16a34a?text=DataSync',
+  },
+  {
+    id: 11,
+    name: 'Luminary AI',
+    tier: 'Bronze',
+    logo: 'https://placehold.co/260x110/faf8f4/9333ea?text=Luminary',
+  },
+  {
+    id: 12,
+    name: 'GridCore',
+    tier: 'Bronze',
+    logo: 'https://placehold.co/260x110/faf8f4/dc2626?text=GridCore',
+  },
+  {
+    id: 13,
+    name: 'Pulsar Tech',
+    tier: 'Bronze',
+    logo: 'https://placehold.co/260x110/faf8f4/ea580c?text=Pulsar',
+  },
+  {
+    id: 14,
+    name: 'Zenith Cloud',
+    tier: 'Bronze',
+    logo: 'https://placehold.co/260x110/faf8f4/0b0e14?text=Zenith',
+  },
 ]
 
 // 20-30 committee members, split into Senior Core (SC) and Junior Core (JC)
