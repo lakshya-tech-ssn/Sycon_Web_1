@@ -163,6 +163,21 @@ export const SPONSORS = [
 ]
 
 // 20-30 committee members, split into Senior Core (SC) and Junior Core (JC)
+const verticalDomains = [
+  'Creative & PR', 'Editorial', 'Sponsorship', 'Operations',
+  'Documentation', 'Marketing', 'Logistics', 'Technical'
+]
+
+const verticalHeadsNames = [
+  'Simran Gujral', 'Aisha Khan',
+  'Karan Malhotra', 'Pooja Iyer',
+  'Sneha Kapoor', 'Rohan Desai',
+  'Rahul Khanna', 'Vikram Rao',
+  'Meera Pillai', 'Aditi Warrier',
+  'Kabir Singh', 'Yash Patel',
+  'Nikhil Chandran', 'Sanjay Kumar',
+  'Ananya Menon', 'Aryan Kapoor'
+]
 const seniorNames = [
   'Aarav Sharma', 'Meera Pillai', 'Vikram Rao', 'Ishita Bose', 'Rohan Desai',
   'Ananya Menon', 'Kabir Singh', 'Divya Ramesh', 'Nikhil Chandran', 'Tara Nambiar',
@@ -174,6 +189,17 @@ const juniorNames = [
 ]
 
 export const COMMITTEE = {
+  vertical: verticalHeadsNames.map((name, i) => {
+    const domainIndex = Math.floor(i / 2);
+    return {
+      id: `vh-${i + 1}`,
+      name,
+      domain: verticalDomains[domainIndex],
+      role: `${verticalDomains[domainIndex]} Head`,
+      photo: `https://placehold.co/300x300/171c2b/f9622c?text=${encodeURIComponent(name.split(' ')[0])}`,
+      linkedin: 'https://linkedin.com/in/placeholder',
+    };
+  }),
   senior: seniorNames.map((name, i) => ({
     id: `sc-${i + 1}`,
     name,
