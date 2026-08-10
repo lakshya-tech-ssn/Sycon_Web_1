@@ -5,7 +5,7 @@
 export const EVENT_DATE = new Date('2026-08-26T09:00:00+05:30')
 
 export const REGISTRATION_LINKS = {
-  inside: 'https://forms.gle/REPLACE_WITH_INSIDE_SSN_FORM',
+  inside: 'https://forms.gle/DNVuiaduU4yqgQfo9',
   outside: 'https://forms.gle/REPLACE_WITH_OUTSIDE_SSN_FORM',
 }
 
