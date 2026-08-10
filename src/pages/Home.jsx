@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom'
+import { useEffect, useRef } from 'react'
 import Countdown from '../components/Countdown'
 import GalleryMarquee from '../components/GalleryMarquee'
 import SectionHeading from '../components/SectionHeading'
+import Timeline from '../components/Timeline'
 import { Icon } from '../components/icons'
 import {
   REGISTRATION_LINKS,
@@ -18,36 +20,59 @@ const eventDateLabel = EVENT_DATE.toLocaleDateString('en-IN', {
   year: 'numeric',
 })
 
+// Fade in on scroll hook
+function useFadeInSection() {
+  const ref = useRef(null)
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in-visible')
+          observer.unobserve(entry.target)
+        }
+      },
+      { threshold: 0.1 }
+    )
+    if (ref.current) observer.observe(ref.current)
+    return () => observer.disconnect()
+  }, [])
+  return ref
+}
+
 export default function Home() {
+  const section2Ref = useFadeInSection()
+  const section3Ref = useFadeInSection()
+  const section4Ref = useFadeInSection()
+
   return (
     <>
       {/* ── Hero ─────────────────────────────────────────────────────── */}
-      <section className="border-b border-line bg-paper">
+      <section className="border-b border-line bg-paper hero-section">
         <div className="mx-auto max-w-6xl px-6 pt-14 sm:px-8 sm:pt-20">
           <div className="grid gap-10 lg:grid-cols-[1.4fr_1fr] lg:gap-16">
-            <div>
-              <div className="flex items-center gap-3">
+            <div className="hero-content">
+              <div className="flex items-center gap-3 fade-in-item" style={{ animationDelay: '0.1s' }}>
                 <span className="h-2 w-2 bg-accent-500" />
                 <span className="kicker text-xs uppercase tracking-widest text-navy-700/70">
                   {eventDateLabel}
                 </span>
               </div>
 
-              <h1 className="mt-6 font-display text-5xl font-bold leading-[1.02] tracking-tight text-ink sm:text-6xl md:text-[4.5rem]">
+              <h1 className="mt-6 font-display text-5xl font-bold leading-[1.02] tracking-tight text-ink sm:text-6xl md:text-[4.5rem] fade-in-item" style={{ animationDelay: '0.2s' }}>
                 SYcon<span className="text-accent-500">'26</span>
               </h1>
 
-              <p className="mt-6 max-w-md text-lg leading-relaxed text-navy-700/80">
+              <p className="mt-6 max-w-md text-lg leading-relaxed text-navy-700/80 fade-in-item" style={{ animationDelay: '0.3s' }}>
                 A one-day symposium at SSN. Six speakers, four workshop tracks, and
                 a room full of people who'd rather build something than watch a slide deck.
               </p>
 
-              <div className="mt-8 flex flex-wrap items-center gap-4">
+              <div className="mt-8 flex flex-wrap items-center gap-4 fade-in-item" style={{ animationDelay: '0.4s' }}>
                 <a
                   href={REGISTRATION_LINKS.inside}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 bg-ink px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-accent-600"
+                  className="inline-flex items-center gap-2 bg-ink px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-accent-600 button-hover"
                 >
                   Register — SSN Students <span aria-hidden="true">→</span>
                 </a>
@@ -55,29 +80,31 @@ export default function Home() {
                   href={REGISTRATION_LINKS.outside}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 border border-ink px-6 py-3.5 text-sm font-semibold text-ink transition hover:bg-ink hover:text-white"
+                  className="inline-flex items-center gap-2 border border-ink px-6 py-3.5 text-sm font-semibold text-ink transition hover:bg-ink hover:text-white button-hover"
                 >
                   Register — Other Colleges
                 </a>
               </div>
             </div>
 
-            <div className="flex flex-col justify-end">
-              <p className="kicker mb-3 text-xs uppercase tracking-widest text-navy-700/50">
+            <div className="flex flex-col justify-end countdown-section">
+              <p className="kicker mb-3 text-xs uppercase tracking-widest text-navy-700/50 fade-in-item" style={{ animationDelay: '0.2s' }}>
                 Doors close in
               </p>
-              <Countdown />
+              <div className="fade-in-item" style={{ animationDelay: '0.3s' }}>
+                <Countdown />
+              </div>
             </div>
           </div>
         </div>
 
-        <div className="mt-14">
+        <div className="mt-14 gallery-section">
           <GalleryMarquee />
         </div>
       </section>
 
       {/* ── What is SYcon ───────────────────────────────────────────────*/}
-      <section className="mx-auto max-w-6xl px-6 py-20 sm:px-8 sm:py-28">
+      <section className="mx-auto max-w-6xl px-6 py-20 sm:px-8 sm:py-28 fade-in-section" ref={section2Ref}>
         <div className="grid gap-14 lg:grid-cols-[1fr_1fr]">
           <div>
             <SectionHeading index="01" eyebrow="What it is" title="Not another guest-lecture afternoon" />
@@ -96,7 +123,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="border border-line p-8 sm:p-10">
+          <div className="border border-line p-8 sm:p-10 card-hover">
             <h3 className="font-display text-xl font-bold text-ink">Who should come</h3>
             <ul className="mt-6 space-y-4 border-t border-line pt-6">
               {[
@@ -116,7 +143,7 @@ export default function Home() {
                 href={REGISTRATION_LINKS.inside}
                 target="_blank"
                 rel="noreferrer"
-                className="bg-ink px-5 py-2.5 text-sm font-semibold text-white hover:bg-accent-600"
+                className="bg-ink px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-accent-600 button-hover"
               >
                 Inside SSN
               </a>
@@ -124,7 +151,7 @@ export default function Home() {
                 href={REGISTRATION_LINKS.outside}
                 target="_blank"
                 rel="noreferrer"
-                className="border border-ink px-5 py-2.5 text-sm font-semibold text-ink hover:bg-ink hover:text-white"
+                className="border border-ink px-5 py-2.5 text-sm font-semibold text-ink transition hover:bg-ink hover:text-white button-hover"
               >
                 Outside SSN
               </a>
@@ -134,7 +161,7 @@ export default function Home() {
       </section>
 
       {/* ── Benefits ─────────────────────────────────────────────────── */}
-      <section className="border-y border-line bg-ink py-20 sm:py-28">
+      <section className="border-y border-line bg-ink py-20 sm:py-28 fade-in-section" ref={section3Ref}>
         <div className="mx-auto max-w-6xl px-6 sm:px-8">
           <SectionHeading
             index="02"
@@ -143,8 +170,16 @@ export default function Home() {
             light
           />
           <div className="mt-14 grid gap-px border border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-3">
-            {BENEFITS.map((b) => (
-              <div key={b.title} className="bg-ink p-7 transition hover:bg-navy-900">
+            {BENEFITS.map((b, i) => (
+              <div 
+                key={b.title} 
+                className="bg-ink p-7 transition hover:bg-navy-900 card-hover"
+                style={{ 
+                  animation: 'fadeInUp 0.5s ease-out',
+                  animationDelay: `${i * 0.1}s`,
+                  animationFillMode: 'both'
+                }}
+              >
                 <Icon name={b.icon} className="h-6 w-6 text-accent-500" />
                 <h3 className="mt-5 font-display text-lg font-bold text-white">{b.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-slate-400">{b.desc}</p>
@@ -155,7 +190,7 @@ export default function Home() {
       </section>
 
       {/* ── Registration Fee ─────────────────────────────────────────── */}
-      <section className="mx-auto max-w-6xl px-6 py-20 sm:px-8 sm:py-28">
+      <section className="mx-auto max-w-6xl px-6 py-20 sm:px-8 sm:py-28 fade-in-section" ref={section4Ref}>
         <SectionHeading
           index="03"
           eyebrow="Registration"
@@ -165,9 +200,14 @@ export default function Home() {
           {FEES.map((fee, i) => (
             <div
               key={fee.title}
-              className={`flex flex-col p-8 ${i !== 0 ? 'border-t border-line md:border-t-0 md:border-l' : ''} ${
+              className={`flex flex-col p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-md ${i !== 0 ? 'border-t border-line md:border-t-0 md:border-l' : ''} ${
                 fee.highlight ? 'bg-ink text-white' : 'bg-paper text-ink'
               }`}
+              style={{ 
+                animation: 'fadeInUp 0.5s ease-out',
+                animationDelay: `${i * 0.1}s`,
+                animationFillMode: 'both'
+              }}
             >
               {fee.highlight && (
                 <span className="kicker mb-4 inline-block w-fit bg-accent-500 px-2 py-1 text-[10px] font-bold uppercase tracking-wide text-white">
@@ -206,22 +246,14 @@ export default function Home() {
 
       {/* ── Timeline ─────────────────────────────────────────────────── */}
       <section className="border-t border-line bg-paper py-20 sm:py-28">
-        <div className="mx-auto max-w-4xl px-6 sm:px-8">
+        <div className="mx-auto max-w-6xl px-6 sm:px-8">
           <SectionHeading
             index="04"
             eyebrow="Nov 6, 2026"
             title="How the day runs"
           />
-          <div className="mt-14 divide-y divide-line border-t border-b border-line">
-            {TIMELINE.map((item) => (
-              <div key={item.title} className="grid gap-2 py-6 sm:grid-cols-[120px_1fr] sm:gap-6">
-                <span className="kicker text-sm font-semibold text-accent-600">{item.time}</span>
-                <div>
-                  <h3 className="font-display text-lg font-bold text-ink">{item.title}</h3>
-                  <p className="mt-1.5 text-sm leading-relaxed text-navy-700/70">{item.desc}</p>
-                </div>
-              </div>
-            ))}
+          <div className="mt-14">
+            <Timeline events={TIMELINE} />
           </div>
         </div>
       </section>
@@ -240,7 +272,7 @@ export default function Home() {
               href={REGISTRATION_LINKS.inside}
               target="_blank"
               rel="noreferrer"
-              className="bg-accent-500 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-accent-600"
+              className="bg-accent-500 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-accent-600 button-hover"
             >
               Register — SSN
             </a>
@@ -248,7 +280,7 @@ export default function Home() {
               href={REGISTRATION_LINKS.outside}
               target="_blank"
               rel="noreferrer"
-              className="border border-white/30 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-white hover:text-ink"
+              className="border border-white/30 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-white hover:text-ink button-hover"
             >
               Register — Outside
             </a>
@@ -261,6 +293,60 @@ export default function Home() {
           </Link>
         </p>
       </section>
+
+      <style>{`
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        .fade-in-item {
+          animation: fadeInUp 0.6s ease-out forwards;
+          opacity: 0;
+        }
+
+        .fade-in-section {
+          opacity: 0;
+          transform: translateY(20px);
+          transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in-section.fade-in-visible {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        .card-hover {
+          transition: all 0.3s ease-out;
+        }
+
+        .button-hover {
+          transition: all 0.2s ease-out;
+        }
+
+        .hero-content {
+          animation: fadeInUp 0.8s ease-out;
+        }
+
+        .countdown-section {
+          animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        .gallery-section {
+          animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+
+        /* Subtle hover scale on benefit/fee cards */
+        .card-hover:hover {
+          transform: translateY(-2px);
+        }
+      `}</style>
     </>
   )
 }
