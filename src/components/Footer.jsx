@@ -30,7 +30,7 @@ export default function Footer() {
           </div>
           <p className="mt-3 max-w-xs text-sm leading-relaxed text-slate-400">
             Organized by <strong className="text-slate-200">SSN Lakshya</strong> — Department Symposium Committee at <strong className="text-slate-200">SSN College of Engineering</strong>.
-            One day, six speakers, four workshop tracks.
+            One day, six speakers, six fields.
           </p>
         </div>
 

@@ -24,7 +24,7 @@ function App() {
     <div className="flex min-h-screen flex-col overflow-x-hidden">
       <ScrollToTop />
       <Navbar />
-      <main className="flex-1">
+      <main className="min-w-0 flex-1">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/speakers" element={<Speakers />} />
