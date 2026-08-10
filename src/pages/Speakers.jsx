@@ -68,7 +68,6 @@ export default function Speakers() {
             <SpeakerCard 
               key={speaker.id} 
               speaker={speaker} 
-              number={`0${speaker.id}`} 
             />
           ))}
         </div>

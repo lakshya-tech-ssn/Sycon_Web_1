@@ -4,7 +4,7 @@ export default function GalleryMarquee() {
   const track = [...GALLERY_IMAGES, ...GALLERY_IMAGES]
 
   return (
-    <div className="group relative w-full overflow-hidden border-y border-line bg-ink">
+    <div className="group relative w-full min-w-0 overflow-hidden border-y border-line bg-ink">
       <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-ink to-transparent sm:w-24" />
       <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-ink to-transparent sm:w-24" />
 

@@ -48,11 +48,11 @@ export default function Home() {
     <>
       {/* ── Hero ─────────────────────────────────────────────────────── */}
       <section className="border-b border-line bg-paper hero-section">
-        <div className="mx-auto max-w-6xl px-6 pt-14 sm:px-8 sm:pt-20">
-          <div className="grid gap-12 lg:grid-cols-[1.3fr_1fr] lg:gap-10">
+        <div className="mx-auto max-w-6xl px-6 pt-10 sm:px-8 sm:pt-14">
+          <div className="grid gap-10 lg:grid-cols-[1.3fr_1fr] lg:gap-10">
             <div className="hero-content">
               {/* Institutional & Event Branding Badge */}
-              <div className="flex flex-wrap items-center gap-2.5 sm:gap-3.5 mb-8 p-3 sm:p-3.5 rounded-xl border border-line bg-white/70 backdrop-blur-md shadow-xs fade-in-item w-fit" style={{ animationDelay: '0.05s' }}>
+              <div className="flex flex-wrap items-center gap-2.5 sm:gap-3.5 mb-6 p-3 sm:p-3.5 rounded-xl border border-line bg-white/70 backdrop-blur-md shadow-xs fade-in-item w-fit" style={{ animationDelay: '0.05s' }}>
                 <div className="flex items-center gap-2" title="SSN College of Engineering">
                   <img src="/ssn-logo.jpg" alt="SSN College Logo" className="h-6 sm:h-7 w-auto object-contain" />
                   <span className="text-[12px] font-semibold text-navy-900 hidden sm:inline">SSN College of Engineering</span>
@@ -80,20 +80,20 @@ export default function Home() {
                 SYCON<span className="text-accent-500">'26</span>
               </h1>
 
-              <p className="mt-6 max-w-xl text-lg leading-relaxed text-navy-700/80 sm:text-xl fade-in-item" style={{ animationDelay: '0.3s' }}>
-                A one-day symposium at SSN. Six speakers, four workshop tracks, and
-                a room full of people who'd rather build something than watch a slide deck.
+              <p className="mt-5 max-w-xl text-lg leading-relaxed text-navy-700/80 sm:text-xl fade-in-item" style={{ animationDelay: '0.3s' }}>
+                A one-day speaker symposium at SSN. Six speakers, six fields, and
+                a room full of people who'd rather hear it straight than sit through another slide deck.
               </p>
 
               {/* Pitch strip */}
-              <div className="mt-6 flex items-center gap-3 fade-in-item" style={{ animationDelay: '0.35s' }}>
-                <span className="h-px w-8 bg-accent-500/60" />
-                <p className="kicker text-xs font-bold uppercase tracking-widest text-accent-600 sm:text-sm">
+              <div className="mt-5 flex items-start gap-3 fade-in-item" style={{ animationDelay: '0.35s' }}>
+                <span className="mt-1 h-px w-6 flex-shrink-0 bg-accent-500/60" />
+                <p className="kicker text-[10px] font-bold uppercase tracking-widest text-accent-600">
                   Seats are limited — lock yours in before the room fills up
                 </p>
               </div>
 
-              <div className="mt-8 flex flex-col items-start gap-3 countdown-section">
+              <div className="mt-6 flex flex-col items-start gap-3 countdown-section">
                 <p className="kicker text-xs uppercase tracking-widest text-navy-700/50 fade-in-item" style={{ animationDelay: '0.2s' }}>
                   Doors close in
                 </p>
@@ -104,14 +104,14 @@ export default function Home() {
             </div>
 
             {/* Register pitch panel */}
-            <div className="flex flex-col justify-center border border-line bg-white/60 p-7 backdrop-blur-md shadow-xs fade-in-item sm:p-8 lg:mt-8" style={{ animationDelay: '0.4s' }}>
+            <div className="flex flex-col justify-center border border-line bg-white/60 p-7 backdrop-blur-md shadow-xs fade-in-item sm:p-8" style={{ animationDelay: '0.4s' }}>
               <span className="text-3xl leading-none text-accent-500/40">&ldquo;</span>
-              <p className="mt-2 font-display text-xl font-semibold leading-snug text-ink sm:text-2xl">
+              <p className="mt-2 font-display text-2xl font-semibold leading-snug text-ink sm:text-[1.75rem]">
                 The best ideas in the room won't wait for you to decide later.
               </p>
-              <p className="mt-4 text-sm leading-relaxed text-navy-700/70 sm:text-base">
-                One day, six speakers who actually ship, and workshops where you leave
-                with something built — not just notes. Grab your seat before it's gone.
+              <p className="mt-4 text-base leading-relaxed text-navy-700/70">
+                One day, six speakers who actually ship, talking straight about
+                what they do — not a recycled deck. Grab your seat before it's gone.
               </p>
 
               <div className="mt-7 flex flex-col gap-3">
@@ -132,11 +132,23 @@ export default function Home() {
                   Register Now — Other Colleges
                 </a>
               </div>
+
+              <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 border-t border-line pt-5 text-sm">
+                <Link to="/speakers" className="font-semibold text-navy-700 underline underline-offset-4 transition-colors hover:text-accent-600">
+                  Know the speakers →
+                </Link>
+                <Link to="/sponsors" className="font-semibold text-navy-700 underline underline-offset-4 transition-colors hover:text-accent-600">
+                  Know the sponsors →
+                </Link>
+                <Link to="/committee" className="font-semibold text-navy-700 underline underline-offset-4 transition-colors hover:text-accent-600">
+                  Know the leadership team →
+                </Link>
+              </div>
             </div>
           </div>
         </div>
 
-        <div className="mt-14 gallery-section">
+        <div className="mt-10 gallery-section">
           <GalleryMarquee />
         </div>
       </section>
@@ -148,10 +160,10 @@ export default function Home() {
             <SectionHeading index="01" eyebrow="What it is" title="Not another guest-lecture afternoon" />
             <div className="mt-6 space-y-4 text-base leading-relaxed text-navy-700/80 sm:text-lg">
               <p>
-                SYCON is the department's annual symposium — one full day split between talks,
-                hands-on workshops, a panel, and a couple of on-the-spot challenges. It started
-                as a single afternoon of guest lectures; this year it's grown into something
-                closer to a small conference.
+                SYCON is the department's annual speaker symposium — one full day of talks
+                from six speakers across six different fields, followed by a live panel
+                discussion. It started as a single afternoon of guest lectures; this year
+                it's grown into something closer to a small conference.
               </p>
               <p>
                 The goal hasn't changed though: get people who are actually building things —
@@ -167,8 +179,8 @@ export default function Home() {
               {[
                 'Any SSN student, any year, any department',
                 'Students from other colleges — outside registration is open',
-                'Anyone who wants to sit through a workshop and actually build something',
-                'Groups of 4 or more registering together get a lower per-head rate',
+                'Anyone who wants to hear directly from people shipping real work',
+                'Two registration tracks: SSN students, and students from other colleges',
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3 text-sm text-navy-700/80 sm:text-base">
                   <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 bg-accent-500" />
@@ -207,7 +219,7 @@ export default function Home() {
             title="What you get for the entry fee"
             light
           />
-          <div className="mt-14 grid gap-px border border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-14 grid gap-px border border-white/10 bg-white/10 sm:grid-cols-2">
             {BENEFITS.map((b, i) => (
               <div 
                 key={b.title} 
@@ -232,9 +244,9 @@ export default function Home() {
         <SectionHeading
           index="03"
           eyebrow="Registration"
-          title="Three ways to register, one price each"
+          title="Two ways to register, one price each"
         />
-        <div className="mt-14 grid border border-line md:grid-cols-3">
+        <div className="mt-14 grid border border-line md:grid-cols-2">
           {FEES.map((fee, i) => (
             <div
               key={fee.title}
