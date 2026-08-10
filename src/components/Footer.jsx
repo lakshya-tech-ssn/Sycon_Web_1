@@ -28,18 +28,18 @@ export default function Footer() {
         <div>
           <h4 className="kicker text-xs font-medium text-slate-500">Reach us</h4>
           <ul className="mt-4 space-y-2.5 text-sm text-slate-400">
-            <li><a href="mailto:sycon26@ssn.edu.in" className="hover:text-accent-400">lakshya@ssn.edu.in</a></li>
+            <li><a href="mailto:mail.lakshyatech@gmail.com" className="hover:text-accent-400">mail.lakshyatech@gmail.com</a></li>
             <li>SSN College of Engineering, Kalavakkam</li>
             <li className="flex gap-4 pt-1">
-              <a href="#" className="hover:text-accent-400">Instagram</a>
-              <a href="#" className="hover:text-accent-400">LinkedIn</a>
+              <a href="https://instagram.com_ssnlakshya" className="hover:text-accent-400">Instagram</a>
+              <a href="https://www.linkedin.com/company/lakshya-ssn" className="hover:text-accent-400">LinkedIn</a>
             </li>
           </ul>
         </div>
       </div>
       <div className="border-t border-white/10 px-6 py-5 text-xs text-slate-500 sm:px-8">
         <div className="mx-auto flex max-w-6xl items-center justify-between">
-          <span>SYCON'26 — Sep 1, 2026</span>
+          <span> | SYCON'26 | </span>
           <span>Built with 🧡 by SSN Lakshya Tech Team</span>
         </div>
       </div>
