@@ -21,7 +21,7 @@ export default function Navbar() {
 
   return (
     <header
-      className={`sticky top-0 z-50 border-b bg-paper/95 backdrop-blur transition-all duration-300 ${
+      className={`sticky top-0 z-50 border-b bg-ink backdrop-blur transition-all duration-300 ${
         scrolled ? 'border-line shadow-xs py-1' : 'border-transparent py-0'
       }`}
     >
@@ -38,13 +38,13 @@ export default function Navbar() {
           {/* SYCON Logo & Text */}
           <div className="flex items-center gap-2.5">
             <img 
-              src="/sycon_bg.png" 
+              src="/sycon_logo_1.png" 
               alt="SYCON Logo" 
-              className="h-9 w-auto object-contain transition-transform group-hover:scale-105"
+              className="h-9 w-auto object-contain scale-[1.2] transition-transform group-hover:scale-105"
             />
             <div className="flex flex-col">
               <div className="flex items-baseline gap-1">
-                <span className="font-display text-lg sm:text-xl font-bold tracking-tight text-ink">
+                <span className="font-display text-lg sm:text-xl font-bold tracking-tight text-navy-600">
                   SYCON
                 </span>
                 <span className="kicker font-display text-lg sm:text-xl font-bold text-accent-600">'26</span>
@@ -52,35 +52,24 @@ export default function Navbar() {
             </div>
           </div>
 
-          <span className="h-5 sm:h-6 w-px bg-line/80 hidden sm:block" />
+          <span className="h-12 sm:h-6 w-px hidden sm:block" />
 
-          {/* Lakshya Logo */}
-          <div className="hidden sm:flex items-center gap-1.5 rounded-full border border-line bg-white/70 px-2.5 py-1 backdrop-blur-xs transition-colors group-hover:border-accent-500/40">
-            <img 
-              src="/logo.png" 
-              alt="Lakshya Logo" 
-              className="h-5 w-auto object-contain"
-            />
-            <span className="text-[10px] font-mono font-semibold uppercase tracking-wider text-navy-700">
-              Lakshya
-            </span>
-          </div>
+          
         </NavLink>
 
-        <ul className="hidden items-center gap-8 md:flex">
-          {links.map((link, i) => (
+        <ul className="hidden items-center gap-14 md:flex">
+          {links.map((link) => (
             <li key={link.to}>
               <NavLink
                 to={link.to}
                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                 className={({ isActive }) =>
-                  `kicker flex items-baseline gap-1.5 text-[13px] font-medium transition-colors ${
-                    isActive ? 'text-accent-600' : 'text-navy-700 hover:text-ink'
+                  `kicker flex items-baseline gap-20px text-[13px] font-medium transition-colors ${
+                    isActive ? 'text-accent-600' : 'text-navy-700 hover:text-navy-600'
                   }`
                 }
                 end={link.to === '/'}
               >
-                <span className="text-[10px] text-navy-600/50">0{i + 1}</span>
                 {link.label}
               </NavLink>
             </li>

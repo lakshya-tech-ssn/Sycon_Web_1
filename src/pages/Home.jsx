@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { useEffect, useRef } from 'react'
 import Countdown from '../components/Countdown'
 import GalleryMarquee from '../components/GalleryMarquee'
+import ParticleField from '../components/ParticleField'
 import SectionHeading from '../components/SectionHeading'
 import Timeline from '../components/Timeline'
 import { Icon } from '../components/icons'
@@ -47,40 +48,41 @@ export default function Home() {
   return (
     <>
       {/* ── Hero ─────────────────────────────────────────────────────── */}
-      <section className="border-b border-line bg-paper hero-section">
-        <div className="mx-auto max-w-6xl px-6 pt-14 sm:px-8 sm:pt-20">
+      <section className="sponsors-hero relative overflow-hidden border-b border-line">
+        <ParticleField />
+        <div className="relative z-10 mx-auto max-w-6xl px-6 pt-2 sm:px-8 sm:pt-2">
           <div className="grid gap-12 lg:grid-cols-[1.3fr_1fr] lg:gap-10">
             <div className="hero-content">
               {/* Institutional & Event Branding Badge */}
-              <div className="flex flex-wrap items-center gap-2.5 sm:gap-3.5 mb-8 p-3 sm:p-3.5 rounded-xl border border-line bg-white/70 backdrop-blur-md shadow-xs fade-in-item w-fit" style={{ animationDelay: '0.05s' }}>
+              <div className="mb-8 flex w-fit flex-wrap items-center gap-2.5 rounded-xl border border-white/10 bg-white/5 p-3 shadow-xs backdrop-blur-md sm:gap-3.5 sm:p-3.5 fade-in-item" style={{ animationDelay: '0.05s' }}>
                 <div className="flex items-center gap-2" title="SSN College of Engineering">
-                  <img src="/ssn-logo.jpg" alt="SSN College Logo" className="h-6 sm:h-7 w-auto object-contain" />
-                  <span className="text-[12px] font-semibold text-navy-900 hidden sm:inline">SSN College of Engineering</span>
+                  <img src="/ssn-logo.jpg" alt="SSN College Logo" className="h-6 w-auto object-contain sm:h-7" />
+                  <span className="hidden text-[12px] font-semibold text-white sm:inline">SSN College of Engineering</span>
                 </div>
-                <span className="h-4 w-px bg-line" />
+                <span className="h-4 w-px bg-white/15" />
                 <div className="flex items-center gap-1.5" title="SYCON '26">
-                  <img src="/sycon_bg.png" alt="SYCON Logo" className="h-6 sm:h-7 w-auto object-contain" />
-                  <span className="text-[12px] font-bold text-ink">SYCON'26</span>
+                  <img src="/sycon_logo_1.png" alt="SYCON Logo" className="h-6 w-auto object-contain sm:h-7" />
+                  <span className="text-[12px] font-bold text-white">SYCON'26</span>
                 </div>
-                <span className="h-4 w-px bg-line" />
+                <span className="h-4 w-px bg-white/15" />
                 <div className="flex items-center gap-1.5" title="Organized by SSN Lakshya">
-                  <img src="/logo.png" alt="Lakshya Logo" className="h-5 sm:h-6 w-auto object-contain" />
-                  <span className="text-[11px] font-mono font-medium text-navy-700 uppercase">Lakshya</span>
+                  <img src="/logo.png" alt="Lakshya Logo" className="h-5 w-auto object-contain sm:h-6" />
+                  <span className="font-mono text-[11px] font-medium uppercase tracking-[0.12em] text-white/80">Lakshya</span>
                 </div>
               </div>
 
               <div className="flex items-center gap-3 fade-in-item" style={{ animationDelay: '0.1s' }}>
                 <span className="h-2 w-2 bg-accent-500" />
-                <span className="kicker text-xs uppercase tracking-widest text-navy-700/70">
+                <span className="kicker text-xs uppercase tracking-widest text-white/70">
                   {eventDateLabel}
                 </span>
               </div>
 
-              <h1 className="mt-4 font-display text-5xl font-bold leading-[1.02] tracking-tight text-ink sm:text-6xl md:text-7xl lg:text-[5.5rem] fade-in-item" style={{ animationDelay: '0.2s' }}>
+              <h1 className="mt-4 font-display text-5xl font-bold leading-[1.02] tracking-tight text-white sm:text-6xl md:text-7xl lg:text-[5.5rem] fade-in-item" style={{ animationDelay: '0.2s' }}>
                 SYCON<span className="text-accent-500">'26</span>
               </h1>
 
-              <p className="mt-6 max-w-xl text-lg leading-relaxed text-navy-700/80 sm:text-xl fade-in-item" style={{ animationDelay: '0.3s' }}>
+              <p className="mt-6 max-w-xl text-lg leading-relaxed text-slate-200/80 sm:text-xl fade-in-item" style={{ animationDelay: '0.3s' }}>
                 A one-day symposium at SSN. Six speakers, four workshop tracks, and
                 a room full of people who'd rather build something than watch a slide deck.
               </p>
@@ -88,38 +90,19 @@ export default function Home() {
               {/* Pitch strip */}
               <div className="mt-6 flex items-center gap-3 fade-in-item" style={{ animationDelay: '0.35s' }}>
                 <span className="h-px w-8 bg-accent-500/60" />
-                <p className="kicker text-xs font-bold uppercase tracking-widest text-accent-600 sm:text-sm">
+                <p className="kicker text-xs font-bold uppercase tracking-widest text-accent-400 sm:text-sm">
                   Seats are limited — lock yours in before the room fills up
                 </p>
               </div>
-
-              <div className="mt-8 flex flex-col items-start gap-3 countdown-section">
-                <p className="kicker text-xs uppercase tracking-widest text-navy-700/50 fade-in-item" style={{ animationDelay: '0.2s' }}>
-                  Doors close in
-                </p>
-                <div className="fade-in-item" style={{ animationDelay: '0.3s' }}>
-                  <Countdown />
-                </div>
-              </div>
             </div>
-
-            {/* Register pitch panel */}
-            <div className="flex flex-col justify-center border border-line bg-white/60 p-7 backdrop-blur-md shadow-xs fade-in-item sm:p-8 lg:mt-8" style={{ animationDelay: '0.4s' }}>
-              <span className="text-3xl leading-none text-accent-500/40">&ldquo;</span>
-              <p className="mt-2 font-display text-xl font-semibold leading-snug text-ink sm:text-2xl">
-                The best ideas in the room won't wait for you to decide later.
-              </p>
-              <p className="mt-4 text-sm leading-relaxed text-navy-700/70 sm:text-base">
-                One day, six speakers who actually ship, and workshops where you leave
-                with something built — not just notes. Grab your seat before it's gone.
-              </p>
-
-              <div className="mt-7 flex flex-col gap-3">
+          </div>
+          {/* Registration */}
+            <div className="mt-7 flex w-fit flex-col gap-3">
                 <a
                   href={REGISTRATION_LINKS.inside}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center justify-center gap-2 bg-ink px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-accent-600 button-hover"
+                  className="inline-flex items-center justify-center gap-2 bg-accent-500 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-accent-600 button-hover"
                 >
                   Register Now — SSN Students <span aria-hidden="true">→</span>
                 </a>
@@ -127,13 +110,19 @@ export default function Home() {
                   href={REGISTRATION_LINKS.outside}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center justify-center gap-2 border border-ink px-6 py-3.5 text-sm font-semibold text-ink transition hover:bg-ink hover:text-white button-hover"
+                  className="inline-flex items-center justify-center gap-2 border border-white/15 bg-white/5 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-white/10 button-hover"
                 >
                   Register Now — Other Colleges
                 </a>
               </div>
-            </div>
-          </div>
+              <div className="mt-8 flex flex-col items-start gap-3 countdown-section">
+                <p className="kicker text-xs uppercase tracking-widest text-white/50 fade-in-item" style={{ animationDelay: '0.2s' }}>
+                  Doors close in
+                </p>
+                <div className="fade-in-item" style={{ animationDelay: '0.3s' }}>
+                  <Countdown />
+                </div>
+              </div>
         </div>
 
         <div className="mt-14 gallery-section">
