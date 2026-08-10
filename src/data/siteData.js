@@ -265,8 +265,8 @@ const seniorNames = [
   'Ananya Menon', 'Kabir Singh', 'Divya Ramesh', 'Nikhil Chandran', 'Tara Nambiar',
 ]
 const juniorNames = [
-  'Sanjay Kumar', 'Aditi Warrier', 'Yash Patel', 'Riya Suresh', 'Dev Anand',
-  'Pooja Iyer', 'Aryan Kapoor', 'Lakshmi Narayan', 'Vivaan Joshi', 'Sara Thomas',
+  'Gokul M', 'J Kamali Shree', 'Shree Vaishnavi', 'JayaSuriya S', 'Nithesh B',
+  'Madhu Visagan HT', 'Krishna PV ', 'KK Ridhuvarshini', 'Nathaniel Christian', 'Sara Thomas',
   'Manoj Pillai', 'Nithya Krishnan', 'Aditya Ranganathan', 'Fathima Noor', 'Harish Babu',
 ]
 
