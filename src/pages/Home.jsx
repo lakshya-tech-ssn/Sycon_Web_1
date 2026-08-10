@@ -46,7 +46,7 @@ export default function Home() {
   const section4Ref = useFadeInSection()
 
   return (
-    <>
+    <div className="bg-ink text-white">
       {/* ── Hero ─────────────────────────────────────────────────────── */}
       <section className="sponsors-hero relative overflow-hidden border-b border-line">
         <ParticleField />
@@ -131,57 +131,59 @@ export default function Home() {
       </section>
 
       {/* ── What is SYcon ───────────────────────────────────────────────*/}
-      <section className="mx-auto max-w-6xl px-6 py-20 sm:px-8 sm:py-28 fade-in-section" ref={section2Ref}>
-        <div className="grid gap-14 lg:grid-cols-[1fr_1fr]">
-          <div>
-            <SectionHeading index="01" eyebrow="What it is" title="Not another guest-lecture afternoon" />
-            <div className="mt-6 space-y-4 text-base leading-relaxed text-navy-700/80 sm:text-lg">
-              <p>
-                SYCON is the department's annual symposium — one full day split between talks,
-                hands-on workshops, a panel, and a couple of on-the-spot challenges. It started
-                as a single afternoon of guest lectures; this year it's grown into something
-                closer to a small conference.
-              </p>
-              <p>
-                The goal hasn't changed though: get people who are actually building things —
-                speakers, sponsors, students — into the same room, and leave enough unstructured
-                time that conversations happen on their own.
-              </p>
+      <section className="bg-ink px-6 py-20 sm:px-8 sm:py-28 fade-in-section" ref={section2Ref}>
+        <div className="mx-auto max-w-6xl">
+          <div className="grid gap-14 lg:grid-cols-[1fr_1fr]">
+            <div>
+              <SectionHeading index="01" eyebrow="What it is" title="Not another guest-lecture afternoon" light />
+              <div className="mt-6 space-y-4 text-base leading-relaxed text-slate-300 sm:text-lg">
+                <p>
+                  SYCON is the department's annual symposium — one full day split between talks,
+                  hands-on workshops, a panel, and a couple of on-the-spot challenges. It started
+                  as a single afternoon of guest lectures; this year it's grown into something
+                  closer to a small conference.
+                </p>
+                <p>
+                  The goal hasn't changed though: get people who are actually building things —
+                  speakers, sponsors, students — into the same room, and leave enough unstructured
+                  time that conversations happen on their own.
+                </p>
+              </div>
             </div>
-          </div>
 
-          <div className="border border-line p-8 sm:p-10 card-hover">
-            <h3 className="font-display text-xl font-bold text-ink">Who should come</h3>
-            <ul className="mt-6 space-y-4 border-t border-line pt-6">
-              {[
-                'Any SSN student, any year, any department',
-                'Students from other colleges — outside registration is open',
-                'Anyone who wants to sit through a workshop and actually build something',
-                'Groups of 4 or more registering together get a lower per-head rate',
-              ].map((item) => (
-                <li key={item} className="flex items-start gap-3 text-sm text-navy-700/80 sm:text-base">
-                  <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 bg-accent-500" />
-                  {item}
-                </li>
-              ))}
-            </ul>
-            <div className="mt-8 flex flex-wrap gap-3 border-t border-line pt-6">
-              <a
-                href={REGISTRATION_LINKS.inside}
-                target="_blank"
-                rel="noreferrer"
-                className="bg-ink px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-accent-600 button-hover"
-              >
-                Inside SSN
-              </a>
-              <a
-                href={REGISTRATION_LINKS.outside}
-                target="_blank"
-                rel="noreferrer"
-                className="border border-ink px-5 py-2.5 text-sm font-semibold text-ink transition hover:bg-ink hover:text-white button-hover"
-              >
-                Outside SSN
-              </a>
+            <div className="border border-white/10 bg-navy-900/80 p-8 sm:p-10 card-hover">
+              <h3 className="font-display text-xl font-bold text-white">Who should come</h3>
+              <ul className="mt-6 space-y-4 border-t border-white/10 pt-6">
+                {[
+                  'Any SSN student, any year, any department',
+                  'Students from other colleges — outside registration is open',
+                  'Anyone who wants to sit through a workshop and actually build something',
+                  'Groups of 4 or more registering together get a lower per-head rate',
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-sm text-slate-300 sm:text-base">
+                    <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 bg-accent-500" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-8 flex flex-wrap gap-3 border-t border-white/10 pt-6">
+                <a
+                  href={REGISTRATION_LINKS.inside}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="bg-accent-500 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-accent-600 button-hover"
+                >
+                  Inside SSN
+                </a>
+                <a
+                  href={REGISTRATION_LINKS.outside}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="border border-white/15 bg-white/5 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10 button-hover"
+                >
+                  Outside SSN
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -217,70 +219,74 @@ export default function Home() {
       </section>
 
       {/* ── Registration Fee ─────────────────────────────────────────── */}
-      <section className="mx-auto max-w-6xl px-6 py-20 sm:px-8 sm:py-28 fade-in-section" ref={section4Ref}>
-        <SectionHeading
-          index="03"
-          eyebrow="Registration"
-          title="Three ways to register, one price each"
-        />
-        <div className="mt-14 grid border border-line md:grid-cols-3">
-          {FEES.map((fee, i) => (
-            <div
-              key={fee.title}
-              className={`flex flex-col p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-md ${i !== 0 ? 'border-t border-line md:border-t-0 md:border-l' : ''} ${
-                fee.highlight ? 'bg-ink text-white' : 'bg-paper text-ink'
-              }`}
-              style={{ 
-                animation: 'fadeInUp 0.5s ease-out',
-                animationDelay: `${i * 0.1}s`,
-                animationFillMode: 'both'
-              }}
-            >
-              {fee.highlight && (
-                <span className="kicker mb-4 inline-block w-fit bg-accent-500 px-2 py-1 text-[10px] font-bold uppercase tracking-wide text-white">
-                  Recommended
-                </span>
-              )}
-              <h3 className="font-display text-lg font-bold">{fee.title}</h3>
-              <div className="mt-3 font-display text-4xl font-bold text-accent-500">
-                {fee.price}
-              </div>
-              <p className={`mt-1 text-sm ${fee.highlight ? 'text-slate-400' : 'text-navy-700/60'}`}>{fee.note}</p>
-              <ul className={`mt-6 flex-1 space-y-3 border-t pt-6 ${fee.highlight ? 'border-white/10' : 'border-line'}`}>
-                {fee.perks.map((perk) => (
-                  <li key={perk} className={`flex items-start gap-2.5 text-sm ${fee.highlight ? 'text-slate-300' : 'text-navy-700/80'}`}>
-                    <span className="text-accent-500">+</span>
-                    {perk}
-                  </li>
-                ))}
-              </ul>
-              <a
-                href={REGISTRATION_LINKS.inside}
-                target="_blank"
-                rel="noreferrer"
-                className={`mt-8 block px-5 py-3 text-center text-sm font-semibold transition ${
-                  fee.highlight
-                    ? 'bg-accent-500 text-white hover:bg-accent-600'
-                    : 'bg-ink text-white hover:bg-accent-600'
+      <section className="bg-ink px-6 py-20 sm:px-8 sm:py-28 fade-in-section" ref={section4Ref}>
+        <div className="mx-auto max-w-6xl">
+          <SectionHeading
+            index="03"
+            eyebrow="Registration"
+            title="Three ways to register, one price each"
+            light
+          />
+          <div className="mt-14 grid border border-white/10 md:grid-cols-3">
+            {FEES.map((fee, i) => (
+              <div
+                key={fee.title}
+                className={`flex flex-col p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-md ${i !== 0 ? 'border-t border-white/10 md:border-t-0 md:border-l md:border-white/10' : ''} ${
+                  fee.highlight ? 'bg-ink text-white' : 'bg-navy-900 text-white'
                 }`}
+                style={{ 
+                  animation: 'fadeInUp 0.5s ease-out',
+                  animationDelay: `${i * 0.1}s`,
+                  animationFillMode: 'both'
+                }}
               >
-                Register
-              </a>
-            </div>
-          ))}
+                {fee.highlight && (
+                  <span className="kicker mb-4 inline-block w-fit bg-accent-500 px-2 py-1 text-[10px] font-bold uppercase tracking-wide text-white">
+                    Recommended
+                  </span>
+                )}
+                <h3 className="font-display text-lg font-bold text-white">{fee.title}</h3>
+                <div className="mt-3 font-display text-4xl font-bold text-accent-500">
+                  {fee.price}
+                </div>
+                <p className={`mt-1 text-sm ${fee.highlight ? 'text-slate-400' : 'text-slate-300'}`}>{fee.note}</p>
+                <ul className={`mt-6 flex-1 space-y-3 border-t pt-6 ${fee.highlight ? 'border-white/10' : 'border-white/10'}`}>
+                  {fee.perks.map((perk) => (
+                    <li key={perk} className="flex items-start gap-2.5 text-sm text-slate-300">
+                      <span className="text-accent-500">+</span>
+                      {perk}
+                    </li>
+                  ))}
+                </ul>
+                <a
+                  href={REGISTRATION_LINKS.inside}
+                  target="_blank"
+                  rel="noreferrer"
+                  className={`mt-8 block px-5 py-3 text-center text-sm font-semibold transition ${
+                    fee.highlight
+                      ? 'bg-accent-500 text-white hover:bg-accent-600'
+                      : 'bg-white/5 text-white hover:bg-accent-600'
+                  }`}
+                >
+                  Register
+                </a>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* ── Timeline ─────────────────────────────────────────────────── */}
-      <section className="border-t border-line bg-paper py-20 sm:py-28">
+      <section className="border-t border-white/10 bg-ink py-20 sm:py-28">
         <div className="mx-auto max-w-6xl px-6 sm:px-8">
           <SectionHeading
             index="04"
             eyebrow="Nov 6, 2026"
             title="How the day runs"
+            light
           />
           <div className="mt-14">
-            <Timeline events={TIMELINE} />
+            <Timeline events={TIMELINE} dark />
           </div>
         </div>
       </section>
@@ -374,6 +380,6 @@ export default function Home() {
           transform: translateY(-2px);
         }
       `}</style>
-    </>
+    </div>
   )
 }

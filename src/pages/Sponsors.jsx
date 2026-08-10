@@ -185,7 +185,7 @@ export default function Sponsors() {
   const collageLayout = useMemo(() => buildCollageLayout(otherSponsors), [])
 
   return (
-    <div style={{ background: 'var(--color-paper)', overflow: 'hidden' }}>
+    <div style={{ background: 'var(--color-ink)', color: '#fff', overflow: 'hidden' }}>
 
       {/* ── HERO ───────────────────────────────────────────────────────── */}
       <section className="sponsors-hero">
