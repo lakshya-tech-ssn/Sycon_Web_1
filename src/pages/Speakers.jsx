@@ -10,12 +10,12 @@ export default function Speakers() {
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-gradient-to-b from-accent-500/10 via-accent-500/5 to-transparent blur-3xl pointer-events-none" />
 
         <div className="mx-auto max-w-6xl px-6 sm:px-8 relative z-10">
-          
+
           {/* Top Kicker Badge */}
           <div className="inline-flex items-center gap-2 border border-line bg-white px-3.5 py-1.5 shadow-sm">
             <span className="h-2 w-2 rounded-full bg-accent-500 animate-pulse" />
             <span className="kicker text-xs uppercase font-semibold text-navy-700/80">
-              SYCON '26 Lineup • 6 Keynote Sessions
+              Founder Talk
             </span>
           </div>
 
@@ -27,7 +27,7 @@ export default function Speakers() {
                 <span className="text-accent-500">what gets built</span> next.
               </h1>
               <p className="mt-6 max-w-xl text-base sm:text-lg leading-relaxed text-navy-700/80">
-                Six leaders from AI, engineering, product design, and robotics. No recycled deck templates or corporate sales pitches — just honest, 45-minute postmortems of what breaks when you build at scale.
+                Six leaders from AI, fitness, restaurants, and community building. No recycled deck templates or corporate sales pitches just honest, 30-minute postmortems of what breaks when you build at scale.
               </p>
             </div>
 
@@ -35,24 +35,24 @@ export default function Speakers() {
             <div className="border border-line bg-white p-6 shadow-sm">
               <div className="flex items-center justify-between border-b border-line pb-3">
                 <span className="font-mono text-xs uppercase font-bold tracking-widest text-navy-700/60">
-                  Keynote Format
+                  Founder Talk Format
                 </span>
                 <span className="font-mono text-xs font-bold text-accent-500">
-                  100% Practical
+
                 </span>
               </div>
               <div className="mt-4 space-y-3 font-mono text-xs text-navy-700/80">
                 <div className="flex items-center justify-between">
                   <span>Talk Duration</span>
-                  <span className="font-bold text-ink">45 Mins</span>
+                  <span className="font-bold text-ink">30 Mins</span>
                 </div>
                 <div className="flex items-center justify-between">
                   <span>Open Q&A</span>
-                  <span className="font-bold text-ink">20 Mins</span>
+                  <span className="font-bold text-ink">5 Mins</span>
                 </div>
                 <div className="flex items-center justify-between">
                   <span>Post-Talk Access</span>
-                  <span className="font-bold text-accent-500">Lawn Mixer</span>
+                  <span className="font-bold text-accent-500">Personal Connection</span>
                 </div>
               </div>
             </div>
@@ -65,9 +65,9 @@ export default function Speakers() {
       <section className="mx-auto max-w-6xl px-6 py-16 sm:px-8 sm:py-24">
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {SPEAKERS.map((speaker) => (
-            <SpeakerCard 
-              key={speaker.id} 
-              speaker={speaker} 
+            <SpeakerCard
+              key={speaker.id}
+              speaker={speaker}
             />
           ))}
         </div>
@@ -80,7 +80,7 @@ export default function Speakers() {
 
         <div className="mx-auto max-w-6xl px-6 sm:px-8 relative z-10">
           <div className="grid gap-12 lg:grid-cols-[1.2fr_1fr] lg:items-center">
-            
+
             {/* Left Content */}
             <div>
               <div className="inline-flex items-center gap-2 border border-accent-500/30 bg-accent-500/10 px-3 py-1 font-mono text-xs font-semibold uppercase tracking-widest text-accent-400">
