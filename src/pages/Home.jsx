@@ -59,7 +59,7 @@ export default function Home() {
                 </div>
                 <span className="h-4 w-px bg-line" />
                 <div className="flex items-center gap-1.5" title="SYCON '26">
-                  <img src="/sycon_logo.png" alt="SYCON Logo" className="h-6 sm:h-7 w-auto object-contain" />
+                  <img src="/sycon_bg.png" alt="SYCON Logo" className="h-6 sm:h-7 w-auto object-contain" />
                   <span className="text-[12px] font-bold text-ink">SYCON'26</span>
                 </div>
                 <span className="h-4 w-px bg-line" />
