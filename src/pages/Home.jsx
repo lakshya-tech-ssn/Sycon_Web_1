@@ -51,6 +51,24 @@ export default function Home() {
         <div className="mx-auto max-w-6xl px-6 pt-14 sm:px-8 sm:pt-20">
           <div className="grid gap-10 lg:grid-cols-[1.4fr_1fr] lg:gap-16">
             <div className="hero-content">
+              {/* Institutional & Event Branding Badge */}
+              <div className="flex flex-wrap items-center gap-2.5 sm:gap-3.5 mb-8 p-3 sm:p-3.5 rounded-xl border border-line bg-white/70 backdrop-blur-md shadow-xs fade-in-item w-fit" style={{ animationDelay: '0.05s' }}>
+                <div className="flex items-center gap-2" title="SSN College of Engineering">
+                  <img src="/ssnlogo.webp" alt="SSN College Logo" className="h-6 sm:h-7 w-auto object-contain" />
+                  <span className="text-[12px] font-semibold text-navy-900 hidden sm:inline">SSN College of Engineering</span>
+                </div>
+                <span className="h-4 w-px bg-line" />
+                <div className="flex items-center gap-1.5" title="SYCON '26">
+                  <img src="/sycon_logo.png" alt="SYCON Logo" className="h-6 sm:h-7 w-auto object-contain" />
+                  <span className="text-[12px] font-bold text-ink">SYCON'26</span>
+                </div>
+                <span className="h-4 w-px bg-line" />
+                <div className="flex items-center gap-1.5" title="Organized by SSN Lakshya">
+                  <img src="/logo.png" alt="Lakshya Logo" className="h-5 sm:h-6 w-auto object-contain" />
+                  <span className="text-[11px] font-mono font-medium text-navy-700 uppercase">Lakshya</span>
+                </div>
+              </div>
+
               <div className="flex items-center gap-3 fade-in-item" style={{ animationDelay: '0.1s' }}>
                 <span className="h-2 w-2 bg-accent-500" />
                 <span className="kicker text-xs uppercase tracking-widest text-navy-700/70">
@@ -58,7 +76,7 @@ export default function Home() {
                 </span>
               </div>
 
-              <h1 className="mt-6 font-display text-5xl font-bold leading-[1.02] tracking-tight text-ink sm:text-6xl md:text-[4.5rem] fade-in-item" style={{ animationDelay: '0.2s' }}>
+              <h1 className="mt-4 font-display text-5xl font-bold leading-[1.02] tracking-tight text-ink sm:text-6xl md:text-[4.5rem] fade-in-item" style={{ animationDelay: '0.2s' }}>
                 SYCON<span className="text-accent-500">'26</span>
               </h1>
 
