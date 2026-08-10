@@ -12,7 +12,7 @@ export default function Footer() {
           {/* Official Branding Logos Container */}
           <div className="flex flex-wrap items-center gap-3 rounded-lg border border-white/10 bg-white/5 p-3.5 backdrop-blur-xs w-fit">
             <div className="flex items-center gap-2 rounded bg-white px-2 py-1 shadow-xs" title="SSN College of Engineering">
-              <img src="/ssnlogo.webp" alt="SSN College Logo" className="h-7 w-auto object-contain" />
+              <img src="/ssn-logo.jpg" alt="SSN College Logo" className="h-7 w-auto object-contain" />
             </div>
             <span className="h-6 w-px bg-white/20" />
             <div className="flex items-center gap-2 px-1" title="SYCON '26">
@@ -40,7 +40,7 @@ export default function Footer() {
             <li><Link to="/" onClick={scrollToTop} className="transition-colors hover:text-accent-400">Home</Link></li>
             <li><Link to="/speakers" onClick={scrollToTop} className="transition-colors hover:text-accent-400">Speakers</Link></li>
             <li><Link to="/sponsors" onClick={scrollToTop} className="transition-colors hover:text-accent-400">Sponsors</Link></li>
-            <li><Link to="/committee" onClick={scrollToTop} className="transition-colors hover:text-accent-400">Committee</Link></li>
+            <li><Link to="/committee" onClick={scrollToTop} className="transition-colors hover:text-accent-400">Leadership Team</Link></li>
           </ul>
         </div>
 
