@@ -59,7 +59,7 @@ export default function Home() {
               </div>
 
               <h1 className="mt-6 font-display text-5xl font-bold leading-[1.02] tracking-tight text-ink sm:text-6xl md:text-[4.5rem] fade-in-item" style={{ animationDelay: '0.2s' }}>
-                SYcon<span className="text-accent-500">'26</span>
+                SYCON<span className="text-accent-500">'26</span>
               </h1>
 
               <p className="mt-6 max-w-md text-lg leading-relaxed text-navy-700/80 fade-in-item" style={{ animationDelay: '0.3s' }}>
