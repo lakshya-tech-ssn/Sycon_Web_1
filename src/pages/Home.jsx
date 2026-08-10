@@ -54,7 +54,7 @@ export default function Home() {
               {/* Institutional & Event Branding Badge */}
               <div className="flex flex-wrap items-center gap-2.5 sm:gap-3.5 mb-8 p-3 sm:p-3.5 rounded-xl border border-line bg-white/70 backdrop-blur-md shadow-xs fade-in-item w-fit" style={{ animationDelay: '0.05s' }}>
                 <div className="flex items-center gap-2" title="SSN College of Engineering">
-                   <img src="/ssn-logo.jpg" alt="SSN College Logo" className="h-6 sm:h-7 w-auto object-contain" />
+                  <img src="/ssn-logo.jpg" alt="SSN College Logo" className="h-6 sm:h-7 w-auto object-contain" />
                   <span className="text-[12px] font-semibold text-navy-900 hidden sm:inline">SSN College of Engineering</span>
                 </div>
                 <span className="h-4 w-px bg-line" />

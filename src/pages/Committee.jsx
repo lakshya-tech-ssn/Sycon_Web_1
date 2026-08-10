@@ -26,7 +26,7 @@ export default function Committee() {
           >
             <span className="inline-flex items-center gap-2.5 rounded-full border border-line bg-white/60 backdrop-blur-md px-4 py-1.5 text-[11px] font-bold uppercase tracking-widest text-accent-600 shadow-sm">
               <span className="h-2 w-2 rounded-full bg-accent-500 animate-pulse" />
-              Committee
+              Leadership Team
             </span>
           </motion.div>
 
