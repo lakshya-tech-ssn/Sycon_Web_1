@@ -13,7 +13,7 @@ export default function GalleryMarquee() {
           <figure key={`${img.id}-${i}`} className="relative h-40 w-60 flex-shrink-0 border-r border-white/10 sm:h-52 sm:w-80">
             <img src={img.src} alt={img.alt} loading="lazy" className="h-full w-full object-cover" />
             <figcaption className="kicker absolute bottom-2 left-2 bg-ink/80 px-2 py-1 text-[10px] text-white">
-              SYcon '25
+              SYCON '25
             </figcaption>
           </figure>
         ))}

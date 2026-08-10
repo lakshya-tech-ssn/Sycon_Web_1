@@ -28,7 +28,7 @@ export default function Footer() {
         <div>
           <h4 className="kicker text-xs font-medium text-slate-500">Reach us</h4>
           <ul className="mt-4 space-y-2.5 text-sm text-slate-400">
-            <li><a href="mailto:mail.lakshyatech@gmail.com" className="hover:text-accent-400">mail.lakshyatech@gmail.com</a></li>
+            <li><a href="mailto:mail.lakshyatech@gmail.com" className="hover:text-accent-400">mail.lakshyatech@gnail.com</a></li>
             <li>SSN College of Engineering, Kalavakkam</li>
             <li className="flex gap-4 pt-1">
               <a href="https://instagram.com_ssnlakshya" className="hover:text-accent-400">Instagram</a>

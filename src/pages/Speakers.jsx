@@ -15,7 +15,7 @@ export default function Speakers() {
           <div className="inline-flex items-center gap-2 border border-line bg-white px-3.5 py-1.5 shadow-sm">
             <span className="h-2 w-2 rounded-full bg-accent-500 animate-pulse" />
             <span className="kicker text-xs uppercase font-semibold text-navy-700/80">
-              SYcon '26 Lineup • 6 Keynote Sessions
+              SYCON '26 Lineup • 6 Keynote Sessions
             </span>
           </div>
 
@@ -95,7 +95,7 @@ export default function Speakers() {
               </h2>
 
               <p className="mt-6 text-base text-slate-300 leading-relaxed max-w-xl">
-                Every ticket grants full access to all 6 keynote talks, live Q&A sessions, hands-on workshop tracks, the post-event lawn mixer, and the official SYcon '26 participant kit.
+                Every ticket grants full access to all 6 keynote talks, live Q&A sessions, hands-on workshop tracks, the post-event lawn mixer, and the official SYCON '26 participant kit.
               </p>
 
               {/* Feature Checklist */}
