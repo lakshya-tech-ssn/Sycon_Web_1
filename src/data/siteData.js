@@ -78,7 +78,7 @@ export const TIMELINE = [
 
 export const GALLERY_IMAGES = Array.from({ length: 10 }, (_, i) => ({
   id: i + 1,
-  src: `https://placehold.co/480x320/10141f/f9622c?text=SYcon+%2725+%E2%80%94+${i + 1}`,
+  src: `https://placehold.co/480x320/10141f/f9622c?text=SYCON+%2725+%E2%80%94+${i + 1}`,
   alt: `Photo from a previous SYcon edition, frame ${i + 1}`,
 }))
 

@@ -28,7 +28,7 @@ export default function Navbar() {
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-8">
         <NavLink to="/" className="flex items-baseline gap-2" onClick={() => setOpen(false)}>
           <span className="font-display text-xl font-bold tracking-tight text-ink">
-            SYcon
+            SYCON
           </span>
           <span className="kicker text-xs font-medium text-accent-600">/26</span>
         </NavLink>

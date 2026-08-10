@@ -191,12 +191,12 @@ export default function Sponsors() {
       <section className="sponsors-hero">
         <ParticleField />
         <div className="sponsors-hero-inner">
-          <p className="sponsors-eyebrow">SYcon '26 · Backed By</p>
+          <p className="sponsors-eyebrow">SYCON '26 · Backed By</p>
           <h1 className="sponsors-hero-title">
             Our <span className="sponsors-accent">Sponsors</span>
           </h1>
           <p className="sponsors-hero-sub">
-            The organisations making SYcon possible — funding the kits,
+            The organisations making SYCON possible — funding the kits,
             <br className="hidden sm:block" />
             the lunch, the stage, and everything in between.
           </p>
@@ -297,7 +297,7 @@ export default function Sponsors() {
               Sponsor packages for every budget — booth space, kit branding, and stage acknowledgment.
             </p>
           </div>
-          <a href="mailto:sycon26@ssn.edu.in" className="sponsors-cta-btn">
+          <a href="mail.lakshyatech@gmail.com" className="sponsors-cta-btn">
             Email the team <span aria-hidden="true">→</span>
           </a>
         </div>

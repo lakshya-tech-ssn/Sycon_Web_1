@@ -110,7 +110,7 @@ export default function Home() {
             <SectionHeading index="01" eyebrow="What it is" title="Not another guest-lecture afternoon" />
             <div className="mt-6 space-y-4 text-base leading-relaxed text-navy-700/80 sm:text-lg">
               <p>
-                SYcon is the department's annual symposium — one full day split between talks,
+                SYCON is the department's annual symposium — one full day split between talks,
                 hands-on workshops, a panel, and a couple of on-the-spot challenges. It started
                 as a single afternoon of guest lectures; this year it's grown into something
                 closer to a small conference.
