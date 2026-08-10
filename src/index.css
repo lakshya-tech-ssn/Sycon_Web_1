@@ -34,11 +34,9 @@
   }
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
+html,
 body {
+  scroll-behavior: smooth !important;
   margin: 0;
   background-color: var(--color-paper);
   font-family: var(--font-sans);
