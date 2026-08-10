@@ -36,11 +36,11 @@ export default function Navbar() {
           title="SYCON '26 — SSN Lakshya"
         >
           {/* SYCON Logo & Text */}
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2.5">
             <img 
-              src="/sycon_logo.png" 
+              src="/sycon_bg.png" 
               alt="SYCON Logo" 
-              className="h-7 sm:h-8 w-auto object-contain transition-transform group-hover:scale-105"
+              className="h-9 w-auto object-contain transition-transform group-hover:scale-105"
             />
             <div className="flex flex-col">
               <div className="flex items-baseline gap-1">
@@ -55,7 +55,7 @@ export default function Navbar() {
           <span className="h-5 sm:h-6 w-px bg-line/80 hidden sm:block" />
 
           {/* Lakshya Logo */}
-          <div className="hidden sm:flex items-center gap-1.5 rounded-full border border-line/80 bg-white/70 px-2.5 py-1 backdrop-blur-xs transition-colors group-hover:border-accent-500/40">
+          <div className="hidden sm:flex items-center gap-1.5 rounded-full border border-line bg-white/70 px-2.5 py-1 backdrop-blur-xs transition-colors group-hover:border-accent-500/40">
             <img 
               src="/logo.png" 
               alt="Lakshya Logo" 
@@ -122,7 +122,7 @@ export default function Navbar() {
             </div>
             <span className="h-4 w-px bg-line" />
             <div className="flex items-center gap-1.5">
-              <img src="/sycon_logo.png" alt="SYCON Logo" className="h-6 w-auto object-contain" />
+              <img src="/sycon_bg.png" alt="SYCON Logo" className="h-6 w-auto object-contain" />
               <span className="text-[11px] font-bold text-ink">SYCON'26</span>
             </div>
             <span className="h-4 w-px bg-line" />
