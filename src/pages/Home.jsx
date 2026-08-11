@@ -56,7 +56,7 @@ export default function Home() {
               {/* Branding Section */}
               <div className="mb-6 flex flex-col items-start gap-3 fade-in-item" style={{ animationDelay: '0.05s' }}>
                 <div className="flex items-center gap-4">
-                  <img src="/ssn_transparent.png" alt="SSN College Logo" className="h-10 w-auto object-contain brightness-0 invert opacity-90" />
+                  <img src="/public/ssn_transparent.png" alt="SSN College Logo" className="h-10 w-auto object-contain brightness-0 invert opacity-90" />
                   <span className="text-white/30 text-xl font-light">+</span>
                   <img src="/Lakshya Logo Transparent.png" alt="Lakshya Logo" className="h-12 w-auto object-contain" />
                 </div>
@@ -235,9 +235,8 @@ export default function Home() {
           {FEES.map((fee, i) => (
             <div
               key={fee.title}
-              className={`flex flex-col p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-md ${
-                i !== 0 ? 'border-t border-line md:border-t-0 md:border-l' : ''
-              } ${fee.highlight ? 'bg-white/5 text-white' : 'bg-ink text-white'}`}
+              className={`flex flex-col p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-md ${i !== 0 ? 'border-t border-line md:border-t-0 md:border-l' : ''
+                } ${fee.highlight ? 'bg-white/5 text-white' : 'bg-ink text-white'}`}
               style={{
                 animation: 'fadeInUp 0.5s ease-out',
                 animationDelay: `${i * 0.1}s`,
@@ -266,11 +265,10 @@ export default function Home() {
                 href={REGISTRATION_LINKS.inside}
                 target="_blank"
                 rel="noreferrer"
-                className={`mt-8 block px-5 py-3 text-center text-sm font-semibold transition ${
-                  fee.highlight
+                className={`mt-8 block px-5 py-3 text-center text-sm font-semibold transition ${fee.highlight
                     ? 'bg-accent-500 text-white hover:bg-accent-600'
                     : 'bg-white/5 text-white hover:bg-white/10'
-                }`}
+                  }`}
               >
                 Register
               </a>
