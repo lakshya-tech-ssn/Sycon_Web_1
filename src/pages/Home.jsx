@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
-import { useEffect, useRef } from 'react'
-import Countdown from '../components/Countdown'
+import { useEffect, useRef, useState } from 'react'
 import GalleryMarquee from '../components/GalleryMarquee'
 import ParticleField from '../components/ParticleField'
 import SectionHeading from '../components/SectionHeading'
@@ -20,6 +19,61 @@ const eventDateLabel = EVENT_DATE.toLocaleDateString('en-IN', {
   month: 'long',
   year: 'numeric',
 })
+
+function getTimeLeft(targetDate) {
+  const diff = Math.max(0, targetDate.getTime() - Date.now())
+
+  return {
+    days: Math.floor(diff / (1000 * 60 * 60 * 24)),
+    hours: Math.floor((diff / (1000 * 60 * 60)) % 24),
+    minutes: Math.floor((diff / (1000 * 60)) % 60),
+    seconds: Math.floor((diff / 1000) % 60),
+  }
+}
+
+function EventCountdown() {
+  const [timeLeft, setTimeLeft] = useState(() => getTimeLeft(EVENT_DATE))
+
+  useEffect(() => {
+    const tick = () => setTimeLeft(getTimeLeft(EVENT_DATE))
+    tick()
+    const timer = window.setInterval(tick, 1000)
+    return () => window.clearInterval(timer)
+  }, [])
+
+  const units = [
+    { label: 'days', short: 'days', value: timeLeft.days },
+    { label: 'hours', short: 'hours', value: timeLeft.hours },
+    { label: 'minutes', short: 'min', value: timeLeft.minutes },
+    { label: 'seconds', short: 'sec', value: timeLeft.seconds },
+  ]
+
+  return (
+    <div className="sm:p-5">
+      <p className="kicker mb-4 text-left text-[10px] uppercase tracking-[0.2em] text-white/60">
+        Event countdown
+      </p>
+      <div className="grid auto-cols-max grid-flow-col gap-3 text-center sm:gap-4">
+        {units.map((unit) => (
+          <div key={unit.label} className="flex min-w-[52px] flex-col items-center sm:min-w-[64px]">
+            <span className="countdown font-mono text-3xl font-semibold text-white sm:text-4xl">
+              <span
+                style={{ '--value': unit.value }}
+                aria-live="polite"
+                aria-label={`${unit.value} ${unit.label}`}
+              >
+                {String(unit.value).padStart(2, '0')}
+              </span>
+            </span>
+            <span className="mt-2 text-[9px] uppercase tracking-[0.18em] text-white/55 sm:text-[10px]">
+              {unit.short}
+            </span>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
 
 // Fade in on scroll hook
 function useFadeInSection() {
@@ -113,18 +167,16 @@ export default function Home() {
 
             {/* Right Column: Countdown */}
             <div className="flex flex-col items-start lg:items-end justify-center mt-6 lg:mt-0 justify-self-start lg:justify-self-end w-full lg:w-auto">
-              <div className="flex flex-col items-start gap-5 countdown-section bg-white/5 p-6 sm:p-8 rounded-2xl border border-white/10 backdrop-blur-md fade-in-item shadow-2xl relative overflow-hidden" style={{ animationDelay: '0.3s' }}>
-                {/* Subtle glow effect behind countdown */}
-                <div className="absolute -top-10 -right-10 h-32 w-32 rounded-full bg-accent-500/20 blur-3xl"></div>
-                <p className="kicker text-sm uppercase tracking-widest text-accent-400 flex items-center gap-2 relative z-10 font-semibold">
+              <div className="flex flex-col items-start gap-5 countdown-section fade-in-item relative overflow-hidden" style={{ animationDelay: '0.3s' }}>
+                <p className="kicker relative z-10 flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-accent-400">
                   <span className="relative flex h-2 w-2">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-400 opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-accent-500"></span>
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent-400 opacity-75" />
+                    <span className="relative inline-flex h-2 w-2 rounded-full bg-accent-500" />
                   </span>
                   Registration closes in
                 </p>
                 <div className="relative z-10">
-                  <Countdown />
+                  <EventCountdown />
                 </div>
               </div>
             </div>
