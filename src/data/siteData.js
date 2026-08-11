@@ -160,7 +160,7 @@ export const SPONSORS = [
     category: 'Shana Events',
     tagline: 'Exceed your imagination and elevate your events to extraordinary heights',
     description: 'Exceed your imagination and elevate your events to extraordinary heights',
-    logo: '/Sponsors/CredO.jpeg',
+    logo: '/Sponsors/shana_events.jpg',
     perks: ['Lead Associate Sponsor', 'Stage & Tech Infrastructure', 'Security Operations'],
     website: 'https://shanaevemts.ai',
   },
