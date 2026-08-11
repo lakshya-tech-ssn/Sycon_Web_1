@@ -4,7 +4,7 @@ export default function SectionHeading({ index, eyebrow, title, subtitle, light 
       {eyebrow && (
         <div className={`flex items-center gap-3 ${align === 'center' ? 'justify-center' : ''}`}>
           {index && <span className="kicker text-xs text-accent-500">{index}</span>}
-          <span className={`kicker text-xs font-medium uppercase ${light ? 'text-slate-500' : 'text-navy-600/60'}`}>
+          <span className={`kicker text-xs font-semibold uppercase tracking-wider ${light ? 'text-accent-400' : 'text-accent-600'}`}>
             {eyebrow}
           </span>
           <span className={`h-px flex-1 ${align === 'center' ? 'hidden' : ''} ${light ? 'bg-white/10' : 'bg-line'}`} />

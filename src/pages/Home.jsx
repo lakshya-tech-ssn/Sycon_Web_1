@@ -50,39 +50,34 @@ export default function Home() {
       {/* ── Hero ─────────────────────────────────────────────────────── */}
       <section className="sponsors-hero relative overflow-hidden border-b border-line">
         <ParticleField />
-        <div className="relative z-10 mx-auto max-w-6xl px-6 pt-2 sm:px-8 sm:pt-2">
-          <div className="grid gap-12 lg:grid-cols-[1.3fr_1fr] lg:gap-10">
-            <div className="hero-content">
-              {/* Institutional & Event Branding Badge */}
-              <div className="mb-8 flex w-fit flex-wrap items-center gap-2.5 rounded-xl border border-white/10 bg-white/5 p-3 shadow-xs backdrop-blur-md sm:gap-3.5 sm:p-3.5 fade-in-item" style={{ animationDelay: '0.05s' }}>
-                <div className="flex items-center gap-2" title="SSN College of Engineering">
-                  <img src="/ssn-logo.jpg" alt="SSN College Logo" className="h-6 w-auto object-contain sm:h-7" />
-                  <span className="hidden text-[12px] font-semibold text-white sm:inline">SSN College of Engineering</span>
+        <div className="relative z-10 mx-auto max-w-[1400px] px-6 pt-4 pb-6 sm:px-10 lg:px-12">
+          <div className="grid gap-12 lg:grid-cols-[1fr_auto] lg:gap-12 lg:items-center w-full min-w-0">
+            <div className="hero-content flex flex-col items-start text-left justify-self-start max-w-2xl lg:max-w-3xl min-w-0">
+              {/* Branding Section */}
+              <div className="mb-6 flex flex-col items-start gap-3 fade-in-item" style={{ animationDelay: '0.05s' }}>
+                <div className="flex items-center gap-4">
+                  <img src="/ssn_transparent.png" alt="SSN College Logo" className="h-10 w-auto object-contain brightness-0 invert opacity-90" />
+
+                  <span className="text-white/30 text-xl font-light">+</span>
+                  <img src="/Lakshya Logo Transparent.png" alt="Lakshya Logo" className="h-12 w-auto object-contain" />
                 </div>
-                <span className="h-4 w-px bg-white/15" />
-                <div className="flex items-center gap-1.5" title="SYCON '26">
-                  <img src="/sycon_logo_1.png" alt="SYCON Logo" className="h-6 w-auto object-contain sm:h-7" />
-                  <span className="text-[12px] font-bold text-white">SYCON'26</span>
-                </div>
-                <span className="h-4 w-px bg-white/15" />
-                <div className="flex items-center gap-1.5" title="Organized by SSN Lakshya">
-                  <img src="/logo.png" alt="Lakshya Logo" className="h-5 w-auto object-contain sm:h-6" />
-                  <span className="font-mono text-[11px] font-medium uppercase tracking-[0.12em] text-white/80">Lakshya</span>
-                </div>
+                <span className="kicker text-[11px] uppercase tracking-[0.2em] text-accent-400 pl-18">presents</span>
               </div>
 
-              <div className="flex items-center gap-3 fade-in-item" style={{ animationDelay: '0.1s' }}>
-                <span className="h-2 w-2 bg-accent-500" />
-                <span className="kicker text-xs uppercase tracking-widest text-white/70">
+              {/* Main Title with Logo */}
+              <h1 className="mt-2 flex flex-row flex-wrap sm:flex-nowrap items-center gap-3 sm:gap-4 font-display text-5xl font-extrabold leading-[1.02] tracking-tight text-white sm:text-6xl md:text-7xl lg:text-[5.25rem] fade-in-item" style={{ animationDelay: '0.2s' }}>
+                <img src="/sycon_logo_1.png" alt="SYCON Logo" className="h-12 sm:h-16 md:h-20 lg:h-[80px] w-auto object-contain flex-shrink-0" />
+                <span>SYCON<span className="text-accent-500">'26</span></span>
+              </h1>
+
+              <div className="mt-5 flex items-center gap-3 fade-in-item" style={{ animationDelay: '0.25s' }}>
+                <span className="h-2 w-2 rounded-full bg-accent-500" />
+                <span className="kicker text-xs uppercase tracking-widest text-slate-300">
                   {eventDateLabel}
                 </span>
               </div>
 
-              <h1 className="mt-4 font-display text-5xl font-bold leading-[1.02] tracking-tight text-white sm:text-6xl md:text-7xl lg:text-[5.5rem] fade-in-item" style={{ animationDelay: '0.2s' }}>
-                SYCON<span className="text-accent-500">'26</span>
-              </h1>
-
-              <p className="mt-6 max-w-xl text-lg leading-relaxed text-slate-200/80 sm:text-xl fade-in-item" style={{ animationDelay: '0.3s' }}>
+              <p className="mt-6 max-w-xl text-lg leading-relaxed text-slate-200/90 sm:text-xl fade-in-item" style={{ animationDelay: '0.3s' }}>
                 A one-day symposium at SSN. Six speakers, four workshop tracks, and
                 a room full of people who'd rather build something than watch a slide deck.
               </p>
@@ -91,13 +86,12 @@ export default function Home() {
               <div className="mt-6 flex items-center gap-3 fade-in-item" style={{ animationDelay: '0.35s' }}>
                 <span className="h-px w-8 bg-accent-500/60" />
                 <p className="kicker text-xs font-bold uppercase tracking-widest text-accent-400 sm:text-sm">
-                  Seats are limited — lock yours in before the room fills up
+                  Seats are limited ! Grab Yours
                 </p>
               </div>
-            </div>
-          </div>
-          {/* Registration */}
-            <div className="mt-7 flex w-fit flex-col gap-3">
+
+              {/* Registration Buttons */}
+              <div className="mt-8 flex flex-wrap items-center gap-4 fade-in-item" style={{ animationDelay: '0.4s' }}>
                 <a
                   href={REGISTRATION_LINKS.inside}
                   target="_blank"
@@ -115,14 +109,26 @@ export default function Home() {
                   Register Now — Other Colleges
                 </a>
               </div>
-              <div className="mt-8 flex flex-col items-start gap-3 countdown-section">
-                <p className="kicker text-xs uppercase tracking-widest text-white/50 fade-in-item" style={{ animationDelay: '0.2s' }}>
-                  Doors close in
+            </div>
+
+            {/* Right Column: Countdown */}
+            <div className="flex flex-col items-start lg:items-end justify-center mt-6 lg:mt-0 justify-self-start lg:justify-self-end w-full lg:w-auto">
+              <div className="flex flex-col items-start gap-5 countdown-section bg-white/5 p-6 sm:p-8 rounded-2xl border border-white/10 backdrop-blur-md fade-in-item shadow-2xl relative overflow-hidden" style={{ animationDelay: '0.3s' }}>
+                {/* Subtle glow effect behind countdown */}
+                <div className="absolute -top-10 -right-10 h-32 w-32 rounded-full bg-accent-500/20 blur-3xl"></div>
+                <p className="kicker text-sm uppercase tracking-widest text-accent-400 flex items-center gap-2 relative z-10 font-semibold">
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-accent-500"></span>
+                  </span>
+                  Registration closes in
                 </p>
-                <div className="fade-in-item" style={{ animationDelay: '0.3s' }}>
+                <div className="relative z-10">
                   <Countdown />
                 </div>
               </div>
+            </div>
+          </div>
         </div>
 
         <div className="mt-10 gallery-section">
@@ -152,7 +158,7 @@ export default function Home() {
             </div>
 
             <div className="border border-white/10 bg-navy-900/80 p-8 sm:p-10 card-hover">
-              <h3 className="font-display text-xl font-bold text-white">Who should come</h3>
+              <h3 className="font-display text-xl font-bold text-accent-500">Who should come</h3>
               <ul className="mt-6 space-y-4 border-t border-white/10 pt-6">
                 {[
                   'Any SSN student, any year, any department',
@@ -200,17 +206,17 @@ export default function Home() {
           />
           <div className="mt-14 grid gap-px border border-white/10 bg-white/10 sm:grid-cols-2">
             {BENEFITS.map((b, i) => (
-              <div 
-                key={b.title} 
+              <div
+                key={b.title}
                 className="bg-ink p-7 transition hover:bg-navy-900 card-hover"
-                style={{ 
+                style={{
                   animation: 'fadeInUp 0.5s ease-out',
                   animationDelay: `${i * 0.1}s`,
                   animationFillMode: 'both'
                 }}
               >
                 <Icon name={b.icon} className="h-6 w-6 text-accent-500" />
-                <h3 className="mt-5 font-display text-lg font-bold text-white">{b.title}</h3>
+                <h3 className="mt-5 font-display text-lg font-bold text-accent-500">{b.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-slate-400">{b.desc}</p>
               </div>
             ))}
@@ -224,14 +230,14 @@ export default function Home() {
           index="03"
           eyebrow="Registration"
           title="Two ways to register, one price each"
+          light
         />
         <div className="mt-14 grid border border-line md:grid-cols-2">
           {FEES.map((fee, i) => (
             <div
               key={fee.title}
-              className={`flex flex-col p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-md ${i !== 0 ? 'border-t border-line md:border-t-0 md:border-l' : ''} ${
-                fee.highlight ? 'bg-ink text-white' : 'bg-paper text-ink'
-              }`}
+              className={`flex flex-col p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-md ${i !== 0 ? 'border-t border-line md:border-t-0 md:border-l' : ''
+                } ${fee.highlight ? 'bg-white/5 text-white' : 'bg-ink text-white'}`}
               style={{
                 animation: 'fadeInUp 0.5s ease-out',
                 animationDelay: `${i * 0.1}s`,
@@ -239,19 +245,19 @@ export default function Home() {
               }}
             >
               {fee.highlight && (
-                <span className="kicker mb-4 inline-block w-fit bg-accent-500 px-2 py-1 text-[10px] font-bold uppercase tracking-wide text-white">
+                <span className="kicker mb-4 inline-block w-fit bg-accent-500 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-white">
                   Recommended
                 </span>
               )}
-              <h3 className="font-display text-lg font-bold">{fee.title}</h3>
+              <h3 className="font-display text-xl font-bold text-white">{fee.title}</h3>
               <div className="mt-3 font-display text-4xl font-bold text-accent-500">
                 {fee.price}
               </div>
-              <p className={`mt-1 text-sm ${fee.highlight ? 'text-slate-400' : 'text-navy-700/60'}`}>{fee.note}</p>
-              <ul className={`mt-6 flex-1 space-y-3 border-t pt-6 ${fee.highlight ? 'border-white/10' : 'border-line'}`}>
+              <p className="mt-1 text-sm text-slate-400">{fee.note}</p>
+              <ul className="mt-6 flex-1 space-y-3 border-t border-white/10 pt-6">
                 {fee.perks.map((perk) => (
-                  <li key={perk} className={`flex items-start gap-2.5 text-sm ${fee.highlight ? 'text-slate-300' : 'text-navy-700/80'}`}>
-                    <span className="text-accent-500">+</span>
+                  <li key={perk} className="flex items-start gap-2.5 text-sm text-slate-300">
+                    <span className="text-accent-500 font-bold">+</span>
                     {perk}
                   </li>
                 ))}
@@ -260,11 +266,10 @@ export default function Home() {
                 href={REGISTRATION_LINKS.inside}
                 target="_blank"
                 rel="noreferrer"
-                className={`mt-8 block px-5 py-3 text-center text-sm font-semibold transition ${
-                  fee.highlight
-                    ? 'bg-accent-500 text-white hover:bg-accent-600'
-                    : 'bg-white/5 text-white hover:bg-accent-600'
-                }`}
+                className={`mt-8 block px-5 py-3 text-center text-sm font-semibold transition ${fee.highlight
+                  ? 'bg-accent-500 text-white hover:bg-accent-600'
+                  : 'bg-white/5 text-white hover:bg-white/10'
+                  }`}
               >
                 Register
               </a>

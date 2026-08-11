@@ -39,7 +39,7 @@ export default function Committee() {
             className="mb-6 font-display text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl"
           >
             The people actually <br className="hidden sm:block" />
-            <span className="bg-gradient-to-r from-accent-500 to-accent-600 bg-clip-text text-transparent">running this.</span>
+            <span className="bg-gradient-to-r from-accent-500 to-accent-600 bg-clip-text text-transparent">making this happen.</span>
           </motion.h1>
 
           <motion.p
@@ -53,6 +53,7 @@ export default function Committee() {
         </div>
       </section>
 
+      {/* 1. Senior Core Team */}
       <motion.section
         initial={{ opacity: 0, y: 40, filter: 'blur(4px)' }}
         whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
@@ -60,9 +61,39 @@ export default function Committee() {
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         className="mx-auto max-w-6xl px-6 pt-16 sm:px-8 sm:pt-20"
       >
-        <div className="mb-12 flex items-baseline justify-between border-b border-line pb-4">
-          <h3 className="font-display text-2xl font-bold text-ink">Vertical Heads</h3>
-          <span className="kicker text-xs text-navy-700/50">{COMMITTEE.vertical?.length || 0} members</span>
+        <div className="mb-8 flex items-baseline justify-between border-b border-white/10 pb-4">
+          <h3 className="font-display text-2xl font-bold text-white">Senior Core Team</h3>
+          <span className="kicker text-xs text-slate-400">{COMMITTEE.senior?.length || 0} members</span>
+        </div>
+        <AutoCarousel items={COMMITTEE.senior} renderItem={renderItem} />
+      </motion.section>
+
+      {/* 2. Junior Core Team */}
+      <motion.section
+        initial={{ opacity: 0, y: 40, filter: 'blur(4px)' }}
+        whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        className="mx-auto max-w-6xl px-6 pt-20 sm:px-8"
+      >
+        <div className="mb-8 flex items-baseline justify-between border-b border-white/10 pb-4">
+          <h3 className="font-display text-2xl font-bold text-white">Junior Core Team</h3>
+          <span className="kicker text-xs text-slate-400">{COMMITTEE.junior?.length || 0} members</span>
+        </div>
+        <AutoCarousel items={COMMITTEE.junior} renderItem={renderItem} />
+      </motion.section>
+
+      {/* 3. Vertical Heads */}
+      <motion.section
+        initial={{ opacity: 0, y: 40, filter: 'blur(4px)' }}
+        whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        className="mx-auto max-w-6xl px-6 pt-20 sm:px-8"
+      >
+        <div className="mb-12 flex items-baseline justify-between border-b border-white/10 pb-4">
+          <h3 className="font-display text-2xl font-bold text-white">Vertical Heads</h3>
+          <span className="kicker text-xs text-slate-400">{COMMITTEE.vertical?.length || 0} members</span>
         </div>
 
         <div className="flex flex-col gap-20">
@@ -71,9 +102,9 @@ export default function Committee() {
             return (
               <div key={domain} className="flex flex-col gap-8">
                 <h4 className="kicker text-center text-sm font-bold tracking-widest text-accent-500 uppercase flex items-center justify-center gap-4">
-                  <span className="h-px w-8 bg-line" />
+                  <span className="h-px w-8 bg-white/15" />
                   {domain}
-                  <span className="h-px w-8 bg-line" />
+                  <span className="h-px w-8 bg-white/15" />
                 </h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto w-full">
                   {heads.map(renderItem)}
@@ -84,6 +115,7 @@ export default function Committee() {
         </div>
       </motion.section>
 
+      {/* 4. Faculty Mentor */}
       <motion.section
         initial={{ opacity: 0, y: 40, filter: 'blur(4px)' }}
         whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
@@ -91,25 +123,13 @@ export default function Committee() {
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         className="mx-auto max-w-6xl px-6 pt-20 sm:px-8"
       >
-        <div className="mb-8 flex items-baseline justify-between border-b border-line pb-4">
-          <h3 className="font-display text-2xl font-bold text-ink">Senior Core Team</h3>
-          <span className="kicker text-xs text-navy-700/50">{COMMITTEE.senior?.length || 0} members</span>
+        <div className="mb-8 flex items-baseline justify-between border-b border-white/10 pb-4">
+          <h3 className="font-display text-2xl font-bold text-white">Faculty Mentor</h3>
+          <span className="kicker text-xs text-accent-400">Mechanical Department</span>
         </div>
-        <AutoCarousel items={COMMITTEE.senior} renderItem={renderItem} />
-      </motion.section>
-
-      <motion.section
-        initial={{ opacity: 0, y: 40, filter: 'blur(4px)' }}
-        whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        className="mx-auto max-w-6xl px-6 pt-20 sm:px-8"
-      >
-        <div className="mb-8 flex items-baseline justify-between border-b border-line pb-4">
-          <h3 className="font-display text-2xl font-bold text-ink">Junior Core Team</h3>
-          <span className="kicker text-xs text-navy-700/50">{COMMITTEE.junior?.length || 0} members</span>
+        <div className="max-w-xs mx-auto">
+          {COMMITTEE.faculty.map(renderItem)}
         </div>
-        <AutoCarousel items={COMMITTEE.junior} renderItem={renderItem} />
       </motion.section>
     </div>
   )

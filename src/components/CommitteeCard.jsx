@@ -2,6 +2,17 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Icon } from './icons'
 
+function getDirectImageUrl(url) {
+  if (!url) return ''
+  if (url.includes('drive.google.com')) {
+    const match = url.match(/\/file\/d\/([a-zA-Z0-9_-]+)/) || url.match(/id=([a-zA-Z0-9_-]+)/)
+    if (match && match[1]) {
+      return `https://lh3.googleusercontent.com/d/${match[1]}`
+    }
+  }
+  return url
+}
+
 export default function CommitteeCard({ member }) {
     const [isHovered, setIsHovered] = useState(false)
 
@@ -21,7 +32,7 @@ export default function CommitteeCard({ member }) {
                 <div className="absolute inset-0 flex flex-col overflow-hidden border border-line backface-hidden bg-paper">
                     <div className="relative flex-1 overflow-hidden bg-navy-900">
                         <img
-                            src={member.photo}
+                            src={getDirectImageUrl(member.photo)}
                             alt={member.name}
                             className="h-full w-full object-cover grayscale transition duration-500 group-hover:grayscale-0"
                         />
