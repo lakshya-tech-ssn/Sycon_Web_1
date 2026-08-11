@@ -50,9 +50,9 @@ export default function Home() {
       {/* ── Hero ─────────────────────────────────────────────────────── */}
       <section className="sponsors-hero relative overflow-hidden border-b border-line">
         <ParticleField />
-        <div className="relative z-10 mx-auto max-w-6xl px-6 pt-2 sm:px-8 sm:pt-2">
-          <div className="grid gap-12 lg:grid-cols-[1fr_auto] lg:gap-8 lg:items-center w-full">
-            <div className="hero-content">
+        <div className="relative z-10 mx-auto max-w-[1400px] px-6 pt-4 pb-6 sm:px-10 lg:px-12">
+          <div className="grid gap-12 lg:grid-cols-[1fr_auto] lg:gap-12 lg:items-center w-full min-w-0">
+            <div className="hero-content flex flex-col items-start text-left justify-self-start max-w-2xl lg:max-w-3xl min-w-0">
               {/* Branding Section */}
               <div className="mb-6 flex flex-col items-start gap-3 fade-in-item" style={{ animationDelay: '0.05s' }}>
                 <div className="flex items-center gap-4">
@@ -60,23 +60,23 @@ export default function Home() {
                   <span className="text-white/30 text-xl font-light">+</span>
                   <img src="/Lakshya Logo Transparent.png" alt="Lakshya Logo" className="h-12 w-auto object-contain" />
                 </div>
-                <span className="kicker text-[11px] uppercase tracking-[0.2em] text-white/50 pl-1">presents</span>
+                <span className="kicker text-[11px] uppercase tracking-[0.2em] text-accent-400 pl-1">presents</span>
               </div>
 
               {/* Main Title with Logo */}
-              <h1 className="mt-2 flex flex-row flex-wrap sm:flex-nowrap items-center gap-3 sm:gap-4 font-display text-5xl font-bold leading-[1.02] tracking-tight text-white sm:text-6xl md:text-7xl lg:text-[5rem] fade-in-item" style={{ animationDelay: '0.2s' }}>
-                <img src="/sycon_logo_1.png" alt="SYCON Logo" className="h-12 sm:h-20 md:h-24 lg:h-[80px] w-auto object-contain flex-shrink-0" />
+              <h1 className="mt-2 flex flex-row flex-wrap sm:flex-nowrap items-center gap-3 sm:gap-4 font-display text-5xl font-extrabold leading-[1.02] tracking-tight text-white sm:text-6xl md:text-7xl lg:text-[5.25rem] fade-in-item" style={{ animationDelay: '0.2s' }}>
+                <img src="/sycon_logo_1.png" alt="SYCON Logo" className="h-12 sm:h-16 md:h-20 lg:h-[80px] w-auto object-contain flex-shrink-0" />
                 <span>SYCON<span className="text-accent-500">'26</span></span>
               </h1>
 
               <div className="mt-5 flex items-center gap-3 fade-in-item" style={{ animationDelay: '0.25s' }}>
-                <span className="h-2 w-2 bg-accent-500" />
-                <span className="kicker text-xs uppercase tracking-widest text-white/70">
+                <span className="h-2 w-2 rounded-full bg-accent-500" />
+                <span className="kicker text-xs uppercase tracking-widest text-slate-300">
                   {eventDateLabel}
                 </span>
               </div>
 
-              <p className="mt-6 max-w-xl text-lg leading-relaxed text-slate-200/80 sm:text-xl fade-in-item" style={{ animationDelay: '0.3s' }}>
+              <p className="mt-6 max-w-xl text-lg leading-relaxed text-slate-200/90 sm:text-xl fade-in-item" style={{ animationDelay: '0.3s' }}>
                 A one-day symposium at SSN. Six speakers, four workshop tracks, and
                 a room full of people who'd rather build something than watch a slide deck.
               </p>
@@ -85,7 +85,7 @@ export default function Home() {
               <div className="mt-6 flex items-center gap-3 fade-in-item" style={{ animationDelay: '0.35s' }}>
                 <span className="h-px w-8 bg-accent-500/60" />
                 <p className="kicker text-xs font-bold uppercase tracking-widest text-accent-400 sm:text-sm">
-                  Seats are limited — lock yours in before the room fills up
+                  Seats are limited ! Grab Yours
                 </p>
               </div>
 
@@ -111,11 +111,11 @@ export default function Home() {
             </div>
 
             {/* Right Column: Countdown */}
-            <div className="flex flex-col items-start lg:items-end justify-center mt-6 lg:mt-0 lg:justify-self-end">
+            <div className="flex flex-col items-start lg:items-end justify-center mt-6 lg:mt-0 justify-self-start lg:justify-self-end w-full lg:w-auto">
               <div className="flex flex-col items-start gap-5 countdown-section bg-white/5 p-6 sm:p-8 rounded-2xl border border-white/10 backdrop-blur-md fade-in-item shadow-2xl relative overflow-hidden" style={{ animationDelay: '0.3s' }}>
                 {/* Subtle glow effect behind countdown */}
                 <div className="absolute -top-10 -right-10 h-32 w-32 rounded-full bg-accent-500/20 blur-3xl"></div>
-                <p className="kicker text-sm uppercase tracking-widest text-white/70 flex items-center gap-2 relative z-10">
+                <p className="kicker text-sm uppercase tracking-widest text-accent-400 flex items-center gap-2 relative z-10 font-semibold">
                   <span className="relative flex h-2 w-2">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-400 opacity-75"></span>
                     <span className="relative inline-flex rounded-full h-2 w-2 bg-accent-500"></span>
@@ -205,10 +205,10 @@ export default function Home() {
           />
           <div className="mt-14 grid gap-px border border-white/10 bg-white/10 sm:grid-cols-2">
             {BENEFITS.map((b, i) => (
-              <div 
-                key={b.title} 
+              <div
+                key={b.title}
                 className="bg-ink p-7 transition hover:bg-navy-900 card-hover"
-                style={{ 
+                style={{
                   animation: 'fadeInUp 0.5s ease-out',
                   animationDelay: `${i * 0.1}s`,
                   animationFillMode: 'both'
@@ -229,14 +229,15 @@ export default function Home() {
           index="03"
           eyebrow="Registration"
           title="Two ways to register, one price each"
+          light
         />
         <div className="mt-14 grid border border-line md:grid-cols-2">
           {FEES.map((fee, i) => (
             <div
               key={fee.title}
-              className={`flex flex-col p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-md ${i !== 0 ? 'border-t border-line md:border-t-0 md:border-l' : ''} ${
-                fee.highlight ? 'bg-white/5 text-white' : 'bg-ink text-white'
-              }`}
+              className={`flex flex-col p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-md ${
+                i !== 0 ? 'border-t border-line md:border-t-0 md:border-l' : ''
+              } ${fee.highlight ? 'bg-white/5 text-white' : 'bg-ink text-white'}`}
               style={{
                 animation: 'fadeInUp 0.5s ease-out',
                 animationDelay: `${i * 0.1}s`,
@@ -244,11 +245,11 @@ export default function Home() {
               }}
             >
               {fee.highlight && (
-                <span className="kicker mb-4 inline-block w-fit bg-accent-500 px-2 py-1 text-[10px] font-bold uppercase tracking-wide text-white">
+                <span className="kicker mb-4 inline-block w-fit bg-accent-500 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-white">
                   Recommended
                 </span>
               )}
-              <h3 className="font-display text-lg font-bold">{fee.title}</h3>
+              <h3 className="font-display text-xl font-bold text-white">{fee.title}</h3>
               <div className="mt-3 font-display text-4xl font-bold text-accent-500">
                 {fee.price}
               </div>
@@ -256,7 +257,7 @@ export default function Home() {
               <ul className="mt-6 flex-1 space-y-3 border-t border-white/10 pt-6">
                 {fee.perks.map((perk) => (
                   <li key={perk} className="flex items-start gap-2.5 text-sm text-slate-300">
-                    <span className="text-accent-500">+</span>
+                    <span className="text-accent-500 font-bold">+</span>
                     {perk}
                   </li>
                 ))}
