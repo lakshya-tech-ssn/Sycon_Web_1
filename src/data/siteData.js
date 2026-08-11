@@ -2,7 +2,7 @@
 // Swap the values here (and drop real images into /public/images/...) once
 // real assets/copy are ready. Every page reads from this single file.
 
-export const EVENT_DATE = new Date('2026-08-26T09:00:00+05:30')
+export const EVENT_DATE = new Date('2026-09-01T09:00:00+05:30')
 
 export const REGISTRATION_LINKS = {
   inside: 'https://forms.gle/DNVuiaduU4yqgQfo9',
@@ -12,24 +12,17 @@ export const REGISTRATION_LINKS = {
 export const FEES = [
   {
     title: 'SSN Students',
-    price: '₹299',
+    price: '₹150',
     note: 'Valid SSN ID required at check-in',
-    perks: ['All talks and workshops', 'Kit and participation certificate', 'Lunch and refreshments'],
+    perks: ['Access to all speaker sessions', 'Kit and participation certificate', 'Lunch and refreshments'],
     highlight: false,
   },
   {
     title: 'Other Colleges',
-    price: '₹499',
+    price: '₹200',
     note: 'Open to all engineering and arts colleges',
-    perks: ['All talks and workshops', 'Kit and participation certificate', 'Lunch and refreshments', 'Reserved front-half seating'],
+    perks: ['Access to all speaker sessions', 'Kit and participation certificate', 'Lunch and refreshments', 'Reserved front-half seating'],
     highlight: true,
-  },
-  {
-    title: 'Groups of 4+',
-    price: '₹449',
-    note: 'Register together, pay per head',
-    perks: ['All talks and workshops', 'Kit and participation certificate', 'Lunch and refreshments'],
-    highlight: false,
   },
 ]
 
@@ -40,29 +33,19 @@ export const BENEFITS = [
     icon: 'mic',
   },
   {
-    title: 'You leave with something built',
-    desc: 'The workshop tracks are hands-on. Bring a laptop, walk out with a working project, not just notes.',
-    icon: 'code',
+    title: 'Direct access to the speakers',
+    desc: 'Live Q&A after every session, plus the post-panel mixer — this isn’t a one-way broadcast.',
+    icon: 'users',
   },
   {
     title: 'A certificate that means attendance, not just a PDF',
-    desc: 'Signed and numbered, issued only to students who check in and stay through their track.',
+    desc: 'Signed and numbered, issued only to students who check in and stay for the sessions.',
     icon: 'award',
   },
   {
     title: 'Actual conversations',
     desc: 'Lunch and the post-panel mixer are built into the schedule on purpose — that’s where most people exchange numbers.',
-    icon: 'users',
-  },
-  {
-    title: 'On-the-spot challenges',
-    desc: 'Quick build/pitch rounds between sessions with real prize money, judged live by the speakers.',
     icon: 'trophy',
-  },
-  {
-    title: 'A kit you’ll actually use',
-    desc: 'Tee, ID lanyard and notebook — no filler merch, no plastic bag full of flyers.',
-    icon: 'gift',
   },
 ]
 
@@ -70,10 +53,10 @@ export const TIMELINE = [
   { time: '9:00 AM', title: 'Check-in opens', desc: 'Show your registration confirmation, collect your kit and badge.' },
   { time: '10:00 AM', title: 'Opening address', desc: 'Short and on time — chief guest speaks for 15 minutes, not 45.' },
   { time: '11:00 AM', title: 'Keynote', desc: 'Our headline speaker opens the day.' },
-  { time: '12:30 PM', title: 'Workshop tracks', desc: 'Pick one: AI/ML, Web3, Product Design, or Robotics. Laptops required.' },
+  { time: '12:30 PM', title: 'Speaker sessions', desc: 'Back-to-back talks from the rest of the lineup, with live Q&A after each.' },
   { time: '2:00 PM', title: 'Lunch', desc: 'Served on the lawn. Speakers eat with everyone else.' },
   { time: '3:00 PM', title: 'Panel discussion', desc: 'Open Q&A in the last 20 minutes — bring hard questions.' },
-  { time: '5:00 PM', title: 'Results and closing', desc: 'Challenge winners announced, kits for volunteers, doors close by 6.' },
+  { time: '5:00 PM', title: 'Closing', desc: 'Certificates handed out, doors close by 6.' },
 ]
 
 export const GALLERY_IMAGES = Array.from({ length: 10 }, (_, i) => ({

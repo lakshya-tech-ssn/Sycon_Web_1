@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 
-export default function Timeline({ events }) {
+export default function Timeline({ events, dark = false }) {
   const itemsRef = useRef([])
 
   useEffect(() => {
@@ -26,7 +26,7 @@ export default function Timeline({ events }) {
   return (
     <div className="relative mx-auto max-w-3xl">
       {/* Vertical line */}
-      <div className="absolute left-1/2 top-0 bottom-0 w-0.5 -translate-x-1/2 bg-line" />
+      <div className={`absolute left-1/2 top-0 bottom-0 w-0.5 -translate-x-1/2 ${dark ? 'bg-white/10' : 'bg-line'}`} />
 
       {/* Timeline items */}
       <div className="space-y-6 px-4 py-8 sm:px-0">
@@ -40,7 +40,7 @@ export default function Timeline({ events }) {
           >
             {/* Dot */}
             <div className="absolute left-1/2 top-6 z-10 flex -translate-x-1/2 items-center justify-center">
-              <div className="h-4 w-4 rounded-full border-3 border-accent-500 bg-paper transition-shadow group-hover:shadow-[0_0_12px_rgba(249,98,44,0.4)]" />
+              <div className={`h-4 w-4 rounded-full border-3 border-accent-500 ${dark ? 'bg-ink' : 'bg-paper'} transition-shadow group-hover:shadow-[0_0_12px_rgba(249,98,44,0.4)]`} />
             </div>
 
             {/* Content card */}
@@ -49,14 +49,14 @@ export default function Timeline({ events }) {
                 i % 2 === 0 ? 'sm:pr-8' : 'sm:pl-8'
               }`}
             >
-              <div className="relative rounded-lg border border-line bg-paper p-5 transition-all duration-300 hover:-translate-y-1 hover:border-line hover:shadow-sm sm:p-6">
+              <div className={`relative rounded-lg border p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-sm sm:p-6 ${dark ? 'border-white/10 bg-navy-900' : 'border-line bg-paper'}`}>
                 <div className="kicker text-xs font-semibold uppercase tracking-wide text-accent-500">
                   {event.time}
                 </div>
-                <h3 className="mt-2 font-display text-lg font-bold text-ink">
+                <h3 className={`mt-2 font-display text-lg font-bold ${dark ? 'text-white' : 'text-ink'}`}>
                   {event.title}
                 </h3>
-                <p className="mt-1.5 text-sm leading-relaxed text-navy-700/70">
+                <p className={`mt-1.5 text-sm leading-relaxed ${dark ? 'text-slate-300' : 'text-navy-700/70'}`}>
                   {event.desc}
                 </p>
               </div>

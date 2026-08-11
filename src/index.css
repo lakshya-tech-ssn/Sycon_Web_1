@@ -233,7 +233,7 @@ body {
   background: var(--color-ink);
   overflow: hidden;
   padding: 6rem 1.5rem 5rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: none;
 }
 
 .sponsors-hero::before {
@@ -497,59 +497,8 @@ body {
 
 }
 
-.sponsors-hero-bottom-curve {
-  position: absolute;
-  bottom: -1px;
-  left: 0;
-  right: 0;
-  height: 40px;
-  background: var(--color-paper);
-  clip-path: polygon(0 100%, 100% 100%, 100% 0);
-  z-index: 4;
-}
-
-/* ── Tier Section Blocks ─────────────────────────────────────────────────── */
-.sponsors-tier-block {
-  max-width: 1150px;
-  margin: 0 auto;
-  padding: 5rem 1.5rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-}
-
-.sponsors-tier-header {
-  text-align: center;
-  max-width: 700px;
-  margin: 0 auto 3.5rem;
-}
-
-.tier-crown-badge,
-.tier-platinum-badge,
-.tier-gold-badge,
-.tier-silver-badge,
-.tier-stalls-badge {
-  display: inline-block;
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  padding: 0.3rem 0.9rem;
-  border-radius: 4px;
-  margin-bottom: 0.8rem;
-}
-
-.tier-crown-badge {
-  background: rgba(249, 98, 44, 0.12);
-  color: #f9622c;
-  border: 1px solid rgba(249, 98, 44, 0.3);
-}
-
-.tier-platinum-badge {
-  background: rgba(56, 189, 248, 0.12);
-  height: 60px;
-  background: var(--color-paper);
-  clip-path: polygon(0 100%, 100% 100%, 100% 40%, 0 100%);
-  z-index: 3;
+.sponsors-hero-stripe {
+  display: none;
 }
 
 /* ── Section shell ───────────────────────────────────────────── */
@@ -561,10 +510,10 @@ body {
 
 .sponsors-section--dark {
   max-width: 100%;
-  background: #fff;
+  background: rgba(11, 15, 25, 0.92);
   padding: 5rem 1.5rem;
-  border-top: 1px solid var(--color-line);
-  border-bottom: 1px solid var(--color-line);
+  border-top: none;
+  border-bottom: none;
 }
 
 /* ── Tier label ──────────────────────────────────────────────── */
@@ -596,11 +545,11 @@ body {
 }
 
 .sponsors-tier-text--light {
-  color: var(--color-accent-600);
+  color: var(--color-accent-400);
 }
 
 .sponsors-tier-line--light {
-  background: var(--color-line);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 /* ── Animations & Keyframes ────────────────────────────────────────────── */

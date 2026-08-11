@@ -2,6 +2,7 @@
 import { motion } from 'framer-motion'
 import CommitteeCard from '../components/CommitteeCard'
 import AutoCarousel from '../components/AutoCarousel'
+import ParticleField from '../components/ParticleField'
 import { COMMITTEE } from '../data/siteData'
 
 export default function Committee() {
@@ -10,21 +11,22 @@ export default function Committee() {
   )
 
   return (
-    <div className="bg-paper pb-28">
-      <section className="relative overflow-hidden border-b border-line py-20 sm:py-28 lg:py-32">
+    <div className="bg-ink pb-28">
+      <section className="sponsors-hero relative overflow-hidden border-b border-line py-20 sm:py-28 lg:py-32">
+        <ParticleField />
         {/* Soft, premium SaaS glow utilizing the requested theme constraints */}
         <div className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
           <div className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-accent-400 to-accent-600 opacity-10 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]" />
         </div>
 
-        <div className="mx-auto max-w-4xl px-6 sm:px-8 relative z-10 text-center flex flex-col items-center">
+        <div className="relative z-10 mx-auto flex max-w-4xl flex-col items-center px-6 text-center sm:px-8">
           <motion.div
             initial={{ opacity: 0, scale: 0.9, y: 10 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
             className="mb-8"
           >
-            <span className="inline-flex items-center gap-2.5 rounded-full border border-line bg-white/60 backdrop-blur-md px-4 py-1.5 text-[11px] font-bold uppercase tracking-widest text-accent-600 shadow-sm">
+            <span className="inline-flex items-center gap-2.5 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-[11px] font-bold uppercase tracking-widest text-accent-400 shadow-sm backdrop-blur-md">
               <span className="h-2 w-2 rounded-full bg-accent-500 animate-pulse" />
               Leadership Team
             </span>
@@ -34,17 +36,17 @@ export default function Committee() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-ink tracking-tight leading-[1.1] mb-6"
+            className="mb-6 font-display text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl"
           >
             The people actually <br className="hidden sm:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-500 to-accent-600">running this.</span>
+            <span className="bg-gradient-to-r from-accent-500 to-accent-600 bg-clip-text text-transparent">running this.</span>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="mx-auto max-w-2xl text-lg sm:text-xl text-navy-700/70 leading-relaxed"
+            className="mx-auto max-w-2xl text-lg leading-relaxed text-slate-200/80 sm:text-xl"
           >
             Meet the core team and vertical heads behind SYcon'26. We execute on budget, speaker procurement, and handling the day-of chaos.
           </motion.p>
