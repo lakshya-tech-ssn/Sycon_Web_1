@@ -51,36 +51,30 @@ export default function Home() {
       <section className="sponsors-hero relative overflow-hidden border-b border-line">
         <ParticleField />
         <div className="relative z-10 mx-auto max-w-6xl px-6 pt-2 sm:px-8 sm:pt-2">
-          <div className="grid gap-12 lg:grid-cols-[1.3fr_1fr] lg:gap-10">
+          <div className="grid gap-12 lg:grid-cols-[1.3fr_1fr] lg:gap-10 lg:items-center">
             <div className="hero-content">
-              {/* Institutional & Event Branding Badge */}
-              <div className="mb-8 flex w-fit flex-wrap items-center gap-2.5 rounded-xl border border-white/10 bg-white/5 p-3 shadow-xs backdrop-blur-md sm:gap-3.5 sm:p-3.5 fade-in-item" style={{ animationDelay: '0.05s' }}>
-                <div className="flex items-center gap-2" title="SSN College of Engineering">
-                  <img src="/ssn-logo.jpg" alt="SSN College Logo" className="h-6 w-auto object-contain sm:h-7" />
-                  <span className="hidden text-[12px] font-semibold text-white sm:inline">SSN College of Engineering</span>
+              {/* Branding Section */}
+              <div className="mb-6 flex flex-col items-start gap-3 fade-in-item" style={{ animationDelay: '0.05s' }}>
+                <div className="flex items-center gap-4">
+                  <img src="/ssn_transparent.png" alt="SSN College Logo" className="h-10 w-auto object-contain brightness-0 invert opacity-90" />
+                  <span className="text-white/30 text-xl font-light">+</span>
+                  <img src="/Lakshya Logo Transparent.png" alt="Lakshya Logo" className="h-12 w-auto object-contain" />
                 </div>
-                <span className="h-4 w-px bg-white/15" />
-                <div className="flex items-center gap-1.5" title="SYCON '26">
-                  <img src="/sycon_logo_1.png" alt="SYCON Logo" className="h-6 w-auto object-contain sm:h-7" />
-                  <span className="text-[12px] font-bold text-white">SYCON'26</span>
-                </div>
-                <span className="h-4 w-px bg-white/15" />
-                <div className="flex items-center gap-1.5" title="Organized by SSN Lakshya">
-                  <img src="/logo.png" alt="Lakshya Logo" className="h-5 w-auto object-contain sm:h-6" />
-                  <span className="font-mono text-[11px] font-medium uppercase tracking-[0.12em] text-white/80">Lakshya</span>
-                </div>
+                <span className="kicker text-[11px] uppercase tracking-[0.2em] text-white/50 pl-1">presents</span>
               </div>
 
-              <div className="flex items-center gap-3 fade-in-item" style={{ animationDelay: '0.1s' }}>
+              {/* Main Title with Logo */}
+              <h1 className="mt-2 flex flex-wrap items-center gap-3 sm:gap-4 font-display text-6xl font-bold leading-[1.02] tracking-tight text-white sm:text-6xl md:text-7xl lg:text-[5.5rem] fade-in-item" style={{ animationDelay: '0.2s' }}>
+                <img src="/sycon_logo_1.png" alt="SYCON Logo" className="h-14 sm:h-20 md:h-24 lg:h-[90px] w-auto object-contain" />
+                <span>SYCON<span className="text-accent-500">'26</span></span>
+              </h1>
+
+              <div className="mt-5 flex items-center gap-3 fade-in-item" style={{ animationDelay: '0.25s' }}>
                 <span className="h-2 w-2 bg-accent-500" />
                 <span className="kicker text-xs uppercase tracking-widest text-white/70">
                   {eventDateLabel}
                 </span>
               </div>
-
-              <h1 className="mt-4 font-display text-5xl font-bold leading-[1.02] tracking-tight text-white sm:text-6xl md:text-7xl lg:text-[5.5rem] fade-in-item" style={{ animationDelay: '0.2s' }}>
-                SYCON<span className="text-accent-500">'26</span>
-              </h1>
 
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-slate-200/80 sm:text-xl fade-in-item" style={{ animationDelay: '0.3s' }}>
                 A one-day symposium at SSN. Six speakers, four workshop tracks, and
@@ -94,10 +88,9 @@ export default function Home() {
                   Seats are limited — lock yours in before the room fills up
                 </p>
               </div>
-            </div>
-          </div>
-          {/* Registration */}
-            <div className="mt-7 flex w-fit flex-col gap-3">
+
+              {/* Registration Buttons */}
+              <div className="mt-8 flex flex-wrap items-center gap-4 fade-in-item" style={{ animationDelay: '0.4s' }}>
                 <a
                   href={REGISTRATION_LINKS.inside}
                   target="_blank"
@@ -115,14 +108,26 @@ export default function Home() {
                   Register Now — Other Colleges
                 </a>
               </div>
-              <div className="mt-8 flex flex-col items-start gap-3 countdown-section">
-                <p className="kicker text-xs uppercase tracking-widest text-white/50 fade-in-item" style={{ animationDelay: '0.2s' }}>
+            </div>
+
+            {/* Right Column: Countdown */}
+            <div className="flex flex-col items-start lg:items-end justify-center mt-6 lg:mt-0">
+              <div className="flex flex-col items-start gap-5 countdown-section bg-white/5 p-6 sm:p-8 rounded-2xl border border-white/10 backdrop-blur-md fade-in-item shadow-2xl relative overflow-hidden" style={{ animationDelay: '0.3s' }}>
+                {/* Subtle glow effect behind countdown */}
+                <div className="absolute -top-10 -right-10 h-32 w-32 rounded-full bg-accent-500/20 blur-3xl"></div>
+                <p className="kicker text-sm uppercase tracking-widest text-white/70 flex items-center gap-2 relative z-10">
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-accent-500"></span>
+                  </span>
                   Doors close in
                 </p>
-                <div className="fade-in-item" style={{ animationDelay: '0.3s' }}>
+                <div className="relative z-10">
                   <Countdown />
                 </div>
               </div>
+            </div>
+          </div>
         </div>
 
         <div className="mt-10 gallery-section">
