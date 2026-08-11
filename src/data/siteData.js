@@ -327,43 +327,56 @@ export const SPONSORS = [
 ]
 
 // 20-30 committee members, split into Senior Core (SC) and Junior Core (JC)
-const verticalDomains = [
-  'Creative & PR', 'Editorial', 'Sponsorship', 'Operations',
-  'Documentation', 'Marketing', 'Logistics', 'Technical'
-]
+const verticalHeadsData = [
+  // Operations and Logistics
+  { name: 'Thuhin B', domain: 'Operations & Logistics' },
+  { name: 'Aditya Kumar', domain: 'Operations & Logistics' },
+  { name: 'Harish Karthick M', domain: 'Operations & Logistics' },
+  { name: 'Guruprakash M', domain: 'Operations & Logistics' },
 
-const verticalHeadsNames = [
-  'Simran Gujral', 'Aisha Khan',
-  'Karan Malhotra', 'Pooja Iyer',
-  'Sneha Kapoor', 'Rohan Desai',
-  'Rahul Khanna', 'Vikram Rao',
-  'Meera Pillai', 'Aditi Warrier',
-  'Kabir Singh', 'Yash Patel',
-  'Nikhil Chandran', 'Sanjay Kumar',
-  'Ananya Menon', 'Aryan Kapoor'
-]
+  // Marketing
+  { name: 'Avantheka Srinivasan', domain: 'Marketing' },
+  { name: 'Hansika NM', domain: 'Marketing' },
+
+  // Sponsorship and Finance
+  { name: 'Swathi P', domain: 'Sponsorship & Finance' },
+  { name: 'Rishi Rithesh', domain: 'Sponsorship & Finance' },
+
+  // Technical
+  { name: 'Rishi Rithesh', domain: 'Technical' },
+  { name: 'Radesh L', domain: 'Technical' },
+  { name: 'Balamuthukrishnan B', domain: 'Technical' },
+
+  // Design and Editorial
+  { name: 'Pranav Karthik A', domain: 'Design & Editorial' },
+  { name: 'Shree Vaishali K', domain: 'Design & Editorial' },
+  { name: 'Rakshith', domain: 'Design & Editorial' },
+
+  // Documentation
+  { name: 'Sanjana Desigan', domain: 'Documentation' },
+  { name: 'Dhanyalalitha S', domain: 'Documentation' }
+];
+
 const seniorNames = [
   'Aarav Sharma', 'Meera Pillai', 'Vikram Rao', 'Ishita Bose', 'Rohan Desai',
   'Ananya Menon', 'Kabir Singh', 'Divya Ramesh', 'Nikhil Chandran', 'Tara Nambiar',
 ]
 const juniorNames = [
-  'Gokul M', 'J Kamali Shree', 'Shree Vaishnavi', 'JayaSuriya S', 'Nithesh B',
-  'Madhu Visagan HT', 'Krishna PV ', 'KK Ridhuvarshini', 'Nathaniel Christian', 'Sara Thomas',
-  'Manoj Pillai', 'Nithya Krishnan', 'Aditya Ranganathan', 'Fathima Noor', 'Harish Babu',
+  'J Kamali Shree', 'Shree Vaishnavi S', 'Krishna PV', 'Nithyashri', 'Madhu Visagan HT',
+  'Nithin R', 'Sanjana Shankar', 'Gokul M', 'Harshith Venkatesh', 'Darshana R',
+  'Kanduja S', 'Mohammed Afzal AR', 'Jayasuriya S', 'Nathaniel Christian', 'Nithesh B',
+  'KK Ridhuvarshini', 'Jeevan'
 ]
 
 export const COMMITTEE = {
-  vertical: verticalHeadsNames.map((name, i) => {
-    const domainIndex = Math.floor(i / 2);
-    return {
-      id: `vh-${i + 1}`,
-      name,
-      domain: verticalDomains[domainIndex],
-      role: `${verticalDomains[domainIndex]} Head`,
-      photo: `https://placehold.co/300x300/171c2b/f9622c?text=${encodeURIComponent(name.split(' ')[0])}`,
-      linkedin: 'https://linkedin.com/in/placeholder',
-    };
-  }),
+  vertical: verticalHeadsData.map((item, i) => ({
+    id: `vh-${i + 1}`,
+    name: item.name,
+    domain: item.domain,
+    role: `${item.domain} Head`,
+    photo: `https://placehold.co/300x300/171c2b/f9622c?text=${encodeURIComponent(item.name.split(' ')[0])}`,
+    linkedin: 'https://linkedin.com/in/placeholder',
+  })),
   senior: seniorNames.map((name, i) => ({
     id: `sc-${i + 1}`,
     name,
