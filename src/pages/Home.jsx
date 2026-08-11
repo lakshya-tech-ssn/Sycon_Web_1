@@ -51,8 +51,8 @@ export default function Home() {
       <section className="sponsors-hero relative overflow-hidden border-b border-line">
         <ParticleField />
         <div className="relative z-10 mx-auto max-w-6xl px-6 pt-2 sm:px-8 sm:pt-2">
-          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-12 lg:gap-8 w-full">
-            <div className="hero-content lg:max-w-[60%] flex-shrink-0">
+          <div className="grid gap-12 lg:grid-cols-[1fr_auto] lg:gap-8 lg:items-center w-full">
+            <div className="hero-content">
               {/* Branding Section */}
               <div className="mb-6 flex flex-col items-start gap-3 fade-in-item" style={{ animationDelay: '0.05s' }}>
                 <div className="flex items-center gap-4">
@@ -64,9 +64,9 @@ export default function Home() {
               </div>
 
               {/* Main Title with Logo */}
-              <h1 className="mt-2 flex flex-row items-center gap-3 sm:gap-4 font-display text-5xl font-bold leading-[1.02] tracking-tight text-white sm:text-6xl md:text-7xl lg:text-[5.5rem] fade-in-item" style={{ animationDelay: '0.2s' }}>
-                <img src="/sycon_logo_1.png" alt="SYCON Logo" className="h-14 sm:h-20 md:h-24 lg:h-[90px] w-auto object-contain flex-shrink-0" />
-                <span className="whitespace-nowrap">SYCON<span className="text-accent-500">'26</span></span>
+              <h1 className="mt-2 flex flex-row flex-wrap sm:flex-nowrap items-center gap-3 sm:gap-4 font-display text-5xl font-bold leading-[1.02] tracking-tight text-white sm:text-6xl md:text-7xl lg:text-[5rem] fade-in-item" style={{ animationDelay: '0.2s' }}>
+                <img src="/sycon_logo_1.png" alt="SYCON Logo" className="h-12 sm:h-20 md:h-24 lg:h-[80px] w-auto object-contain flex-shrink-0" />
+                <span>SYCON<span className="text-accent-500">'26</span></span>
               </h1>
 
               <div className="mt-5 flex items-center gap-3 fade-in-item" style={{ animationDelay: '0.25s' }}>
@@ -111,7 +111,7 @@ export default function Home() {
             </div>
 
             {/* Right Column: Countdown */}
-            <div className="flex flex-col items-start lg:items-end justify-center mt-6 lg:mt-0 lg:max-w-[40%]">
+            <div className="flex flex-col items-start lg:items-end justify-center mt-6 lg:mt-0 lg:justify-self-end">
               <div className="flex flex-col items-start gap-5 countdown-section bg-white/5 p-6 sm:p-8 rounded-2xl border border-white/10 backdrop-blur-md fade-in-item shadow-2xl relative overflow-hidden" style={{ animationDelay: '0.3s' }}>
                 {/* Subtle glow effect behind countdown */}
                 <div className="absolute -top-10 -right-10 h-32 w-32 rounded-full bg-accent-500/20 blur-3xl"></div>
@@ -157,7 +157,7 @@ export default function Home() {
             </div>
 
             <div className="border border-white/10 bg-navy-900/80 p-8 sm:p-10 card-hover">
-              <h3 className="font-display text-xl font-bold text-white">Who should come</h3>
+              <h3 className="font-display text-xl font-bold text-accent-500">Who should come</h3>
               <ul className="mt-6 space-y-4 border-t border-white/10 pt-6">
                 {[
                   'Any SSN student, any year, any department',
@@ -215,7 +215,7 @@ export default function Home() {
                 }}
               >
                 <Icon name={b.icon} className="h-6 w-6 text-accent-500" />
-                <h3 className="mt-5 font-display text-lg font-bold text-white">{b.title}</h3>
+                <h3 className="mt-5 font-display text-lg font-bold text-accent-500">{b.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-slate-400">{b.desc}</p>
               </div>
             ))}
