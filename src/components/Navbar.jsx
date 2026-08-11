@@ -44,10 +44,10 @@ export default function Navbar() {
             />
             <div className="flex flex-col">
               <div className="flex items-baseline gap-1">
-                <span className="font-display text-lg sm:text-xl font-bold tracking-tight text-navy-600">
+                <span className="font-display text-lg sm:text-xl font-bold tracking-tight text-white">
                   SYCON
                 </span>
-                <span className="kicker font-display text-lg sm:text-xl font-bold text-accent-600">'26</span>
+                <span className="kicker font-display text-lg sm:text-xl font-bold text-accent-500">'26</span>
               </div>
             </div>
           </div>
@@ -65,7 +65,7 @@ export default function Navbar() {
                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                 className={({ isActive }) =>
                   `kicker flex items-baseline gap-20px text-[13px] font-medium transition-colors ${
-                    isActive ? 'text-accent-600' : 'text-navy-700 hover:text-navy-600'
+                    isActive ? 'text-accent-500' : 'text-slate-300 hover:text-white'
                   }`
                 }
                 end={link.to === '/'}
@@ -80,14 +80,14 @@ export default function Navbar() {
           href={REGISTRATION_LINKS.inside}
           target="_blank"
           rel="noreferrer"
-          className="hidden items-center gap-2 border border-ink bg-ink px-5 py-2.5 text-[13px] font-semibold text-white transition hover:bg-accent-600 hover:border-accent-600 md:inline-flex button-hover"
+          className="hidden items-center gap-2 border border-white/20 bg-white/5 px-5 py-2.5 text-[13px] font-semibold text-white transition hover:bg-accent-500 hover:border-accent-500 md:inline-flex button-hover"
         >
           Register
           <span aria-hidden="true">→</span>
         </a>
 
         <button
-          className="grid h-10 w-10 place-items-center text-ink md:hidden"
+          className="grid h-10 w-10 place-items-center text-white md:hidden"
           onClick={() => setOpen((o) => !o)}
           aria-label="Toggle menu"
         >
@@ -102,26 +102,26 @@ export default function Navbar() {
       </nav>
 
       {open && (
-        <div className="border-t border-line bg-paper px-5 pb-5 md:hidden">
+        <div className="border-t border-white/10 bg-ink px-5 pb-5 md:hidden">
           {/* Mobile menu branding bar */}
-          <div className="flex items-center justify-around py-3 border-b border-line/60 my-2">
+          <div className="flex items-center justify-around py-3 border-b border-white/10 my-2">
             <div className="flex items-center gap-1.5">
               <img src="/ssn-logo.jpg" alt="SSN Logo" className="h-6 w-auto object-contain" />
-              <span className="text-[11px] font-semibold text-navy-800">SSN</span>
+              <span className="text-[11px] font-semibold text-slate-300">SSN</span>
             </div>
-            <span className="h-4 w-px bg-line" />
+            <span className="h-4 w-px bg-white/10" />
             <div className="flex items-center gap-1.5">
               <img src="/sycon_bg.png" alt="SYCON Logo" className="h-6 w-auto object-contain" />
-              <span className="text-[11px] font-bold text-ink">SYCON'26</span>
+              <span className="text-[11px] font-bold text-white">SYCON'26</span>
             </div>
-            <span className="h-4 w-px bg-line" />
+            <span className="h-4 w-px bg-white/10" />
             <div className="flex items-center gap-1.5">
               <img src="/logo.png" alt="Lakshya Logo" className="h-6 w-auto object-contain" />
-              <span className="text-[11px] font-semibold text-navy-800">Lakshya</span>
+              <span className="text-[11px] font-semibold text-slate-300">Lakshya</span>
             </div>
           </div>
 
-          <ul className="flex flex-col divide-y divide-line pt-1">
+          <ul className="flex flex-col divide-y divide-white/10 pt-1">
             {links.map((link) => (
               <li key={link.to}>
                 <NavLink
@@ -131,7 +131,7 @@ export default function Navbar() {
                     window.scrollTo({ top: 0, behavior: 'smooth' })
                   }}
                   className={({ isActive }) =>
-                    `block py-3 text-[15px] font-medium ${isActive ? 'text-accent-600' : 'text-navy-800'}`
+                    `block py-3 text-[15px] font-medium ${isActive ? 'text-accent-500' : 'text-slate-300'}`
                   }
                   end={link.to === '/'}
                 >

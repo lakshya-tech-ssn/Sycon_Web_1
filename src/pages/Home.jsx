@@ -230,7 +230,7 @@ export default function Home() {
             <div
               key={fee.title}
               className={`flex flex-col p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-md ${i !== 0 ? 'border-t border-line md:border-t-0 md:border-l' : ''} ${
-                fee.highlight ? 'bg-ink text-white' : 'bg-paper text-ink'
+                fee.highlight ? 'bg-white/5 text-white' : 'bg-ink text-white'
               }`}
               style={{
                 animation: 'fadeInUp 0.5s ease-out',
@@ -247,10 +247,10 @@ export default function Home() {
               <div className="mt-3 font-display text-4xl font-bold text-accent-500">
                 {fee.price}
               </div>
-              <p className={`mt-1 text-sm ${fee.highlight ? 'text-slate-400' : 'text-navy-700/60'}`}>{fee.note}</p>
-              <ul className={`mt-6 flex-1 space-y-3 border-t pt-6 ${fee.highlight ? 'border-white/10' : 'border-line'}`}>
+              <p className="mt-1 text-sm text-slate-400">{fee.note}</p>
+              <ul className="mt-6 flex-1 space-y-3 border-t border-white/10 pt-6">
                 {fee.perks.map((perk) => (
-                  <li key={perk} className={`flex items-start gap-2.5 text-sm ${fee.highlight ? 'text-slate-300' : 'text-navy-700/80'}`}>
+                  <li key={perk} className="flex items-start gap-2.5 text-sm text-slate-300">
                     <span className="text-accent-500">+</span>
                     {perk}
                   </li>
@@ -263,7 +263,7 @@ export default function Home() {
                 className={`mt-8 block px-5 py-3 text-center text-sm font-semibold transition ${
                   fee.highlight
                     ? 'bg-accent-500 text-white hover:bg-accent-600'
-                    : 'bg-white/5 text-white hover:bg-accent-600'
+                    : 'bg-white/5 text-white hover:bg-white/10'
                 }`}
               >
                 Register

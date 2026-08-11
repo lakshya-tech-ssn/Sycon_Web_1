@@ -59,11 +59,13 @@ export const TIMELINE = [
   { time: '5:00 PM', title: 'Closing', desc: 'Certificates handed out, doors close by 6.' },
 ]
 
-export const GALLERY_IMAGES = Array.from({ length: 10 }, (_, i) => ({
-  id: i + 1,
-  src: `https://placehold.co/480x320/10141f/f9622c?text=SYCON+%2725+%E2%80%94+${i + 1}`,
-  alt: `Photo from a previous SYcon edition, frame ${i + 1}`,
-}))
+export const GALLERY_IMAGES = [
+  { id: 1, src: '/SYCON24/DSC07043.JPG', alt: 'SYCON \'24 Photo 1' },
+  { id: 2, src: '/SYCON24/DSC07123.JPG', alt: 'SYCON \'24 Photo 2' },
+  { id: 3, src: '/SYCON24/DSC07157.JPG', alt: 'SYCON \'24 Photo 3' },
+  { id: 4, src: '/SYCON24/DSC07216.JPG', alt: 'SYCON \'24 Photo 4' },
+  { id: 5, src: '/SYCON24/DSC07247.JPG', alt: 'SYCON \'24 Photo 5' }
+];
 
 export const SPEAKERS = [
   {
