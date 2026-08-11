@@ -117,7 +117,7 @@ function StallCard({ stall, index }) {
 // ─── Main Page ────────────────────────────────────────────────────────────────
 export default function Sponsors() {
   return (
-    <div style={{ background: 'var(--color-paper)', overflow: 'hidden' }}>
+    <div style={{ background: 'var(--color-ink)', color: '#fff', overflow: 'hidden' }}>
 
       {/* ── HERO ───────────────────────────────────────────────────────── */}
       <section className="sponsors-hero">
