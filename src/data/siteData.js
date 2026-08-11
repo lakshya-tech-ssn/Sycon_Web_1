@@ -171,9 +171,9 @@ export const SPONSORS = [
     category: 'Premier Education Partner',
     tagline: 'Best GATE & Competitive Exam Coaching in Chennai',
     description: 'Empowering engineering minds with top-tier GATE coaching, scholarships, and academic guidance.',
-    logo: '/Sponsors/eeci_gate.jpeg',
+    logo: '/Sponsors/srinivas_elastomers.png',
     perks: ['Title Workshop Host', 'Main Auditorium Naming Rights', 'Full Student Kit Branding'],
-    website: 'https://eecigate.in',
+    website: 'https://srinivaselastomers.com/',
   },
   {
     id: 3,

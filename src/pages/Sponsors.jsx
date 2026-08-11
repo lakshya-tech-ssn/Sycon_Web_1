@@ -174,22 +174,16 @@ export default function Sponsors() {
                   <p className="associate-brand-tagline">"{s.tagline}"</p>
                   <p className="associate-brand-desc">{s.description}</p>
 
-                  <div className="associate-perks-row">
-                    {s.perks.map((perk, idx) => (
-                      <span key={idx} className="associate-perk-chip">
-                        ✦ {perk}
-                      </span>
-                    ))}
-                  </div>
-
-                  <a
-                    href={s.website}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="associate-visit-link"
-                  >
-                    Visit CredO Platform <span aria-hidden="true">→</span>
-                  </a>
+                  {s.website && (
+                    <a
+                      href={s.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="associate-visit-link"
+                    >
+                      Visit {s.name} Website <span aria-hidden="true">→</span>
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
@@ -221,11 +215,16 @@ export default function Sponsors() {
                   <p className="platinum-tagline">{s.tagline}</p>
                   <p className="platinum-desc">{s.description}</p>
 
-                  <div className="platinum-perks-list">
-                    {s.perks.map((perk, idx) => (
-                      <span key={idx} className="platinum-perk-pill">💎 {perk}</span>
-                    ))}
-                  </div>
+                  {s.website && (
+                    <a
+                      href={s.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="sponsor-card-visit-btn"
+                    >
+                      Visit Website <span aria-hidden="true">→</span>
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
@@ -257,11 +256,17 @@ export default function Sponsors() {
                   <h3 className="gold-name">{s.name}</h3>
                   <p className="gold-tagline">"{s.tagline}"</p>
                   <p className="gold-desc">{s.description}</p>
-                  <div className="gold-perks">
-                    {s.perks.map((perk, idx) => (
-                      <span key={idx} className="gold-perk-chip">🥇 {perk}</span>
-                    ))}
-                  </div>
+
+                  {s.website && (
+                    <a
+                      href={s.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="sponsor-card-visit-btn"
+                    >
+                      Visit Website <span aria-hidden="true">→</span>
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
@@ -291,11 +296,17 @@ export default function Sponsors() {
               <h3 className="silver-name">{s.name}</h3>
               <p className="silver-tagline">{s.tagline}</p>
               <p className="silver-desc">{s.description}</p>
-              <div className="silver-perks-row">
-                {s.perks.map((perk, idx) => (
-                  <span key={idx} className="silver-perk-pill">• {perk}</span>
-                ))}
-              </div>
+
+              {s.website && (
+                <a
+                  href={s.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="silver-visit-btn"
+                >
+                  Visit Website <span aria-hidden="true">→</span>
+                </a>
+              )}
             </div>
           ))}
         </div>
@@ -325,7 +336,7 @@ export default function Sponsors() {
             href="mailto:mail.lakshytech@gmail.com?subject=SYCON%20%2726%20Sponsorship%20Inquiry"
             className="be-a-sponsor-main-btn"
           >
-            <span className="btn-sparkle">✨</span> Be a Sponsor <span className="btn-arrow">→</span>
+            <span className="btn-sparkle">💹</span> Be a Sponsor <span className="btn-arrow">→</span>
           </a>
         </div>
       </section>

@@ -834,6 +834,33 @@ body {
   box-shadow: 0 6px 20px rgba(249, 98, 44, 0.45);
 }
 
+.sponsor-card-visit-btn,
+.silver-visit-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: var(--color-accent-500);
+  padding: 0.6rem 1.25rem;
+  border-radius: 8px;
+  text-decoration: none;
+  width: fit-content;
+  margin-top: 1rem;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 12px rgba(249, 98, 44, 0.25);
+}
+
+.sponsor-card-visit-btn:hover,
+.silver-visit-btn:hover {
+  background: var(--color-accent-600);
+  color: #ffffff;
+  transform: translateX(4px);
+  box-shadow: 0 6px 18px rgba(249, 98, 44, 0.45);
+}
+
 /* ── 2. PLATINUM SPONSOR CARD ────────────────────────────────── */
 .platinum-showcase-wrap {
   max-width: 1000px;
