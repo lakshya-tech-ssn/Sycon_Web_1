@@ -114,6 +114,44 @@ function StallCard({ stall, index }) {
   )
 }
 
+// ─── Unified Sponsor Card Component ───────────────────────────────────────────
+function SponsorCard({ sponsor, tierTheme, isGrid = false }) {
+  return (
+    <div className={`unified-sponsor-card tier-${tierTheme} ${isGrid ? 'is-grid-card' : ''}`}>
+      <div className="card-vertical-hover-line" aria-hidden="true" />
+      <div className="card-linear-glow" aria-hidden="true" />
+
+      <div className="sponsor-card-top-bar">
+        <span className="sponsor-badge-tag">{sponsor.tier.toUpperCase()}</span>
+        <span className="sponsor-category-tag">{sponsor.category}</span>
+      </div>
+
+      <div className="sponsor-card-main-grid">
+        <div className="sponsor-card-logo-container">
+          <img src={sponsor.logo} alt={sponsor.name} className="sponsor-card-logo-img" />
+        </div>
+
+        <div className="sponsor-card-info-pane">
+          <h3 className="sponsor-card-name">{sponsor.name}</h3>
+          <p className="sponsor-card-tagline">"{sponsor.tagline}"</p>
+          <p className="sponsor-card-desc">{sponsor.description}</p>
+
+          {sponsor.website && (
+            <a
+              href={sponsor.website}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="sponsor-card-website-btn"
+            >
+              Visit Website <span aria-hidden="true">→</span>
+            </a>
+          )}
+        </div>
+      </div>
+    </div>
+  )
+}
+
 // ─── Main Page ────────────────────────────────────────────────────────────────
 export default function Sponsors() {
   return (
@@ -156,78 +194,24 @@ export default function Sponsors() {
           <span className="sponsors-tier-line" />
         </div>
 
-        <div className="associate-showcase-wrapper">
+        <div className="sponsors-showcase-single">
           {associateSponsor.map((s) => (
-            <div key={s.id} className="associate-spotlight-card">
-              <div className="card-vertical-hover-line" aria-hidden="true" />
-              <div className="associate-accent-glow" aria-hidden="true" />
-              <div className="associate-badge-banner">ASSOCIATE TITLE SPONSOR</div>
-
-              <div className="associate-content-grid">
-                <div className="associate-logo-box">
-                  <img src={s.logo} alt={s.name} className="associate-logo-img" />
-                  <span className="associate-cat-tag">{s.category}</span>
-                </div>
-
-                <div className="associate-details-pane">
-                  <h2 className="associate-brand-title">{s.name}</h2>
-                  <p className="associate-brand-tagline">"{s.tagline}"</p>
-                  <p className="associate-brand-desc">{s.description}</p>
-
-                  {s.website && (
-                    <a
-                      href={s.website}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="associate-visit-link"
-                    >
-                      Visit {s.name} Website <span aria-hidden="true">→</span>
-                    </a>
-                  )}
-                </div>
-              </div>
-            </div>
+            <SponsorCard key={s.id} sponsor={s} tierTheme="associate" />
           ))}
         </div>
       </section>
 
       {/* ── 2. PLATINUM SPONSOR ────────────────────────────────────────── */}
-      <section className="sponsors-section sponsors-section--dark">
-        <div className="sponsors-tier-label sponsors-tier-label--light">
-          <span className="sponsors-tier-line sponsors-tier-line--light" />
-          <span className="sponsors-tier-text sponsors-tier-text--light">Platinum Sponsor</span>
-          <span className="sponsors-tier-line sponsors-tier-line--light" />
+      <section className="sponsors-section">
+        <div className="sponsors-tier-label">
+          <span className="sponsors-tier-line" />
+          <span className="sponsors-tier-text">Platinum Sponsor</span>
+          <span className="sponsors-tier-line" />
         </div>
 
-        <div className="platinum-showcase-wrap">
+        <div className="sponsors-showcase-single">
           {platinumSponsor.map((s) => (
-            <div key={s.id} className="platinum-aesthetic-card">
-              <div className="card-vertical-hover-line" aria-hidden="true" />
-              <div className="platinum-shimmer-bar" />
-              <div className="platinum-card-body">
-                <div className="platinum-logo-side">
-                  <div className="platinum-badge">PLATINUM SPONSOR</div>
-                  <img src={s.logo} alt={s.name} className="platinum-logo-img" />
-                </div>
-                <div className="platinum-info-side">
-                  <span className="platinum-cat">{s.category}</span>
-                  <h3 className="platinum-name">{s.name}</h3>
-                  <p className="platinum-tagline">{s.tagline}</p>
-                  <p className="platinum-desc">{s.description}</p>
-
-                  {s.website && (
-                    <a
-                      href={s.website}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="sponsor-card-visit-btn"
-                    >
-                      Visit Website <span aria-hidden="true">→</span>
-                    </a>
-                  )}
-                </div>
-              </div>
-            </div>
+            <SponsorCard key={s.id} sponsor={s} tierTheme="platinum" />
           ))}
         </div>
       </section>
@@ -240,74 +224,24 @@ export default function Sponsors() {
           <span className="sponsors-tier-line" />
         </div>
 
-        <div className="gold-showcase-wrap">
+        <div className="sponsors-showcase-single">
           {goldSponsor.map((s) => (
-            <div key={s.id} className="gold-aesthetic-card">
-              <div className="card-vertical-hover-line" aria-hidden="true" />
-              <div className="gold-card-header">
-                <span className="gold-badge">GOLD SPONSOR</span>
-                <span className="gold-cat">{s.category}</span>
-              </div>
-              <div className="gold-card-body">
-                <div className="gold-logo-box">
-                  <img src={s.logo} alt={s.name} className="gold-logo-img" />
-                </div>
-                <div className="gold-info">
-                  <h3 className="gold-name">{s.name}</h3>
-                  <p className="gold-tagline">"{s.tagline}"</p>
-                  <p className="gold-desc">{s.description}</p>
-
-                  {s.website && (
-                    <a
-                      href={s.website}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="sponsor-card-visit-btn"
-                    >
-                      Visit Website <span aria-hidden="true">→</span>
-                    </a>
-                  )}
-                </div>
-              </div>
-            </div>
+            <SponsorCard key={s.id} sponsor={s} tierTheme="gold" />
           ))}
         </div>
       </section>
 
       {/* ── 4. SILVER SPONSORS (3) ──────────────────────────────────────── */}
-      <section className="sponsors-section sponsors-section--dark">
-        <div className="sponsors-tier-label sponsors-tier-label--light">
-          <span className="sponsors-tier-line sponsors-tier-line--light" />
-          <span className="sponsors-tier-text sponsors-tier-text--light">Silver Sponsors</span>
-          <span className="sponsors-tier-line sponsors-tier-line--light" />
+      <section className="sponsors-section">
+        <div className="sponsors-tier-label">
+          <span className="sponsors-tier-line" />
+          <span className="sponsors-tier-text">Silver Sponsors</span>
+          <span className="sponsors-tier-line" />
         </div>
 
-        <div className="silver-cards-grid">
+        <div className="silver-sponsors-grid">
           {silverSponsors.map((s) => (
-            <div key={s.id} className="silver-aesthetic-card">
-              <div className="card-vertical-hover-line" aria-hidden="true" />
-              <div className="silver-card-top">
-                <span className="silver-badge">SILVER SPONSOR</span>
-                <span className="silver-cat">{s.category}</span>
-              </div>
-              <div className="silver-logo-box">
-                <img src={s.logo} alt={s.name} className="silver-logo-img" />
-              </div>
-              <h3 className="silver-name">{s.name}</h3>
-              <p className="silver-tagline">{s.tagline}</p>
-              <p className="silver-desc">{s.description}</p>
-
-              {s.website && (
-                <a
-                  href={s.website}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="silver-visit-btn"
-                >
-                  Visit Website <span aria-hidden="true">→</span>
-                </a>
-              )}
-            </div>
+            <SponsorCard key={s.id} sponsor={s} tierTheme="silver" isGrid={true} />
           ))}
         </div>
       </section>
