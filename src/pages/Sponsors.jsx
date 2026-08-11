@@ -1,57 +1,14 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { SPONSORS } from '../data/siteData'
 
-// ─── Data slices ──────────────────────────────────────────────────────────────
-const titleSponsor  = SPONSORS.filter((s) => s.tier === 'Title Sponsor')
-const coSponsors    = SPONSORS.filter((s) => s.tier === 'Co-Sponsor')
-const otherSponsors = SPONSORS.filter((s) => !['Title Sponsor', 'Co-Sponsor'].includes(s.tier))
+// ─── Data Slices ──────────────────────────────────────────────────────────────
+const associateSponsor = SPONSORS.filter((s) => s.tier === 'Associate Sponsor')
+const platinumSponsor = SPONSORS.filter((s) => s.tier === 'Platinum Sponsor')
+const goldSponsor = SPONSORS.filter((s) => s.tier === 'Gold Sponsor')
+const silverSponsors = SPONSORS.filter((s) => s.tier === 'Silver Sponsor')
+const partnersAndStalls = SPONSORS.filter((s) => s.tier === 'Partners and Stalls')
 
-// ─── Build a randomised collage layout each page-load ─────────────────────────
-// Divides the stage into a loose grid of zones, then offsets each item
-// randomly within its zone so nothing clusters but nothing overlaps badly.
-function buildCollageLayout(items) {
-  const shuffled = [...items].sort(() => Math.random() - 0.5)
-
-  const COLS = 4
-  // 4 cols × 24% = 96% total width, 4% overall margin
-  const ZONE_W = 24   // % of stage width per column
-  // 3 rows × 130px = 390px; logos max 70px tall, leaving 60px gap
-  const ZONE_H = 130  // px per row
-
-  return shuffled.map((sponsor, i) => {
-    const col = i % COLS
-    const row = Math.floor(i / COLS)
-
-    // x: start of zone + tiny nudge (max 3% so logo never crosses into next zone)
-    const x = col * ZONE_W + 1 + Math.random() * 3
-
-    // y: top of row + small nudge (max 20px so logo never bleeds into next row)
-    const y = 10 + row * ZONE_H + Math.random() * 20
-
-    // Rotation: subtle tilts only
-    const rotate = (Math.random() - 0.5) * (Math.random() > 0.8 ? 16 : 8)
-
-    // Width: safe max so logo fits inside its 24%-wide zone at 980px stage
-    // 24% of 980px ≈ 235px; logo must fit with 1–4% x-nudge (max ~39px offset)
-    // so logo width max ≈ 235 - 40 = 195px. We keep max at 160 for comfort.
-    const w = Math.round(Math.random() * 30 + 130) // 130–160 px
-    const h = Math.round(Math.random() * 10 + 60)  //  60– 70 px
-
-    return {
-      sponsor,
-      x,
-      y,
-      rotate,
-      w, h,
-      zIndex:   Math.floor(Math.random() * 6) + 1,
-      floatDir: Math.random() > 0.5 ? 'A' : 'B',
-      floatDur: (Math.random() * 2 + 3.5).toFixed(1),
-      dropDelay: i * 0.06 + Math.random() * 0.06,
-    }
-  })
-}
-
-// ─── Particle field (hero background) ─────────────────────────────────────────
+// ─── Hero Particle Field ──────────────────────────────────────────────────────
 function ParticleField() {
   const canvasRef = useRef(null)
 
@@ -62,20 +19,19 @@ function ParticleField() {
     let raf
 
     const resize = () => {
-      canvas.width  = canvas.offsetWidth
+      canvas.width = canvas.offsetWidth
       canvas.height = canvas.offsetHeight
     }
     resize()
     window.addEventListener('resize', resize)
 
-    // Use Math.random() for particles — hero doesn't need stable positions
     const particles = Array.from({ length: 55 }, () => ({
-      x:  Math.random() * canvas.width,
-      y:  Math.random() * canvas.height,
-      r:  Math.random() * 1.8 + 0.4,
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      r: Math.random() * 1.8 + 0.4,
       vx: (Math.random() - 0.5) * 0.3,
       vy: (Math.random() - 0.5) * 0.3,
-      a:  Math.random() * 0.5 + 0.1,
+      a: Math.random() * 0.5 + 0.1,
     }))
 
     const tick = () => {
@@ -83,7 +39,7 @@ function ParticleField() {
       particles.forEach((p) => {
         p.x += p.vx; p.y += p.vy
         if (p.x < 0) p.x = canvas.width
-        if (p.x > canvas.width)  p.x = 0
+        if (p.x > canvas.width) p.x = 0
         if (p.y < 0) p.y = canvas.height
         if (p.y > canvas.height) p.y = 0
         ctx.beginPath()
@@ -102,7 +58,7 @@ function ParticleField() {
   )
 }
 
-// ─── Animated counter ─────────────────────────────────────────────────────────
+// ─── Animated Counter ────────────────────────────────────────────────────────
 function Counter({ to, suffix = '' }) {
   const [val, setVal] = useState(0)
   const ref = useRef(null)
@@ -125,65 +81,41 @@ function Counter({ to, suffix = '' }) {
   return <span ref={ref}>{val}{suffix}</span>
 }
 
-// ─── Single collage item ───────────────────────────────────────────────────────
-// Two-div approach: outer div owns position + float animation (translateY only),
-// inner div owns rotation + hover scale. This prevents animation conflicts.
-function CollageItem({ item }) {
-  const [hovered, setHovered] = useState(false)
-  const { sponsor, x, y, rotate, w, h, zIndex, floatDir, floatDur, dropDelay } = item
+// ─── Stall Card Component ─────────────────────────────────────────────────────
+function StallCard({ stall, index }) {
+  const floatClass = index % 2 === 0 ? 'stall-float-A' : 'stall-float-B'
 
   return (
     <div
-      className={`collage-float collage-float--${floatDir}`}
-      style={{
-        position: 'absolute',
-        left:   `${x}%`,
-        top:    `${y}px`,
-        zIndex: hovered ? 50 : zIndex,
-        animationDuration: `${floatDur}s`,
-        animationDelay: `${dropDelay + 0.5}s`,
-      }}
+      className={`stall-expo-card ${floatClass}`}
+      style={{ animationDelay: `${(index % 4) * 0.3}s` }}
     >
-      <div
-        className="collage-inner"
-        style={{
-          width:  `${w}px`,
-          height: `${h}px`,
-          transform: hovered
-            ? 'rotate(0deg) scale(1.14)'
-            : `rotate(${rotate}deg)`,
-        }}
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
-      >
-        <img
-          src={sponsor.logo}
-          alt={sponsor.name}
-          className="collage-logo-img"
-          style={{
-            opacity: hovered ? 1 : 0.82,
-            filter: hovered ? 'none' : 'saturate(0.85)',
-          }}
-          draggable={false}
-        />
+      <div className="stall-vertical-line" aria-hidden="true" />
 
-        {/* Name tooltip on hover */}
-        {hovered && (
-          <div className="collage-tooltip">
-            <span className="collage-tooltip-tier">{sponsor.tier}</span>
-            <span className="collage-tooltip-name">{sponsor.name}</span>
-          </div>
-        )}
+      <div className="stall-card-badge-row">
+        <span className="stall-code-pill">{stall.stallNumber}</span>
+        <span className="stall-location-pill">📍 {stall.location}</span>
+      </div>
+
+      <div className="stall-profile-row">
+        <img src={stall.logo} alt={stall.name} className="stall-profile-img" />
+        <div>
+          <span className="stall-cat-label">{stall.category}</span>
+          <h3 className="stall-title-name">{stall.name}</h3>
+        </div>
+      </div>
+
+      <p className="stall-tagline-text">{stall.tagline}</p>
+
+      <div className="stall-host-footer">
+        <span className="stall-host-text">Host: {stall.host}</span>
       </div>
     </div>
   )
 }
 
-// ─── Page ─────────────────────────────────────────────────────────────────────
+// ─── Main Page ────────────────────────────────────────────────────────────────
 export default function Sponsors() {
-  // useMemo with [] → computed once per mount → new random layout on every page load
-  const collageLayout = useMemo(() => buildCollageLayout(otherSponsors), [])
-
   return (
     <div style={{ background: 'var(--color-paper)', overflow: 'hidden' }}>
 
@@ -202,9 +134,9 @@ export default function Sponsors() {
           </p>
           <div className="sponsors-stats">
             {[
-              { label: 'Partners',  val: 14,  suffix: '+' },
-              { label: 'In Prizes', val: 50,  suffix: 'K' },
-              { label: 'Attendees', val: 500, suffix: '+' },
+              { label: 'Partners', val: 14, suffix: '+' },
+              { label: 'Speakers', val: 5, suffix: '+' },
+              { label: 'Attendees', val: 800, suffix: '+' },
             ].map((s) => (
               <div key={s.label} className="sponsors-stat-pill">
                 <span className="sponsors-stat-num"><Counter to={s.val} suffix={s.suffix} /></span>
@@ -216,89 +148,184 @@ export default function Sponsors() {
         <div className="sponsors-hero-stripe" aria-hidden="true" />
       </section>
 
-      {/* ── TITLE SPONSOR ──────────────────────────────────────────────── */}
+      {/* ── 1. ASSOCIATE SPONSOR ───────────────────────────────────────── */}
       <section className="sponsors-section">
         <div className="sponsors-tier-label">
           <span className="sponsors-tier-line" />
-          <span className="sponsors-tier-text">Title Sponsor</span>
+          <span className="sponsors-tier-text">Associate Sponsor</span>
           <span className="sponsors-tier-line" />
         </div>
-        <div className="title-sponsor-wrap">
-          {titleSponsor.map((s) => (
-            <div key={s.id} className="title-sponsor-card">
-              <div className="title-sponsor-badge">Presenting Partner</div>
-              <img src={s.logo} alt={s.name} className="title-sponsor-logo" />
-              <p className="title-sponsor-tagline">{s.tagline}</p>
-              <div className="title-sponsor-glow" aria-hidden="true" />
+
+        <div className="associate-showcase-wrapper">
+          {associateSponsor.map((s) => (
+            <div key={s.id} className="associate-spotlight-card">
+              <div className="card-vertical-hover-line" aria-hidden="true" />
+              <div className="associate-accent-glow" aria-hidden="true" />
+              <div className="associate-badge-banner">ASSOCIATE TITLE SPONSOR</div>
+
+              <div className="associate-content-grid">
+                <div className="associate-logo-box">
+                  <img src={s.logo} alt={s.name} className="associate-logo-img" />
+                  <span className="associate-cat-tag">{s.category}</span>
+                </div>
+
+                <div className="associate-details-pane">
+                  <h2 className="associate-brand-title">{s.name}</h2>
+                  <p className="associate-brand-tagline">"{s.tagline}"</p>
+                  <p className="associate-brand-desc">{s.description}</p>
+
+                  <div className="associate-perks-row">
+                    {s.perks.map((perk, idx) => (
+                      <span key={idx} className="associate-perk-chip">
+                        ✦ {perk}
+                      </span>
+                    ))}
+                  </div>
+
+                  <a
+                    href={s.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="associate-visit-link"
+                  >
+                    Visit CredO Platform <span aria-hidden="true">→</span>
+                  </a>
+                </div>
+              </div>
             </div>
           ))}
         </div>
       </section>
 
-      {/* ── CO-SPONSORS ────────────────────────────────────────────────── */}
+      {/* ── 2. PLATINUM SPONSOR ────────────────────────────────────────── */}
       <section className="sponsors-section sponsors-section--dark">
         <div className="sponsors-tier-label sponsors-tier-label--light">
           <span className="sponsors-tier-line sponsors-tier-line--light" />
-          <span className="sponsors-tier-text sponsors-tier-text--light">Co-Sponsors</span>
+          <span className="sponsors-tier-text sponsors-tier-text--light">Platinum Sponsor</span>
           <span className="sponsors-tier-line sponsors-tier-line--light" />
         </div>
-        <div className="cosponsor-grid">
-          {coSponsors.map((s, i) => (
-            <div key={s.id} className="cosponsor-card" style={{ animationDelay: `${i * 0.15}s` }}>
-              <div className="cosponsor-inner">
-                <img src={s.logo} alt={s.name} className="cosponsor-logo" />
-                <div>
-                  <span className="cosponsor-name">{s.name}</span>
-                  <span className="cosponsor-tagline">{s.tagline}</span>
+
+        <div className="platinum-showcase-wrap">
+          {platinumSponsor.map((s) => (
+            <div key={s.id} className="platinum-aesthetic-card">
+              <div className="card-vertical-hover-line" aria-hidden="true" />
+              <div className="platinum-shimmer-bar" />
+              <div className="platinum-card-body">
+                <div className="platinum-logo-side">
+                  <div className="platinum-badge">PLATINUM SPONSOR</div>
+                  <img src={s.logo} alt={s.name} className="platinum-logo-img" />
+                </div>
+                <div className="platinum-info-side">
+                  <span className="platinum-cat">{s.category}</span>
+                  <h3 className="platinum-name">{s.name}</h3>
+                  <p className="platinum-tagline">{s.tagline}</p>
+                  <p className="platinum-desc">{s.description}</p>
+
+                  <div className="platinum-perks-list">
+                    {s.perks.map((perk, idx) => (
+                      <span key={idx} className="platinum-perk-pill">💎 {perk}</span>
+                    ))}
+                  </div>
                 </div>
               </div>
-              <div className="cosponsor-bar" />
             </div>
           ))}
         </div>
       </section>
 
-      {/* ── SUPPORTING SPONSORS COLLAGE ─────────────────────────────────── */}
-      <section className="collage-section">
-        <div className="collage-header">
-          <div className="sponsors-tier-label">
-            <span className="sponsors-tier-line" />
-            <span className="sponsors-tier-text">Supporting Sponsors</span>
-            <span className="sponsors-tier-line" />
-          </div>
-          <p className="collage-sub">Hover to reveal</p>
+      {/* ── 3. GOLD SPONSOR ────────────────────────────────────────────── */}
+      <section className="sponsors-section">
+        <div className="sponsors-tier-label">
+          <span className="sponsors-tier-line" />
+          <span className="sponsors-tier-text">Gold Sponsor</span>
+          <span className="sponsors-tier-line" />
         </div>
 
-        <div className="collage-stage">
-          {/* Subtle noise texture so logos have a surface to sit on */}
-          <div className="collage-stage-bg" aria-hidden="true" />
-
-          {collageLayout.map((item) => (
-            <CollageItem key={item.sponsor.id} item={item} />
+        <div className="gold-showcase-wrap">
+          {goldSponsor.map((s) => (
+            <div key={s.id} className="gold-aesthetic-card">
+              <div className="card-vertical-hover-line" aria-hidden="true" />
+              <div className="gold-card-header">
+                <span className="gold-badge">GOLD SPONSOR</span>
+                <span className="gold-cat">{s.category}</span>
+              </div>
+              <div className="gold-card-body">
+                <div className="gold-logo-box">
+                  <img src={s.logo} alt={s.name} className="gold-logo-img" />
+                </div>
+                <div className="gold-info">
+                  <h3 className="gold-name">{s.name}</h3>
+                  <p className="gold-tagline">"{s.tagline}"</p>
+                  <p className="gold-desc">{s.description}</p>
+                  <div className="gold-perks">
+                    {s.perks.map((perk, idx) => (
+                      <span key={idx} className="gold-perk-chip">🥇 {perk}</span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
           ))}
-
-          {/* Fade edges so logos don't hard-clip */}
-          <div className="collage-fade collage-fade--top"    aria-hidden="true" />
-          <div className="collage-fade collage-fade--bottom" aria-hidden="true" />
-          <div className="collage-fade collage-fade--left"   aria-hidden="true" />
-          <div className="collage-fade collage-fade--right"  aria-hidden="true" />
         </div>
       </section>
 
-      {/* ── CTA ────────────────────────────────────────────────────────── */}
-      <section className="sponsors-cta">
-        <div className="sponsors-cta-inner">
-          <div>
-            <p className="kicker text-xs uppercase tracking-widest" style={{ color: 'var(--color-accent-400)' }}>
-              Want to be part of this?
-            </p>
-            <h2 className="sponsors-cta-title">Deck's ready if you want the numbers.</h2>
-            <p className="sponsors-cta-sub">
-              Sponsor packages for every budget — booth space, kit branding, and stage acknowledgment.
-            </p>
-          </div>
-          <a href="mail.lakshyatech@gmail.com" className="sponsors-cta-btn">
-            Email the team <span aria-hidden="true">→</span>
+      {/* ── 4. SILVER SPONSORS (3) ──────────────────────────────────────── */}
+      <section className="sponsors-section sponsors-section--dark">
+        <div className="sponsors-tier-label sponsors-tier-label--light">
+          <span className="sponsors-tier-line sponsors-tier-line--light" />
+          <span className="sponsors-tier-text sponsors-tier-text--light">Silver Sponsors</span>
+          <span className="sponsors-tier-line sponsors-tier-line--light" />
+        </div>
+
+        <div className="silver-cards-grid">
+          {silverSponsors.map((s) => (
+            <div key={s.id} className="silver-aesthetic-card">
+              <div className="card-vertical-hover-line" aria-hidden="true" />
+              <div className="silver-card-top">
+                <span className="silver-badge">SILVER SPONSOR</span>
+                <span className="silver-cat">{s.category}</span>
+              </div>
+              <div className="silver-logo-box">
+                <img src={s.logo} alt={s.name} className="silver-logo-img" />
+              </div>
+              <h3 className="silver-name">{s.name}</h3>
+              <p className="silver-tagline">{s.tagline}</p>
+              <p className="silver-desc">{s.description}</p>
+              <div className="silver-perks-row">
+                {s.perks.map((perk, idx) => (
+                  <span key={idx} className="silver-perk-pill">• {perk}</span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ── 5. PARTNERS & STALLS (8) ────────────────────────────────────── */}
+      <section className="sponsors-section">
+        <div className="sponsors-tier-label">
+          <span className="sponsors-tier-line" />
+          <span className="sponsors-tier-text">Partners & Campus Stalls</span>
+          <span className="sponsors-tier-line" />
+        </div>
+
+        <p className="stalls-section-sub">
+          8 interactive campus booths bringing gourmet culinary, gaming arcades, fitness screening, and live podcast recordings to SYCON '26.
+        </p>
+
+        <div className="stalls-expo-grid">
+          {partnersAndStalls.map((stall, idx) => (
+            <StallCard key={stall.id} stall={stall} index={idx} />
+          ))}
+        </div>
+
+        {/* ── BE A SPONSOR CTA BUTTON ───────────────────────────────────── */}
+        <div className="be-a-sponsor-container">
+          <a
+            href="mailto:mail.lakshytech@gmail.com?subject=SYCON%20%2726%20Sponsorship%20Inquiry"
+            className="be-a-sponsor-main-btn"
+          >
+            <span className="btn-sparkle">✨</span> Be a Sponsor <span className="btn-arrow">→</span>
           </a>
         </div>
       </section>
