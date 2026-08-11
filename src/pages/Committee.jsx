@@ -39,7 +39,7 @@ export default function Committee() {
             className="mb-6 font-display text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl"
           >
             The people actually <br className="hidden sm:block" />
-            <span className="bg-gradient-to-r from-accent-500 to-accent-600 bg-clip-text text-transparent">running this.</span>
+            <span className="bg-gradient-to-r from-accent-500 to-accent-600 bg-clip-text text-transparent">making this happen.</span>
           </motion.h1>
 
           <motion.p
