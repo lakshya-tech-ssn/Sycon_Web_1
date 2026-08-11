@@ -358,8 +358,8 @@ const verticalHeadsData = [
 ];
 
 const seniorNames = [
-  'Aarav Sharma', 'Meera Pillai', 'Vikram Rao', 'Ishita Bose', 'Rohan Desai',
-  'Ananya Menon', 'Kabir Singh', 'Divya Ramesh', 'Nikhil Chandran', 'Tara Nambiar',
+  'Bharath Ram', 'Anbuselvam B', 'Akaspathan R', 'Madhangi Karimanal', 'Dakshata Senthil',
+  'Krthikia', 'Saranathan Iyengar', 'Saikirtan Srinivasan', 'Deepan Bomb', 'Bharathi Asok', 'Prawin Kumar S', 'Nanditha S'
 ]
 const juniorNames = [
   'J Kamali Shree', 'Shree Vaishnavi S', 'Krishna PV', 'Nithyashri', 'Madhu Visagan HT',
