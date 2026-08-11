@@ -60,7 +60,7 @@ export default function Home() {
                   <span className="text-white/30 text-xl font-light">+</span>
                   <img src="/Lakshya Logo Transparent.png" alt="Lakshya Logo" className="h-12 w-auto object-contain" />
                 </div>
-                <span className="kicker text-[11px] uppercase tracking-[0.2em] text-accent-400 pl-1">presents</span>
+                <span className="kicker text-[11px] uppercase tracking-[0.2em] text-accent-400 pl-18">presents</span>
               </div>
 
               {/* Main Title with Logo */}
@@ -266,8 +266,8 @@ export default function Home() {
                 target="_blank"
                 rel="noreferrer"
                 className={`mt-8 block px-5 py-3 text-center text-sm font-semibold transition ${fee.highlight
-                    ? 'bg-accent-500 text-white hover:bg-accent-600'
-                    : 'bg-white/5 text-white hover:bg-white/10'
+                  ? 'bg-accent-500 text-white hover:bg-accent-600'
+                  : 'bg-white/5 text-white hover:bg-white/10'
                   }`}
               >
                 Register

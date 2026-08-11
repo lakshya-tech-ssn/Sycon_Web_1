@@ -376,4 +376,13 @@ export const COMMITTEE = {
     photo: `https://placehold.co/300x300/171c2b/f9622c?text=${encodeURIComponent(name.split(' ')[0])}`,
     linkedin: 'https://linkedin.com/in/placeholder',
   })),
+  faculty: [
+    {
+      id: 'fm-1',
+      name: 'Vimal Samsingh',
+      role: 'Mechanical Department',
+      photo: `https://placehold.co/300x300/171c2b/f9622c?text=Vimal`,
+      linkedin: 'https://linkedin.com/in/placeholder',
+    }
+  ]
 }
