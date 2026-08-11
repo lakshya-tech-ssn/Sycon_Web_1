@@ -61,7 +61,7 @@ export default function Home() {
                   <span className="text-white/30 text-xl font-light">+</span>
                   <img src="/Lakshya Logo Transparent.png" alt="Lakshya Logo" className="h-12 w-auto object-contain" />
                 </div>
-                <span className="kicker text-[11px] uppercase tracking-[0.2em] text-accent-400 pl-1">presents</span>
+                <span className="kicker text-[11px] uppercase tracking-[0.2em] text-accent-400 pl-18">presents</span>
               </div>
 
               {/* Main Title with Logo */}
