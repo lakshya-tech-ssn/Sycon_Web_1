@@ -138,94 +138,94 @@ export const SPEAKERS = [
 export const SPONSORS = [
   {
     id: 1,
-    name: 'CredO',
+    name: 'Shana Events',
     tier: 'Associate Sponsor',
-    category: 'CredO',
-    tagline: 'AI-Driven Real-Time Security Intelligence & Platform',
-    description: 'Powers SYCON \'26 event infrastructure, security intelligence, stage coordination, and digital operations.',
-    logo: '/Sponsors/CredO.jpeg',
+    category: 'Shana Events',
+    tagline: 'Exceed your imagination and elevate your events to extraordinary heights',
+    description: 'Exceed your imagination and elevate your events to extraordinary heights',
+    logo: '/Sponsors/shana_events.jpg',
     perks: ['Lead Associate Sponsor', 'Stage & Tech Infrastructure', 'Security Operations'],
-    website: 'https://credo.ai',
+    website: 'https://shanaevemts.ai',
   },
   {
     id: 2,
     name: 'Srinivas Elaastomers',
     tier: 'Platinum Sponsor',
-    category: 'Premier Education Partner',
-    tagline: 'Best GATE & Competitive Exam Coaching in Chennai',
-    description: 'Empowering engineering minds with top-tier GATE coaching, scholarships, and academic guidance.',
+    category: 'Srinivas Elastomers',
+    tagline: 'Manufacturer of auto components',
+    description: 'Srinivas Elastomers India Pvt Ltd has been rendering service to various Automobile industries in supplying best quality rubber components & plastic moulded components, manufactured out of synthetic and Natural rubber polymers.',
     logo: '/Sponsors/srinivas_elastomers.png',
     perks: ['Title Workshop Host', 'Main Auditorium Naming Rights', 'Full Student Kit Branding'],
     website: 'https://srinivaselastomers.com/',
   },
   {
     id: 3,
-    name: 'Bell Institute of Hotel Management',
+    name: 'Finaltics',
     tier: 'Gold Sponsor',
-    category: 'Hospitality & Catering Partner',
-    tagline: 'Excellence in Hospitality & Culinary Management',
-    description: 'Powering the official SYCON \'26 lunch, delegate refreshments, and VIP hospitality experience.',
-    logo: '/Sponsors/bell_institute.jpeg',
+    category: 'Finaltics',
+    tagline: 'Experiential learning and career acceleration platform',
+    description: ' Provides hands-on experience programs (such as Financial Analyst, Investment Banking, Business Analyst, and Data Science programs) featuring live projects and self-paced learning structures.',
+    logo: '/Sponsors/finaltics.jpeg',
     perks: ['Official Catering Partner', 'Lawn Pavilion Branding', 'VIP Delegate Lounge'],
-    website: 'https://bellinstitute.edu.in',
+    website: 'https://www.finlatics.com',
   },
   {
     id: 4,
-    name: 'Farmley',
+    name: 'Bell Institute of Hotel Management',
     tier: 'Silver Sponsor',
-    category: 'Nutrition & Snack Partner',
+    category: '',
     tagline: 'Healthy Snacks & Premium Makhana Partner',
     description: 'Fueling participants with wholesome, healthy snack kits across workshops and challenge tracks.',
-    logo: '/Sponsors/Farmley_Makha_Shaka.png',
+    logo: '/Sponsors/bell_institute.jpeg',
     perks: ['Official Snack Partner', 'Participant Kit Insertion', 'Refreshment Zone'],
     website: 'https://farmley.com',
   },
   {
     id: 5,
-    name: 'VoltCore Energy',
+    name: 'CredO',
     tier: 'Silver Sponsor',
-    category: 'Power & Tech Infrastructure',
+    category: '',
     tagline: 'High-Performance Power Solutions & Smart Hardware',
     description: 'Providing mobile fast-charging stations and continuous power infrastructure for workshop halls.',
-    logo: 'https://placehold.co/320x130/0b0f19/f9622c?text=VoltCore+Energy',
+    logo: '/Sponsors/CredO.jpeg',
     perks: ['Charging Station Host', 'Hardware Tech Support', 'Digital Hall Signage'],
-    website: 'https://voltcore.io',
+    website: 'https://credo.ai',
   },
   {
     id: 6,
-    name: 'Nexora Cloud',
+    name: 'EECI Gate Academy',
     tier: 'Silver Sponsor',
-    category: 'Cloud & API Partner',
+    category: '',
     tagline: 'Scalable Cloud Infrastructure & Developer API',
     description: 'Granting cloud credits, API keys, and sandbox computing environments for workshop attendees.',
-    logo: 'https://placehold.co/320x130/0b0f19/38bdf8?text=Nexora+Cloud',
+    logo: '/Sponsors/eeci_gate.jpeg',
     perks: ['$500 Cloud Credits/Student', 'Developer Sandbox Access', 'AI Track Partner'],
     website: 'https://nexoracloud.com',
   },
   // ─── 8 PARTNERS & STALLS ──────────────────────────────────────────────────
   {
     id: 7,
-    name: 'Arabian Garden',
+    name: 'Farmleys',
     tier: 'Partners and Stalls',
-    category: 'Culinary & Gourmet Stall',
+    category: 'Refreshment Partner',
     stallNumber: 'STALL #01',
-    location: 'Lawn Food Pavilion',
+    location: 'Justice Prathap Auditorium',
     tagline: 'Gourmet Culinary Delights & Refreshing Drinks',
     description: 'Specialty culinary booth offering artisanal rolls, kebabs, and cold coolers throughout the day.',
-    logo: '/Speakers/abdul_nabeel.jpg',
+    logo: '/Sponsors/Farmley_Makha_Shaka.png',
     host: 'Mr. K Abdul Nabeel',
     highlights: ['Live Barbecue Grill', 'Exclusive Delegate Discount', 'Signature Beverage Station'],
   },
   {
     id: 8,
-    name: 'DNA Community',
+    name: 'Red Bull',
     tier: 'Partners and Stalls',
-    category: 'Community & Founder Booth',
+    category: 'Energy Drink Partner',
     stallNumber: 'STALL #02',
-    location: 'Main Foyer',
-    tagline: 'Empowering Student Founders, Creators & Changemakers',
+    location: 'Main Audi Lawn',
+    tagline: 'Gives You Wings',
     description: 'Interactive networking hub connecting student entrepreneurs with mentors, investors, and peers.',
-    logo: '/Speakers/deepak_kumar.jpeg',
+    logo: '/Sponsors/red_bull.jpg',
     host: 'Deepak Kumar',
     highlights: ['1-on-1 Founder Office Hours', 'Free Ecosystem Swag', 'Community Onboarding Desk'],
   },
@@ -310,43 +310,56 @@ export const SPONSORS = [
 ]
 
 // 20-30 committee members, split into Senior Core (SC) and Junior Core (JC)
-const verticalDomains = [
-  'Creative & PR', 'Editorial', 'Sponsorship', 'Operations',
-  'Documentation', 'Marketing', 'Logistics', 'Technical'
-]
+const verticalHeadsData = [
+  // Operations and Logistics
+  { name: 'Thuhin B', domain: 'Operations & Logistics' },
+  { name: 'Aditya Kumar', domain: 'Operations & Logistics' },
+  { name: 'Harish Karthick M', domain: 'Operations & Logistics' },
+  { name: 'Guruprakash M', domain: 'Operations & Logistics' },
 
-const verticalHeadsNames = [
-  'Simran Gujral', 'Aisha Khan',
-  'Karan Malhotra', 'Pooja Iyer',
-  'Sneha Kapoor', 'Rohan Desai',
-  'Rahul Khanna', 'Vikram Rao',
-  'Meera Pillai', 'Aditi Warrier',
-  'Kabir Singh', 'Yash Patel',
-  'Nikhil Chandran', 'Sanjay Kumar',
-  'Ananya Menon', 'Aryan Kapoor'
-]
+  // Marketing
+  { name: 'Avantheka Srinivasan', domain: 'Marketing' },
+  { name: 'Hansika NM', domain: 'Marketing' },
+
+  // Sponsorship and Finance
+  { name: 'Swathi P', domain: 'Sponsorship & Finance' },
+  { name: 'Rishi Rithesh', domain: 'Sponsorship & Finance' },
+
+  // Technical
+  { name: 'Rishi Rithesh', domain: 'Technical' },
+  { name: 'Radesh L', domain: 'Technical' },
+  { name: 'Balamuthukrishnan B', domain: 'Technical' },
+
+  // Design and Editorial
+  { name: 'Pranav Karthik A', domain: 'Design & Editorial' },
+  { name: 'Shree Vaishali K', domain: 'Design & Editorial' },
+  { name: 'Rakshith', domain: 'Design & Editorial' },
+
+  // Documentation
+  { name: 'Sanjana Desigan', domain: 'Documentation' },
+  { name: 'Dhanyalalitha S', domain: 'Documentation' }
+];
+
 const seniorNames = [
   'Aarav Sharma', 'Meera Pillai', 'Vikram Rao', 'Ishita Bose', 'Rohan Desai',
   'Ananya Menon', 'Kabir Singh', 'Divya Ramesh', 'Nikhil Chandran', 'Tara Nambiar',
 ]
 const juniorNames = [
-  'Gokul M', 'J Kamali Shree', 'Shree Vaishnavi', 'JayaSuriya S', 'Nithesh B',
-  'Madhu Visagan HT', 'Krishna PV ', 'KK Ridhuvarshini', 'Nathaniel Christian', 'Sara Thomas',
-  'Manoj Pillai', 'Nithya Krishnan', 'Aditya Ranganathan', 'Fathima Noor', 'Harish Babu',
+  'J Kamali Shree', 'Shree Vaishnavi S', 'Krishna PV', 'Nithyashri', 'Madhu Visagan HT',
+  'Nithin R', 'Sanjana Shankar', 'Gokul M', 'Harshith Venkatesh', 'Darshana R',
+  'Kanduja S', 'Mohammed Afzal AR', 'Jayasuriya S', 'Nathaniel Christian', 'Nithesh B',
+  'KK Ridhuvarshini', 'Jeevan'
 ]
 
 export const COMMITTEE = {
-  vertical: verticalHeadsNames.map((name, i) => {
-    const domainIndex = Math.floor(i / 2);
-    return {
-      id: `vh-${i + 1}`,
-      name,
-      domain: verticalDomains[domainIndex],
-      role: `${verticalDomains[domainIndex]} Head`,
-      photo: `https://placehold.co/300x300/171c2b/f9622c?text=${encodeURIComponent(name.split(' ')[0])}`,
-      linkedin: 'https://linkedin.com/in/placeholder',
-    };
-  }),
+  vertical: verticalHeadsData.map((item, i) => ({
+    id: `vh-${i + 1}`,
+    name: item.name,
+    domain: item.domain,
+    role: `${item.domain} Head`,
+    photo: `https://placehold.co/300x300/171c2b/f9622c?text=${encodeURIComponent(item.name.split(' ')[0])}`,
+    linkedin: 'https://linkedin.com/in/placeholder',
+  })),
   senior: seniorNames.map((name, i) => ({
     id: `sc-${i + 1}`,
     name,
