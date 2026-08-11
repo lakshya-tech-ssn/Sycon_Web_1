@@ -56,7 +56,8 @@ export default function Home() {
               {/* Branding Section */}
               <div className="mb-6 flex flex-col items-start gap-3 fade-in-item" style={{ animationDelay: '0.05s' }}>
                 <div className="flex items-center gap-4">
-                  <img src="public/ssn_transparent.png" alt="SSN College Logo" className="h-10 w-auto object-contain brightness-0 invert opacity-90" />
+                  <img src="/ssn_transparent.png" alt="SSN College Logo" className="h-10 w-auto object-contain brightness-0 invert opacity-90" />
+
                   <span className="text-white/30 text-xl font-light">+</span>
                   <img src="/Lakshya Logo Transparent.png" alt="Lakshya Logo" className="h-12 w-auto object-contain" />
                 </div>
