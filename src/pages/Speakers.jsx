@@ -1,63 +1,61 @@
 import SpeakerCard from '../components/SpeakerCard'
+import ParticleField from '../components/ParticleField'
 import { SPEAKERS, REGISTRATION_LINKS } from '../data/siteData'
 
 export default function Speakers() {
   return (
-    <div className="bg-paper min-h-screen">
+    <div className="min-h-screen bg-ink">
       {/* ── Editorial Hero Section ────────────────────────────────────────── */}
-      <section className="relative border-b border-line py-16 sm:py-24 bg-grid-pattern overflow-hidden">
-        {/* Ambient Gradient Glow */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-gradient-to-b from-accent-500/10 via-accent-500/5 to-transparent blur-3xl pointer-events-none" />
+      <section className="sponsors-hero relative overflow-hidden border-b border-line py-16 sm:py-24">
+        <ParticleField />
 
-        <div className="mx-auto max-w-6xl px-6 sm:px-8 relative z-10">
-
+        <div className="relative z-10 mx-auto max-w-6xl px-6 sm:px-8">
           {/* Top Kicker Badge */}
-          <div className="inline-flex items-center gap-2 border border-line bg-white px-3.5 py-1.5 shadow-sm">
+          <div className="inline-flex items-center gap-2 border border-white/10 bg-white/5 px-3.5 py-1.5 shadow-sm backdrop-blur-md">
             <span className="h-2 w-2 rounded-full bg-accent-500 animate-pulse" />
-            <span className="kicker text-xs uppercase font-semibold text-navy-700/80">
-              Founder Talk
+            <span className="kicker text-xs uppercase font-semibold text-white/80">
+              SYCON '26 Lineup • 6 Keynote Sessions
             </span>
           </div>
 
           {/* Main Title & Lead */}
           <div className="mt-8 grid gap-8 lg:grid-cols-[1.4fr_1fr] lg:items-end">
             <div>
-              <h1 className="font-display text-4xl sm:text-6xl font-bold leading-[1.05] tracking-tight text-ink">
+              <h1 className="font-display text-4xl font-bold leading-[1.05] tracking-tight text-white sm:text-6xl">
                 The minds shaping <br className="hidden sm:inline" />
                 <span className="text-accent-500">what gets built</span> next.
               </h1>
-              <p className="mt-6 max-w-xl text-base sm:text-lg leading-relaxed text-navy-700/80">
-                Six leaders from AI, fitness, restaurants, and community building. No recycled deck templates or corporate sales pitches just honest, 30-minute postmortems of what breaks when you build at scale.
+              <p className="mt-6 max-w-xl text-base leading-relaxed text-slate-200/80 sm:text-lg">
+                Six leaders from AI, engineering, product design, and robotics. No recycled deck templates or corporate sales pitches — just honest, 45-minute postmortems of what breaks when you build at scale.
               </p>
             </div>
 
             {/* Quick Lineup Stats Spec Box */}
-            <div className="border border-line bg-white p-6 shadow-sm">
-              <div className="flex items-center justify-between border-b border-line pb-3">
-                <span className="font-mono text-xs uppercase font-bold tracking-widest text-navy-700/60">
-                  Founder Talk Format
+            <div className="border border-white/10 bg-white/5 p-6 shadow-sm backdrop-blur-sm">
+              <div className="flex items-center justify-between border-b border-white/10 pb-3">
+                <span className="font-mono text-xs uppercase font-bold tracking-widest text-white/60">
+                  Keynote Format
                 </span>
-                <span className="font-mono text-xs font-bold text-accent-500">
-
+                <span className="font-mono text-xs font-bold text-accent-400">
+                  100% Practical
                 </span>
               </div>
-              <div className="mt-4 space-y-3 font-mono text-xs text-navy-700/80">
+              <div className="mt-4 space-y-3 font-mono text-xs text-slate-200/80">
                 <div className="flex items-center justify-between">
                   <span>Talk Duration</span>
-                  <span className="font-bold text-ink">30 Mins</span>
+                  <span className="font-bold text-white">45 Mins</span>
                 </div>
                 <div className="flex items-center justify-between">
                   <span>Open Q&A</span>
-                  <span className="font-bold text-ink">5 Mins</span>
+                  <span className="font-bold text-white">20 Mins</span>
                 </div>
                 <div className="flex items-center justify-between">
                   <span>Post-Talk Access</span>
-                  <span className="font-bold text-accent-500">Personal Connection</span>
+                  <span className="font-bold text-accent-400">Lawn Mixer</span>
                 </div>
               </div>
             </div>
           </div>
-
         </div>
       </section>
 
@@ -167,7 +165,6 @@ export default function Speakers() {
                 ● Limited seats available for auditorium talks
               </p>
             </div>
-
           </div>
         </div>
       </section>
