@@ -267,8 +267,8 @@ export default function Home() {
                 target="_blank"
                 rel="noreferrer"
                 className={`mt-8 block px-5 py-3 text-center text-sm font-semibold transition ${fee.highlight
-                    ? 'bg-accent-500 text-white hover:bg-accent-600'
-                    : 'bg-white/5 text-white hover:bg-white/10'
+                  ? 'bg-accent-500 text-white hover:bg-accent-600'
+                  : 'bg-white/5 text-white hover:bg-white/10'
                   }`}
               >
                 Register
