@@ -125,7 +125,7 @@ export default function Home() {
               </div>
         </div>
 
-        <div className="mt-14 gallery-section">
+        <div className="mt-10 gallery-section">
           <GalleryMarquee />
         </div>
       </section>
@@ -198,7 +198,7 @@ export default function Home() {
             title="What you get for the entry fee"
             light
           />
-          <div className="mt-14 grid gap-px border border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-14 grid gap-px border border-white/10 bg-white/10 sm:grid-cols-2">
             {BENEFITS.map((b, i) => (
               <div 
                 key={b.title} 
@@ -219,60 +219,57 @@ export default function Home() {
       </section>
 
       {/* ── Registration Fee ─────────────────────────────────────────── */}
-      <section className="bg-ink px-6 py-20 sm:px-8 sm:py-28 fade-in-section" ref={section4Ref}>
-        <div className="mx-auto max-w-6xl">
-          <SectionHeading
-            index="03"
-            eyebrow="Registration"
-            title="Three ways to register, one price each"
-            light
-          />
-          <div className="mt-14 grid border border-white/10 md:grid-cols-3">
-            {FEES.map((fee, i) => (
-              <div
-                key={fee.title}
-                className={`flex flex-col p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-md ${i !== 0 ? 'border-t border-white/10 md:border-t-0 md:border-l md:border-white/10' : ''} ${
-                  fee.highlight ? 'bg-ink text-white' : 'bg-navy-900 text-white'
-                }`}
-                style={{ 
-                  animation: 'fadeInUp 0.5s ease-out',
-                  animationDelay: `${i * 0.1}s`,
-                  animationFillMode: 'both'
-                }}
-              >
-                {fee.highlight && (
-                  <span className="kicker mb-4 inline-block w-fit bg-accent-500 px-2 py-1 text-[10px] font-bold uppercase tracking-wide text-white">
-                    Recommended
-                  </span>
-                )}
-                <h3 className="font-display text-lg font-bold text-white">{fee.title}</h3>
-                <div className="mt-3 font-display text-4xl font-bold text-accent-500">
-                  {fee.price}
-                </div>
-                <p className={`mt-1 text-sm ${fee.highlight ? 'text-slate-400' : 'text-slate-300'}`}>{fee.note}</p>
-                <ul className={`mt-6 flex-1 space-y-3 border-t pt-6 ${fee.highlight ? 'border-white/10' : 'border-white/10'}`}>
-                  {fee.perks.map((perk) => (
-                    <li key={perk} className="flex items-start gap-2.5 text-sm text-slate-300">
-                      <span className="text-accent-500">+</span>
-                      {perk}
-                    </li>
-                  ))}
-                </ul>
-                <a
-                  href={REGISTRATION_LINKS.inside}
-                  target="_blank"
-                  rel="noreferrer"
-                  className={`mt-8 block px-5 py-3 text-center text-sm font-semibold transition ${
-                    fee.highlight
-                      ? 'bg-accent-500 text-white hover:bg-accent-600'
-                      : 'bg-white/5 text-white hover:bg-accent-600'
-                  }`}
-                >
-                  Register
-                </a>
+      <section className="mx-auto max-w-6xl px-6 py-20 sm:px-8 sm:py-28 fade-in-section" ref={section4Ref}>
+        <SectionHeading
+          index="03"
+          eyebrow="Registration"
+          title="Two ways to register, one price each"
+        />
+        <div className="mt-14 grid border border-line md:grid-cols-2">
+          {FEES.map((fee, i) => (
+            <div
+              key={fee.title}
+              className={`flex flex-col p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-md ${i !== 0 ? 'border-t border-line md:border-t-0 md:border-l' : ''} ${
+                fee.highlight ? 'bg-ink text-white' : 'bg-paper text-ink'
+              }`}
+              style={{
+                animation: 'fadeInUp 0.5s ease-out',
+                animationDelay: `${i * 0.1}s`,
+                animationFillMode: 'both'
+              }}
+            >
+              {fee.highlight && (
+                <span className="kicker mb-4 inline-block w-fit bg-accent-500 px-2 py-1 text-[10px] font-bold uppercase tracking-wide text-white">
+                  Recommended
+                </span>
+              )}
+              <h3 className="font-display text-lg font-bold">{fee.title}</h3>
+              <div className="mt-3 font-display text-4xl font-bold text-accent-500">
+                {fee.price}
               </div>
-            ))}
-          </div>
+              <p className={`mt-1 text-sm ${fee.highlight ? 'text-slate-400' : 'text-navy-700/60'}`}>{fee.note}</p>
+              <ul className={`mt-6 flex-1 space-y-3 border-t pt-6 ${fee.highlight ? 'border-white/10' : 'border-line'}`}>
+                {fee.perks.map((perk) => (
+                  <li key={perk} className={`flex items-start gap-2.5 text-sm ${fee.highlight ? 'text-slate-300' : 'text-navy-700/80'}`}>
+                    <span className="text-accent-500">+</span>
+                    {perk}
+                  </li>
+                ))}
+              </ul>
+              <a
+                href={REGISTRATION_LINKS.inside}
+                target="_blank"
+                rel="noreferrer"
+                className={`mt-8 block px-5 py-3 text-center text-sm font-semibold transition ${
+                  fee.highlight
+                    ? 'bg-accent-500 text-white hover:bg-accent-600'
+                    : 'bg-white/5 text-white hover:bg-accent-600'
+                }`}
+              >
+                Register
+              </a>
+            </div>
+          ))}
         </div>
       </section>
 

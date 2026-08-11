@@ -10,7 +10,6 @@ export default function Speakers() {
         <ParticleField />
 
         <div className="relative z-10 mx-auto max-w-6xl px-6 sm:px-8">
-          
           {/* Top Kicker Badge */}
           <div className="inline-flex items-center gap-2 border border-white/10 bg-white/5 px-3.5 py-1.5 shadow-sm backdrop-blur-md">
             <span className="h-2 w-2 rounded-full bg-accent-500 animate-pulse" />
@@ -57,7 +56,6 @@ export default function Speakers() {
               </div>
             </div>
           </div>
-
         </div>
       </section>
 
@@ -65,10 +63,9 @@ export default function Speakers() {
       <section className="mx-auto max-w-6xl px-6 py-16 sm:px-8 sm:py-24">
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {SPEAKERS.map((speaker) => (
-            <SpeakerCard 
-              key={speaker.id} 
-              speaker={speaker} 
-              number={`0${speaker.id}`} 
+            <SpeakerCard
+              key={speaker.id}
+              speaker={speaker}
             />
           ))}
         </div>
@@ -81,7 +78,7 @@ export default function Speakers() {
 
         <div className="mx-auto max-w-6xl px-6 sm:px-8 relative z-10">
           <div className="grid gap-12 lg:grid-cols-[1.2fr_1fr] lg:items-center">
-            
+
             {/* Left Content */}
             <div>
               <div className="inline-flex items-center gap-2 border border-accent-500/30 bg-accent-500/10 px-3 py-1 font-mono text-xs font-semibold uppercase tracking-widest text-accent-400">
@@ -168,7 +165,6 @@ export default function Speakers() {
                 ● Limited seats available for auditorium talks
               </p>
             </div>
-
           </div>
         </div>
       </section>
