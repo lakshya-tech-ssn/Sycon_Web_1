@@ -2,7 +2,7 @@
 // Swap the values here (and drop real images into /public/images/...) once
 // real assets/copy are ready. Every page reads from this single file.
 
-export const EVENT_DATE = new Date('2026-09-01T09:00:00+05:30')
+export const EVENT_DATE = new Date('2026-08-26T23:59:00+05:30')
 
 export const REGISTRATION_LINKS = {
   inside: 'https://forms.gle/DNVuiaduU4yqgQfo9',
@@ -376,4 +376,13 @@ export const COMMITTEE = {
     photo: `https://placehold.co/300x300/171c2b/f9622c?text=${encodeURIComponent(name.split(' ')[0])}`,
     linkedin: 'https://linkedin.com/in/placeholder',
   })),
+  faculty: [
+    {
+      id: 'fm-1',
+      name: 'Vimal Samsingh',
+      role: 'Mechanical Department',
+      photo: `https://placehold.co/300x300/171c2b/f9622c?text=Vimal`,
+      linkedin: 'https://linkedin.com/in/placeholder',
+    }
+  ]
 }
