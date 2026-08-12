@@ -311,47 +311,93 @@ export const SPONSORS = [
   },
 ]
 
-// 20-30 committee members, split into Senior Core (SC) and Junior Core (JC)
+// ─── COMMITTEE MEMBER DATA ─────────────────────────────────────────────────────
+// HOW TO ADD PHOTOS:
+//   Paste a Google Drive file link for each member's 'photo' field.
+//   Supported formats:
+//     • https://drive.google.com/file/d/FILE_ID/view?usp=sharing
+//     • https://drive.google.com/open?id=FILE_ID
+//   The CommitteeCard component auto-converts these to direct image URLs.
+//   Make sure each file is shared as "Anyone with the link can view".
+// ───────────────────────────────────────────────────────────────────────────────
+
 const verticalHeadsData = [
   // Operations and Logistics
-  { name: 'Thuhin B', domain: 'Operations & Logistics' },
-  { name: 'Aditya Kumar', domain: 'Operations & Logistics' },
-  { name: 'Harish Karthick M', domain: 'Operations & Logistics' },
-  { name: 'Guruprakash M', domain: 'Operations & Logistics' },
+  { name: 'Thuhin B', domain: 'Operations & Logistics', photo: 'https://drive.google.com/file/d/1sN2HNbfailOne69rna8EctnBXCs5KEGv/view?usp=sharing', linkedin: '' },
+  { name: 'Aditya Kumar', domain: 'Operations & Logistics', photo: 'https://drive.google.com/file/d/10D0Pr7jmLD_7csbeZPcJ5QpURnqsFZ9N/view?usp=sharing', linkedin: '' },
+  { name: 'Harish Karthick M', domain: 'Operations & Logistics', photo: 'https://drive.google.com/file/d/1zg0qkEWAp48AI-RyNfWSLYYtpqgiG3uj/view?usp=sharing', linkedin: '' },
+  { name: 'Guruprakash M', domain: 'Operations & Logistics', photo: 'https://drive.google.com/file/d/14A9hANDgOmnWbN56mlvTKuf8MuH1rtle/view?usp=sharing', linkedin: '' },
 
   // Marketing
-  { name: 'Avantheka Srinivasan', domain: 'Marketing' },
-  { name: 'Hansika NM', domain: 'Marketing' },
+  { name: 'Avantheka Srinivasan', domain: 'Marketing', photo: 'https://drive.google.com/file/d/1Jd943DW_447K582zqqSR7TACjMUkySjN/view?usp=sharing', linkedin: '' },
+  { name: 'Hansika NM', domain: 'Marketing', photo: 'https://drive.google.com/file/d/1_OdyyfAYi8q4r2hGmPlWBAgpmfjDH2mx/view?usp=sharing', linkedin: '' },
 
   // Sponsorship and Finance
-  { name: 'Swathi P', domain: 'Sponsorship & Finance' },
-  { name: 'Rishi Rithesh', domain: 'Sponsorship & Finance' },
+  { name: 'Swathi P', domain: 'Sponsorship & Finance', photo: 'https://drive.google.com/file/d/1xMvar9kU0YhLEa_79cbFOhn851fpW5IM/view?usp=sharing', linkedin: '' },
+  { name: 'Rishi Rithesh', domain: 'Sponsorship & Finance', photo: 'https://drive.google.com/file/d/1quGZGId9MT4RVj7yk6aX0b7ncQrvJliW/view?usp=sharing', linkedin: '' },
 
   // Technical
-  { name: 'Rishi Rithesh', domain: 'Technical' },
-  { name: 'Radesh L', domain: 'Technical' },
-  { name: 'Balamuthukrishnan B', domain: 'Technical' },
+  { name: 'Rishi Rithesh', domain: 'Technical', photo: 'https://drive.google.com/file/d/1quGZGId9MT4RVj7yk6aX0b7ncQrvJliW/view?usp=sharing', linkedin: '' },
+  { name: 'Radesh L', domain: 'Technical', photo: 'https://drive.google.com/file/d/17OFDbtmAO1ni11WCtgvSYW_H2NRF4QOU/view?usp=sharing', linkedin: '' },
+  { name: 'Balamuthukrishnan B', domain: 'Technical', photo: '', linkedin: '' },
 
   // Design and Editorial
-  { name: 'Pranav Karthik A', domain: 'Design & Editorial' },
-  { name: 'Shree Vaishali K', domain: 'Design & Editorial' },
-  { name: 'Rakshith', domain: 'Design & Editorial' },
+  { name: 'Pranav Karthik A', domain: 'Design & Editorial', photo: 'https://drive.google.com/file/d/1mN0kpMlrCWfgcjt9xenouvMKvpafCikm/view?usp=sharing', linkedin: '' },
+  { name: 'Shree Vaishali K', domain: 'Design & Editorial', photo: 'https://drive.google.com/file/d/1ryk-wI_ES2kFwUZ51p6MsxXb2vFRCb-p/view?usp=sharing', linkedin: '' },
+  { name: 'Rakshith', domain: 'Design & Editorial', photo: 'https://drive.google.com/file/d/13EBCBjZ0XZOrR3012pdB6EBhQC2vvo1x/view?usp=sharing', linkedin: '' },
 
   // Documentation
-  { name: 'Sanjana Desigan', domain: 'Documentation' },
-  { name: 'Dhanyalalitha S', domain: 'Documentation' }
+  { name: 'Sanjana Desigan', domain: 'Documentation', photo: 'https://drive.google.com/file/d/1ciz6j_V_MJ5AjS-ibuPyIKelQjOb6pdZ/view?usp=sharing', linkedin: '' },
+  { name: 'Dhanyalalitha S', domain: 'Documentation', photo: 'https://drive.google.com/file/d/1Z6YPdNpHuTrz3tf_dOyiXY5Q24xF4hsM/view?usp=sharing', linkedin: '' },
 ];
 
-const seniorNames = [
-  'Bharath Ram', 'Anbuselvam B', 'Akaspathan R', 'Madhangi Karimanal', 'Dakshata Senthil',
-  'Krthikia', 'Saranathan Iyengar', 'Saikirtan Srinivasan', 'Deepan Bomb', 'Bharathi Asok', 'Prawin Kumar S', 'Nanditha S'
-]
-const juniorNames = [
-  'J Kamali Shree', 'Shree Vaishnavi S', 'Krishna PV', 'Nithyashri', 'Madhu Visagan HT',
-  'Nithin R', 'Sanjana Shankar', 'Gokul M', 'Harshith Venkatesh', 'Darshana R',
-  'Kanduja S', 'Mohammed Afzal AR', 'Jayasuriya S', 'Nathaniel Christian', 'Nithesh B',
-  'KK Ridhuvarshini', 'Jeevan'
-]
+// ─── SENIOR CORE TEAM ──────────────────────────────────────────────────────────
+// Paste each member's Google Drive photo link in the 'photo' field.
+const seniorCoreData = [
+  { name: 'Bharath Ram', role: 'Event Head', photo: '', linkedin: '' },
+  { name: 'Anbuselvam B', role: 'Vice Head', photo: '', linkedin: '' },
+  { name: 'Akaspathan R', role: 'Senior Core Member', photo: '', linkedin: '' },
+  { name: 'Madhangi Karimanal', role: 'Senior Core Member', photo: '', linkedin: '' },
+  { name: 'Dakshata Senthil', role: 'Senior Core Member', photo: '', linkedin: '' },
+  { name: 'Krthikia', role: 'Senior Core Member', photo: '', linkedin: '' },
+  { name: 'Saranathan Iyengar', role: 'Senior Core Member', photo: '', linkedin: '' },
+  { name: 'Saikirtan Srinivasan', role: 'Senior Core Member', photo: '', linkedin: '' },
+  { name: 'Deepan Bomb', role: 'Senior Core Member', photo: '', linkedin: '' },
+  { name: 'Bharathi Asok', role: 'Senior Core Member', photo: '', linkedin: '' },
+  { name: 'Prawin Kumar S', role: 'Senior Core Member', photo: '', linkedin: '' },
+  { name: 'Nanditha S', role: 'Senior Core Member', photo: '', linkedin: '' },
+];
+
+// ─── JUNIOR CORE TEAM ──────────────────────────────────────────────────────────
+// Paste each member's Google Drive photo link in the 'photo' field.
+const juniorCoreData = [
+  { name: 'J Kamali Shree', role: 'Junior Core Member', photo: '', linkedin: '' },
+  { name: 'Shree Vaishnavi S', role: 'Junior Core Member', photo: 'https://drive.google.com/file/d/1E1zV-r4jgFLDDzOxDAjk_KNJ6HPQEq8i/view?usp=sharing', linkedin: '' },
+  { name: 'Krishna PV', role: 'Junior Core Member', photo: 'https://drive.google.com/file/d/1EnPi5eyo78FmwUhGvWvJ0ZG3Gqxk6WD1/view?usp=sharing', linkedin: '' },
+  { name: 'Nithyashri', role: 'Junior Core Member', photo: 'https://drive.google.com/file/d/1YJvD6FG28cDlRp-SKEglDDQPdwScCT3I/view?usp=sharing', linkedin: '' },
+  { name: 'Madhu Visagan HT', role: 'Junior Core Member', photo: 'https://drive.google.com/file/d/1zZkmNV8etl0g2JXo3iAciqSaFOtb8hBS/view?usp=sharing', linkedin: '' },
+  { name: 'Nithin R', role: 'Junior Core Member', photo: '', linkedin: '' },
+  { name: 'Sanjana Shankar', role: 'Junior Core Member', photo: '', linkedin: '' },
+  { name: 'Gokul M', role: 'Junior Core Member', photo: '', linkedin: '' },
+  { name: 'Harshith Venkatesh', role: 'Junior Core Member', photo: '', linkedin: '' },
+  { name: 'Darshana R', role: 'Junior Core Member', photo: '', linkedin: '' },
+  { name: 'Kanduja S', role: 'Junior Core Member', photo: '', linkedin: '' },
+  { name: 'Mohammed Afzal AR', role: 'Junior Core Member', photo: '', linkedin: '' },
+  { name: 'Jayasuriya S', role: 'Junior Core Member', photo: '', linkedin: '' },
+  { name: 'Nathaniel Christian', role: 'Junior Core Member', photo: 'https://drive.google.com/file/d/144FxyN-EBaJlEZL7HOCBUFftOYbxx9xG/view?usp=sharing', linkedin: '' },
+  { name: 'Nithesh B', role: 'Junior Core Member', photo: 'https://drive.google.com/file/d/1zXYAXxrmTfymJNvC-lxzLV7gasUWBmve/view?usp=sharing', linkedin: '' },
+  { name: 'KK Ridhuvarshini', role: 'Junior Core Member', photo: '', linkedin: '' },
+  { name: 'Jeevan', role: 'Junior Core Member', photo: '', linkedin: '' },
+];
+
+// ─── FACULTY MENTOR ────────────────────────────────────────────────────────────
+const facultyData = [
+  { name: 'Vimal Samsingh', role: 'Mechanical Department', photo: '', linkedin: '' },
+];
+
+// Helper: returns a name-initial placeholder if no Google Drive link is provided
+const fallbackPhoto = (name) =>
+  `https://placehold.co/300x300/171c2b/f9622c?text=${encodeURIComponent(name.split(' ')[0])}`;
 
 export const COMMITTEE = {
   vertical: verticalHeadsData.map((item, i) => ({
@@ -359,30 +405,28 @@ export const COMMITTEE = {
     name: item.name,
     domain: item.domain,
     role: `${item.domain} Head`,
-    photo: `https://placehold.co/300x300/171c2b/f9622c?text=${encodeURIComponent(item.name.split(' ')[0])}`,
-    linkedin: 'https://linkedin.com/in/placeholder',
+    photo: item.photo || fallbackPhoto(item.name),
+    linkedin: item.linkedin || 'https://linkedin.com/in/placeholder',
   })),
-  senior: seniorNames.map((name, i) => ({
+  senior: seniorCoreData.map((item, i) => ({
     id: `sc-${i + 1}`,
-    name,
-    role: i === 0 ? 'Event Head' : i === 1 ? 'Vice Head' : 'Senior Core Member',
-    photo: `https://placehold.co/300x300/171c2b/f9622c?text=${encodeURIComponent(name.split(' ')[0])}`,
-    linkedin: 'https://linkedin.com/in/placeholder',
+    name: item.name,
+    role: item.role,
+    photo: item.photo || fallbackPhoto(item.name),
+    linkedin: item.linkedin || 'https://linkedin.com/in/placeholder',
   })),
-  junior: juniorNames.map((name, i) => ({
+  junior: juniorCoreData.map((item, i) => ({
     id: `jc-${i + 1}`,
-    name,
-    role: 'Junior Core Member',
-    photo: `https://placehold.co/300x300/171c2b/f9622c?text=${encodeURIComponent(name.split(' ')[0])}`,
-    linkedin: 'https://linkedin.com/in/placeholder',
+    name: item.name,
+    role: item.role,
+    photo: item.photo || fallbackPhoto(item.name),
+    linkedin: item.linkedin || 'https://linkedin.com/in/placeholder',
   })),
-  faculty: [
-    {
-      id: 'fm-1',
-      name: 'Vimal Samsingh',
-      role: 'Mechanical Department',
-      photo: `https://placehold.co/300x300/171c2b/f9622c?text=Vimal`,
-      linkedin: 'https://linkedin.com/in/placeholder',
-    }
-  ]
+  faculty: facultyData.map((item, i) => ({
+    id: `fm-${i + 1}`,
+    name: item.name,
+    role: item.role,
+    photo: item.photo || fallbackPhoto(item.name),
+    linkedin: item.linkedin || 'https://linkedin.com/in/placeholder',
+  })),
 }
