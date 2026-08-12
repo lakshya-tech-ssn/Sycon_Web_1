@@ -16,7 +16,7 @@ export default function Footer() {
             </div>
             <span className="h-6 w-px bg-white/20" />
             <div className="flex items-center gap-2 px-1" title="SYCON '26">
-              <img src="/sycon_logo_1.png" alt="SYCON Logo" className="h-7 w-auto object-contain" pl="18" />
+              <img src="/sycon_logo_1.png" alt="SYCON Logo" className="h-7 w-auto object-contain" />
             </div>
             <span className="h-6 w-px bg-white/20" />
             <div className="flex items-center gap-2 rounded bg-white px-2 py-1 shadow-xs" title="Organized by Lakshya">

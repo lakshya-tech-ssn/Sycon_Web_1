@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom'
-import { useEffect, useRef } from 'react'
-import Countdown from '../components/Countdown'
+import { useEffect, useRef, useState } from 'react'
 import GalleryMarquee from '../components/GalleryMarquee'
 import ParticleField from '../components/ParticleField'
 import SectionHeading from '../components/SectionHeading'
 import Timeline from '../components/Timeline'
 import { Icon } from '../components/icons'
+import OrbitalHeroSection from '../components/OrbitalHeroSection'
 import {
   REGISTRATION_LINKS,
   FEES,
@@ -20,6 +20,64 @@ const eventDateLabel = EVENT_DATE.toLocaleDateString('en-IN', {
   month: 'long',
   year: 'numeric',
 })
+
+function getTimeLeft(targetDate) {
+  const diff = Math.max(0, targetDate.getTime() - Date.now())
+
+  return {
+    days: Math.floor(diff / (1000 * 60 * 60 * 24)),
+    hours: Math.floor((diff / (1000 * 60 * 60)) % 24),
+    minutes: Math.floor((diff / (1000 * 60)) % 60),
+    seconds: Math.floor((diff / 1000) % 60),
+  }
+}
+
+function EventCountdown() {
+  const [timeLeft, setTimeLeft] = useState(() => getTimeLeft(EVENT_DATE))
+
+  useEffect(() => {
+    const tick = () => setTimeLeft(getTimeLeft(EVENT_DATE))
+    tick()
+    const timer = window.setInterval(tick, 1000)
+    return () => window.clearInterval(timer)
+  }, [])
+
+  const units = [
+    { label: 'days', short: 'days', value: timeLeft.days },
+    { label: 'hours', short: 'hours', value: timeLeft.hours },
+    { label: 'minutes', short: 'min', value: timeLeft.minutes },
+    { label: 'seconds', short: 'sec', value: timeLeft.seconds },
+  ]
+
+  return (
+    <div className="w-full">
+      <p className="kicker mb-6 text-center text-[10px] uppercase tracking-[0.28em] text-accent-400 sm:text-xs">
+        
+      </p>
+      <div className="flex items-end justify-center gap-2 text-center sm:gap-3 lg:gap-4">
+        {units.map((unit, index) => (
+          <div key={unit.label} className="flex items-end gap-2 sm:gap-3 lg:gap-4">
+            <div className="flex min-w-[72px] flex-col items-center sm:min-w-[96px] lg:min-w-[110px]">
+              <span
+                className="font-mono text-4xl font-semibold text-white sm:text-5xl lg:text-[4.25rem]"
+                aria-live="polite"
+                aria-label={`${unit.value} ${unit.label}`}
+              >
+                {String(unit.value).padStart(2, '0')}
+              </span>
+              <span className="mt-2 text-[9px] uppercase tracking-[0.22em] text-slate-300 sm:text-[10px] lg:text-xs">
+                {unit.short}
+              </span>
+            </div>
+            {index < units.length - 1 && (
+              <span className="pb-5 text-2xl font-semibold text-accent-400 sm:text-3xl lg:pb-7 lg:text-4xl">:</span>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
 
 // Fade in on scroll hook
 function useFadeInSection() {
@@ -48,15 +106,28 @@ export default function Home() {
   return (
     <div className="bg-ink text-white">
       {/* ── Hero ─────────────────────────────────────────────────────── */}
-      <section className="sponsors-hero relative overflow-hidden border-b border-line">
+      <section className="sponsors-hero relative overflow-hidden border-b border-line py-5 sm:py-8 lg:py-10">
+        <div className="absolute inset-y-0 right-0 z-0 w-full max-w-[56%] opacity-90">
+          <OrbitalHeroSection
+            interactive={true}
+            showOrbits={true}
+            showSunTrack={true}
+            glow={1.1}
+            compress={0.45}
+            sunColor="#ff8a4c"
+            viewRadius={3.5}
+            className="h-full w-full"
+          />
+        </div>
         <ParticleField />
-        <div className="relative z-10 mx-auto max-w-[1400px] px-6 pt-4 pb-6 sm:px-10 lg:px-12">
-          <div className="grid gap-12 lg:grid-cols-[1fr_auto] lg:gap-12 lg:items-center w-full min-w-0">
+        <div className="relative z-10 mx-auto max-w-[1400px] px-6 pt-4 pb-4 sm:px-10 lg:px-12">
+          <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:gap-8 lg:items-center w-full min-w-0">
             <div className="hero-content flex flex-col items-start text-left justify-self-start max-w-2xl lg:max-w-3xl min-w-0">
               {/* Branding Section */}
               <div className="mb-6 flex flex-col items-start gap-3 fade-in-item" style={{ animationDelay: '0.05s' }}>
                 <div className="flex items-center gap-4">
                   <img src="/ssn_transparent.png" alt="SSN College Logo" className="h-10 w-auto object-contain brightness-0 invert opacity-90" />
+
                   <span className="text-white/30 text-xl font-light">+</span>
                   <img src="/Lakshya Logo Transparent.png" alt="Lakshya Logo" className="h-12 w-auto object-contain" />
                 </div>
@@ -109,29 +180,26 @@ export default function Home() {
                 </a>
               </div>
             </div>
-
-            {/* Right Column: Countdown */}
-            <div className="flex flex-col items-start lg:items-end justify-center mt-6 lg:mt-0 justify-self-start lg:justify-self-end w-full lg:w-auto">
-              <div className="flex flex-col items-start gap-5 countdown-section bg-white/5 p-6 sm:p-8 rounded-2xl border border-white/10 backdrop-blur-md fade-in-item shadow-2xl relative overflow-hidden" style={{ animationDelay: '0.3s' }}>
-                {/* Subtle glow effect behind countdown */}
-                <div className="absolute -top-10 -right-10 h-32 w-32 rounded-full bg-accent-500/20 blur-3xl"></div>
-                <p className="kicker text-sm uppercase tracking-widest text-accent-400 flex items-center gap-2 relative z-10 font-semibold">
-                  <span className="relative flex h-2 w-2">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-400 opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-accent-500"></span>
-                  </span>
-                  Doors close in
-                </p>
-                <div className="relative z-10">
-                  <Countdown />
-                </div>
-              </div>
-            </div>
           </div>
         </div>
 
-        <div className="mt-10 gallery-section">
-          <GalleryMarquee />
+      </section>
+
+      <div className="gallery-section border-b border-line bg-ink">
+        <GalleryMarquee />
+      </div>
+
+      <section className="border-b border-line bg-ink py-16 sm:py-20 lg:py-24">
+        <div className="mx-auto max-w-6xl px-6 sm:px-8">
+          <div className="flex flex-col items-center justify-center text-center">
+            <p className="kicker mb-4 flex items-center gap-3 text-xs uppercase tracking-[0.28em] text-accent-400 sm:text-sm">
+              <span className="inline-block h-2 w-2 rounded-full bg-accent-500" />
+              Registration closes in
+            </p>
+            <div className="w-full max-w-5xl">
+              <EventCountdown />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -224,7 +292,7 @@ export default function Home() {
       </section>
 
       {/* ── Registration Fee ─────────────────────────────────────────── */}
-      <section className="mx-auto max-w-6xl px-6 py-20 sm:px-8 sm:py-28 fade-in-section" ref={section4Ref}>
+      <section className="mx-auto max-w-6xl px-6 py-20 sm:px-8 sm:py-28 fade-in-section fade-in-visible" ref={section4Ref}>
         <SectionHeading
           index="03"
           eyebrow="Registration"
