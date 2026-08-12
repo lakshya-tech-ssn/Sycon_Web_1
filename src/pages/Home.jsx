@@ -148,7 +148,7 @@ export default function Home() {
               </div>
 
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-slate-200/90 sm:text-xl fade-in-item" style={{ animationDelay: '0.3s' }}>
-                A one-day symposium at SSN. Six speakers, four workshop tracks, and
+                A one-day symposium at SSN. Six speakers and
                 a room full of people who'd rather build something than watch a slide deck.
               </p>
 

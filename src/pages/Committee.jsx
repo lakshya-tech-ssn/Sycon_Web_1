@@ -124,7 +124,7 @@ export default function Committee() {
         className="mx-auto max-w-6xl px-6 pt-20 sm:px-8"
       >
         <div className="mb-8 flex items-baseline justify-between border-b border-white/10 pb-4">
-          <h3 className="font-display text-2xl font-bold text-white">Faculty Mentor</h3>
+          <h3 className="font-display text-2xl font-bold text-white">Faculty Coordinator</h3>
           <span className="kicker text-xs text-accent-400">Mechanical Department</span>
         </div>
         <div className="max-w-xs mx-auto">
