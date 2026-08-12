@@ -123,22 +123,22 @@ export default function Speakers() {
                   SYcon '26 Pass
                 </span>
                 <span className="font-mono text-[10px] bg-accent-500/20 text-accent-300 border border-accent-500/30 px-2 py-0.5 uppercase tracking-wider font-semibold">
-                  Starts at ₹299
+                  Starts at ₹150
                 </span>
               </div>
 
               <div className="mt-6 space-y-4 font-mono text-xs">
                 <div className="flex items-center justify-between text-slate-300">
                   <span>SSN Students</span>
-                  <span className="font-bold text-white text-sm">₹299</span>
+                  <span className="font-bold text-white text-sm">₹150</span>
                 </div>
                 <div className="flex items-center justify-between text-slate-300">
                   <span>Other Colleges</span>
-                  <span className="font-bold text-accent-400 text-sm">₹499</span>
+                  <span className="font-bold text-accent-400 text-sm">₹200</span>
                 </div>
                 <div className="flex items-center justify-between text-slate-300">
-                  <span>Groups (4+)</span>
-                  <span className="font-bold text-white text-sm">₹449 / head</span>
+                  <span></span>
+                  <span className="font-bold text-white text-sm"></span>
                 </div>
               </div>
 
