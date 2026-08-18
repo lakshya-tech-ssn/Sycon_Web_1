@@ -250,12 +250,12 @@ export default function Sponsors() {
       <section className="sponsors-section">
         <div className="sponsors-tier-label">
           <span className="sponsors-tier-line" />
-          <span className="sponsors-tier-text">Partners & Campus Stalls</span>
+          <span className="sponsors-tier-text">Partners & Community</span>
           <span className="sponsors-tier-line" />
         </div>
 
         <p className="stalls-section-sub">
-          8 interactive campus booths bringing gourmet culinary, gaming arcades, fitness screening, and live podcast recordings to SYCON '26.
+          Our valued event and community partners supporting the student ecosystem and experience at SYCON '26.
         </p>
 
         <div className="stalls-expo-grid">
