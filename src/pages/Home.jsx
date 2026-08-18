@@ -148,7 +148,7 @@ export default function Home() {
               </div>
 
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-slate-200/90 sm:text-xl fade-in-item" style={{ animationDelay: '0.3s' }}>
-                A one-day symposium at SSN. Six speakers and
+                A one-day symposium at SSN. Six inspiring founder speakers, an interactive panel discussion, and
                 a room full of people who'd rather build something than watch a slide deck.
               </p>
 
@@ -208,18 +208,16 @@ export default function Home() {
         <div className="mx-auto max-w-6xl">
           <div className="grid gap-14 lg:grid-cols-[1fr_1fr]">
             <div>
-              <SectionHeading index="01" eyebrow="What it is" title="Not another guest-lecture afternoon" light />
+              <SectionHeading index="01" eyebrow="What it is" title="Not another routine conference" light />
               <div className="mt-6 space-y-4 text-base leading-relaxed text-slate-300 sm:text-lg">
                 <p>
-                  SYCON is the department's annual symposium — one full day split between talks,
-                  hands-on workshops, a panel, and a couple of on-the-spot challenges. It started
-                  as a single afternoon of guest lectures; this year it's grown into something
-                  closer to a small conference.
+                  SYCON is the department's annual symposium — one power-packed day featuring keynote
+                  sessions from dynamic founders, a curated panel discussion, and open networking.
+                  Built from the ground up to connect aspiring student innovators directly with real-world builders.
                 </p>
                 <p>
-                  The goal hasn't changed though: get people who are actually building things —
-                  speakers, sponsors, students — into the same room, and leave enough unstructured
-                  time that conversations happen on their own.
+                  The goal: get people who are actively building ventures and solving hard problems —
+                  founders, sponsors, students — into the same room, with unfiltered conversations and live Q&A.
                 </p>
               </div>
             </div>
@@ -230,8 +228,8 @@ export default function Home() {
                 {[
                   'Any SSN student, any year, any department',
                   'Students from other colleges — outside registration is open',
-                  'Anyone who wants to sit through a workshop and actually build something',
-                  'Groups of 4 or more registering together get a lower per-head rate',
+                  'Anyone eager to learn directly from startup founders and ask bold questions',
+                  'Aspiring creators looking to network with founders, sponsors, and peers',
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3 text-sm text-slate-300 sm:text-base">
                     <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 bg-accent-500" />
@@ -330,7 +328,7 @@ export default function Home() {
                 ))}
               </ul>
               <a
-                href={REGISTRATION_LINKS.inside}
+                href={fee.highlight ? REGISTRATION_LINKS.outside : REGISTRATION_LINKS.inside}
                 target="_blank"
                 rel="noreferrer"
                 className={`mt-8 block px-5 py-3 text-center text-sm font-semibold transition ${fee.highlight
