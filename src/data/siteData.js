@@ -6,7 +6,7 @@ export const EVENT_DATE = new Date('2026-09-01T23:59:00+05:30')
 
 export const REGISTRATION_LINKS = {
   inside: 'https://forms.gle/DNVuiaduU4yqgQfo9',
-  outside: 'https://forms.gle/DNVuiaduU4yqgQfo9',
+  outside: 'https://rzp.io/rzp/Syconexternal26',
 }
 
 export const FEES = [
@@ -14,27 +14,27 @@ export const FEES = [
     title: 'SSN Students',
     price: '₹150',
     note: 'Valid SSN ID required at check-in',
-    perks: ['Access to all speaker sessions', 'Kit and participation certificate', 'Lunch and refreshments'],
+    perks: ['Access to all founder speaker sessions', 'Interactive panel discussion access', 'Kit and participation certificate', 'Lunch and refreshments'],
     highlight: false,
   },
   {
     title: 'Other Colleges',
-    price: '₹200',
+    price: '₹250',
     note: 'Open to all engineering and arts colleges',
-    perks: ['Access to all speaker sessions', 'Kit and participation certificate', 'Lunch and refreshments', 'Reserved front-half seating'],
+    perks: ['Access to all founder speaker sessions', 'Interactive panel discussion access', 'Kit and participation certificate', 'Lunch and refreshments', 'Reserved front-half seating'],
     highlight: true,
   },
 ]
 
 export const BENEFITS = [
   {
-    title: 'Talks that aren’t recycled',
-    desc: 'Six speakers, six different fields — no repeated "future of AI" slide decks. Each session is built for this crowd.',
+    title: 'Talks from inspiring founders',
+    desc: 'Six founders, six distinct entrepreneurial journeys. No generic slide decks — honest stories of building from 0 to 1.',
     icon: 'mic',
   },
   {
-    title: 'Direct access to the speakers',
-    desc: 'Live Q&A after every session, plus the post-panel mixer — this isn’t a one-way broadcast.',
+    title: 'Interactive panel discussion',
+    desc: 'Engage with founders on stage during the curated panel discussion with open, unfiltered audience Q&A.',
     icon: 'users',
   },
   {
@@ -51,12 +51,12 @@ export const BENEFITS = [
 
 export const TIMELINE = [
   { time: '9:00 AM', title: 'Check-in opens', desc: 'Show your registration confirmation, collect your kit and badge.' },
-  { time: '10:00 AM', title: 'Opening address', desc: 'Short and on time — chief guest speaks for 15 minutes, not 45.' },
-  { time: '11:00 AM', title: 'Keynote', desc: 'Our headline speaker opens the day.' },
-  { time: '12:30 PM', title: 'Speaker sessions', desc: 'Back-to-back talks from the rest of the lineup, with live Q&A after each.' },
-  { time: '2:00 PM', title: 'Lunch', desc: 'Served on the lawn. Speakers eat with everyone else.' },
-  { time: '3:00 PM', title: 'Panel discussion', desc: 'Open Q&A in the last 20 minutes — bring hard questions.' },
-  { time: '5:00 PM', title: 'Closing', desc: 'Certificates handed out, doors close by 6.' },
+  { time: '10:00 AM', title: 'Opening address', desc: 'Welcome address introducing SYCON \'26 and the day’s vision.' },
+  { time: '11:00 AM', title: 'Keynote founder session', desc: 'Our headline founder speaker opens the day.' },
+  { time: '12:30 PM', title: 'Founder speaker sessions', desc: 'Back-to-back talks from dynamic startup founders, with live Q&A after each.' },
+  { time: '2:00 PM', title: 'Lunch & Networking', desc: 'Served on the lawn. Founders and delegates connect over lunch.' },
+  { time: '3:00 PM', title: 'Founder panel discussion', desc: 'A moderated panel discussion tackling hard startup truths with open audience Q&A.' },
+  { time: '5:00 PM', title: 'Closing ceremony', desc: 'Certificates handed out and concluding remarks.' },
 ]
 
 export const GALLERY_IMAGES = [
@@ -157,7 +157,7 @@ export const SPONSORS = [
     tagline: 'Manufacturer of auto components',
     description: 'Srinivas Elastomers India Pvt Ltd has been rendering service to various Automobile industries in supplying best quality rubber components & plastic moulded components, manufactured out of synthetic and Natural rubber polymers.',
     logo: '/Sponsors/srinivas_elastomers.png',
-    perks: ['Title Workshop Host', 'Main Auditorium Naming Rights', 'Full Student Kit Branding'],
+    perks: ['Title Event Host', 'Main Auditorium Naming Rights', 'Full Student Kit Branding'],
     website: 'https://srinivaselastomers.com/',
   },
   {
@@ -177,7 +177,7 @@ export const SPONSORS = [
     tier: 'Silver Sponsor',
     category: '',
     tagline: 'Healthy Snacks & Premium Makhana Partner',
-    description: 'Fueling participants with wholesome, healthy snack kits across workshops and challenge tracks.',
+    description: 'Fueling participants with wholesome, healthy snack kits across speaker sessions and challenge tracks.',
     logo: '/Sponsors/bell_institute.jpeg',
     perks: ['Official Snack Partner', 'Participant Kit Insertion', 'Refreshment Zone'],
     website: 'https://farmley.com',
@@ -188,7 +188,7 @@ export const SPONSORS = [
     tier: 'Silver Sponsor',
     category: '',
     tagline: 'High-Performance Power Solutions & Smart Hardware',
-    description: 'Providing mobile fast-charging stations and continuous power infrastructure for workshop halls.',
+    description: 'Providing mobile fast-charging stations and continuous power infrastructure for auditorium halls.',
     logo: '/Sponsors/CredO.jpeg',
     perks: ['Charging Station Host', 'Hardware Tech Support', 'Digital Hall Signage'],
     website: 'https://credo.ai',
@@ -199,7 +199,7 @@ export const SPONSORS = [
     tier: 'Silver Sponsor',
     category: '',
     tagline: 'Scalable Cloud Infrastructure & Developer API',
-    description: 'Granting cloud credits, API keys, and sandbox computing environments for workshop attendees.',
+    description: 'Granting cloud credits, API keys, and sandbox computing environments for summit attendees.',
     logo: '/Sponsors/eeci_gate.jpeg',
     perks: ['$500 Cloud Credits/Student', 'Developer Sandbox Access', 'AI Track Partner'],
     website: 'https://nexoracloud.com',
@@ -265,7 +265,7 @@ export const SPONSORS = [
     stallNumber: 'STALL #05',
     location: 'Student Lounge',
     tagline: 'Transforming Lives Through Compassion & Mentorship',
-    description: 'Providing confidential youth counselling, career guidance, and emotional resilience workshops.',
+    description: 'Providing confidential youth counselling, career guidance, and emotional resilience sessions.',
     logo: '/Speakers/shalini_robert.jpg',
     host: 'Shalini Robert',
     highlights: ['Quiet Reflection Zone', 'Career & Life Mentorship', 'TEDx Talk Booklet Drop'],
@@ -289,12 +289,12 @@ export const SPONSORS = [
     tier: 'Partners and Stalls',
     category: 'Hardware & Maker Stall',
     stallNumber: 'STALL #07',
-    location: 'Tech Workshop Corridor',
-    tagline: 'Microcontrollers, IoT Boards & Soldering Demo',
+    location: 'Tech Innovation Corridor',
+    tagline: 'Microcontrollers, IoT Boards & Live Electronics',
     description: 'Hands-on hardware workbench featuring ESP32 boards, sensors, and live electronics demonstrations.',
     logo: 'https://placehold.co/280x120/111827/10b981?text=DevCraft+Hardware',
     host: 'DevCraft Team',
-    highlights: ['Microcontroller Tryout Zone', 'Soldering Workshop Demo', 'Free Sensor Components'],
+    highlights: ['Microcontroller Tryout Zone', 'Hardware Showcase Demo', 'Free Sensor Components'],
   },
   {
     id: 14,
@@ -352,20 +352,20 @@ const verticalHeadsData = [
 ];
 
 // ─── SENIOR CORE TEAM ──────────────────────────────────────────────────────────
-// Paste each member's Google Drive photo link in the 'photo' field.
+// Photos from /public/senior_core
 const seniorCoreData = [
-  { name: 'Bharath Ram', role: 'Event Head', photo: '', linkedin: '' },
-  { name: 'Anbuselvam B', role: 'Vice Head', photo: '', linkedin: '' },
-  { name: 'Akaspathan R', role: 'Senior Core Member', photo: '', linkedin: '' },
-  { name: 'Madhangi Karimanal', role: 'Senior Core Member', photo: '', linkedin: '' },
+  { name: 'Bharath Ram', role: 'Event Head', photo: '/senior_core/Bharath Ram S K logistics .jpg', linkedin: '' },
+  { name: 'Anbuselvam B', role: 'Vice Head', photo: '/senior_core/Anbuselvam B.jpg', linkedin: '' },
+  { name: 'Akaspathan R', role: 'Senior Core Member', photo: '/senior_core/Akaspathan .jpeg', linkedin: '' },
+  { name: 'Madhangi Karimanal', role: 'Senior Core Member', photo: '/senior_core/MadhangiKarimanal.jpg', linkedin: '' },
   { name: 'Dakshata Senthil', role: 'Senior Core Member', photo: '', linkedin: '' },
-  { name: 'Krthikia', role: 'Senior Core Member', photo: '', linkedin: '' },
+  { name: 'Kiruthika Jayakumar', role: 'Senior Core Member', photo: '/senior_core/Kiruthika Jayakumar .jpg', linkedin: '' },
   { name: 'Saranathan Iyengar', role: 'Senior Core Member', photo: '', linkedin: '' },
   { name: 'Saikirtan Srinivasan', role: 'Senior Core Member', photo: '', linkedin: '' },
-  { name: 'Deepan Bomb', role: 'Senior Core Member', photo: '', linkedin: '' },
-  { name: 'Bharathi Asok', role: 'Senior Core Member', photo: '', linkedin: '' },
+  { name: 'Deepan Bomb', role: 'Senior Core Member', photo: '/senior_core/Deepan Bomb_Operations.jpg', linkedin: '' },
+  { name: 'Bharathi Asok', role: 'Senior Core Member', photo: '/senior_core/Bharathi.jpeg', linkedin: '' },
   { name: 'Prawin Kumar S', role: 'Senior Core Member', photo: '', linkedin: '' },
-  { name: 'Nanditha S', role: 'Senior Core Member', photo: '', linkedin: '' },
+  { name: 'Nanditha S', role: 'Senior Core Member', photo: '/senior_core/Nanditha_S.jpg', linkedin: '' },
 ];
 
 // ─── JUNIOR CORE TEAM ──────────────────────────────────────────────────────────
@@ -392,7 +392,7 @@ const juniorCoreData = [
 
 // ─── FACULTY MENTOR ────────────────────────────────────────────────────────────
 const facultyData = [
-  { name: 'Vimal Samsingh', role: 'Mechanical Department', photo: '', linkedin: '' },
+  { name: 'Dr. Vimal Samsingh', role: 'Faculty Coordinator, Mechanical Department', photo: '/vss_pic.jpg', linkedin: '' },
 ];
 
 // Helper: returns a name-initial placeholder if no Google Drive link is provided

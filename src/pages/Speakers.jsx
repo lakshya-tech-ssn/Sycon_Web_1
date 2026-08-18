@@ -26,7 +26,7 @@ export default function Speakers() {
                 <span className="text-accent-500">what gets built</span> next.
               </h1>
               <p className="mt-6 max-w-xl text-base leading-relaxed text-slate-200/80 sm:text-lg">
-                Six leaders from AI, engineering, product design, and robotics. No recycled deck templates or corporate sales pitches — just honest, 45-minute postmortems of what breaks when you build at scale.
+                Six dynamic founders from technology, consumer products, fitness, and social impact. No recycled deck templates or corporate sales pitches — just honest, 45-minute talks and an engaging panel discussion on building from scratch.
               </p>
             </div>
 
@@ -92,7 +92,7 @@ export default function Speakers() {
               </h2>
 
               <p className="mt-6 text-base text-slate-300 leading-relaxed max-w-xl">
-                Every ticket grants full access to all 6 keynote talks, live Q&A sessions, hands-on workshop tracks, the post-event lawn mixer, and the official SYCON '26 participant kit.
+                Every ticket grants full access to all 6 founder keynote talks, the interactive panel discussion, live Q&A sessions, the post-event lawn mixer, and the official SYCON '26 participant kit.
               </p>
 
               {/* Feature Checklist */}
@@ -134,7 +134,7 @@ export default function Speakers() {
                 </div>
                 <div className="flex items-center justify-between text-slate-300">
                   <span>Other Colleges</span>
-                  <span className="font-bold text-accent-400 text-sm">₹200</span>
+                  <span className="font-bold text-accent-400 text-sm">₹250</span>
                 </div>
                 <div className="flex items-center justify-between text-slate-300">
                   <span></span>
