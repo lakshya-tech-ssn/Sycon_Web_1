@@ -228,7 +228,7 @@ export const SPONSORS = [
     tagline: 'Gives You Wings',
     description: 'Energy and refreshment partner fueling student delegates, founders, and innovators across SYCON \'26.',
     logo: '/Sponsors/red_bull.jpg',
-    host: 'Red Bull Team',
+    host: 'Nithesh B',
     highlights: ['Energy Fuel Stations', 'Free Ecosystem Swag', 'Interactive Networking Zone'],
   },
   {
