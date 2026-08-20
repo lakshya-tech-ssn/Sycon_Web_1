@@ -284,7 +284,7 @@ const verticalHeadsData = [
   // Technical
   { name: 'Rishi Rithesh', domain: 'Technical', photo: 'https://drive.google.com/file/d/1quGZGId9MT4RVj7yk6aX0b7ncQrvJliW/view?usp=sharing', linkedin: '' },
   { name: 'Radesh L', domain: 'Technical', photo: 'https://drive.google.com/file/d/17OFDbtmAO1ni11WCtgvSYW_H2NRF4QOU/view?usp=sharing', linkedin: '' },
-  { name: 'Balamuthukrishnan B', domain: 'Technical', photo: '', linkedin: '' },
+  { name: 'Balamuthukrishnan B', domain: 'Technical', photo: 'https://drive.google.com/file/d/1DT8mqBn9PxLJ-WCEBFo_PUZDcc36HlDI/view?usp=sharing', linkedin: '' },
 
   // Design and Editorial
   { name: 'Pranav Karthik A', domain: 'Design & Editorial', photo: 'https://drive.google.com/file/d/1mN0kpMlrCWfgcjt9xenouvMKvpafCikm/view?usp=sharing', linkedin: '' },
