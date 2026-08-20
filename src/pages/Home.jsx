@@ -148,8 +148,7 @@ export default function Home() {
               </div>
 
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-slate-200/90 sm:text-xl fade-in-item" style={{ animationDelay: '0.3s' }}>
-                A one-day symposium at SSN. Six inspiring founder speakers, an interactive panel discussion, and
-                a room full of people who'd rather build something than watch a slide deck.
+                  One room. A hundred perspectives. Endless possibilities.
               </p>
 
               {/* Pitch strip */}
@@ -208,16 +207,14 @@ export default function Home() {
         <div className="mx-auto max-w-6xl">
           <div className="grid gap-14 lg:grid-cols-[1fr_1fr]">
             <div>
-              <SectionHeading index="01" eyebrow="What it is" title="Not another routine conference" light />
+              <SectionHeading index="01" eyebrow="What it is" title="One Conversation To Change The Way You See Your Future." light />
               <div className="mt-6 space-y-4 text-base leading-relaxed text-slate-300 sm:text-lg">
                 <p>
-                  SYCON is the department's annual symposium — one power-packed day featuring keynote
-                  sessions from dynamic founders, a curated panel discussion, and open networking.
-                  Built from the ground up to connect aspiring student innovators directly with real-world builders.
+                  SYCON is more than a conference - it is a meeting point for ideas, experiences and ambition. 
+                  SYCON brings students face to face with accomplished individuals from diverse fields, offering an opportunity to learn from their journeys, question the status quo and explore possibilities beyond the conventional.
                 </p>
                 <p>
-                  The goal: get people who are actively building ventures and solving hard problems —
-                  founders, sponsors, students — into the same room, with unfiltered conversations and live Q&A.
+                   From entrepreneurship and technology to business, creativity, leadership, sports, media and social impact, SYCON brings together voices that have taken different paths to create an impact.
                 </p>
               </div>
             </div>
