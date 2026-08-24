@@ -72,27 +72,27 @@ export const TIMELINE = [
   },
   {
     time: '9:40 – 10:00 AM',
-    title: 'Abdul Nabeel (+10 mins buffer)',
+    title: 'Abdul Nabeel',
     desc: 'Founder & MD, Arabian Garden group of restaurants.',
   },
   {
     time: '10:10 – 10:30 AM',
-    title: 'Deepak Kumar (+10 mins buffer)',
+    title: 'Deepak Kumar',
     desc: 'Founder, DNA Community & C3 Community (“The Community Man”).',
   },
   {
     time: '10:40 – 11:00 AM',
-    title: 'SMC Performance (+10 mins buffer)',
+    title: 'SMC Performance',
     desc: 'Live musical performance by SSN Music Club (SMC).',
   },
   {
     time: '11:10 – 11:30 AM',
-    title: 'Hari (+10 mins buffer)',
+    title: 'Hari',
     desc: 'Hari Prasath S — Founder, Mahathaan Groups.',
   },
   {
     time: '11:40 AM – 12:00 PM',
-    title: 'Tarun Kumar (+10 mins buffer)',
+    title: 'Tarun Kumar',
     desc: 'Founder & Athlete, Fitx120.',
   },
   {
@@ -112,12 +112,12 @@ export const TIMELINE = [
   },
   {
     time: '2:25 – 2:45 PM',
-    title: 'Shalini Robert (+10 mins buffer)',
+    title: 'Shalini Robert',
     desc: 'Founder, The Roberts Trust Foundation.',
   },
   {
     time: '2:55 – 3:15 PM',
-    title: 'Vishal (+10 mins buffer)',
+    title: 'Vishal',
     desc: 'Founder & CEO, CredO.',
   },
   {
