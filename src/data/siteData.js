@@ -60,13 +60,71 @@ export const BENEFITS = [
 ]
 
 export const TIMELINE = [
-  { time: '9:00 AM', title: 'Check-in opens', desc: 'Show your registration confirmation, collect your kit and badge.' },
-  { time: '10:00 AM', title: 'Opening address', desc: 'Welcome address introducing SYCON \'26 and the day’s vision.' },
-  { time: '11:00 AM', title: 'Keynote founder session', desc: 'Our headline founder speaker opens the day.' },
-  { time: '12:30 PM', title: 'Founder speaker sessions', desc: 'Back-to-back talks from dynamic startup founders, with live Q&A after each.' },
-  { time: '2:00 PM', title: 'Lunch & Networking', desc: 'Served on the lawn. Founders and delegates connect over lunch.' },
-  { time: '3:00 PM', title: 'Founder panel discussion', desc: 'A moderated panel discussion tackling hard startup truths with open audience Q&A.' },
-  { time: '5:00 PM', title: 'Closing ceremony', desc: 'Certificates handed out and concluding remarks.' },
+  {
+    time: '9:00 – 9:20 AM',
+    title: 'Inauguration – Felicitation of Chief Guest',
+    desc: 'Official opening ceremony, welcome address, and felicitation of our honored chief guests.',
+  },
+  {
+    time: '9:25 – 9:35 AM',
+    title: 'Aarudhra Performance',
+    desc: 'An inspiring and energetic cultural performance by Aarudhra.',
+  },
+  {
+    time: '9:40 – 10:00 AM',
+    title: 'Abdul Nabeel (+10 mins buffer)',
+    desc: 'Founder & MD, Arabian Garden group of restaurants.',
+  },
+  {
+    time: '10:10 – 10:30 AM',
+    title: 'Deepak Kumar (+10 mins buffer)',
+    desc: 'Founder, DNA Community & C3 Community (“The Community Man”).',
+  },
+  {
+    time: '10:40 – 11:00 AM',
+    title: 'SMC Performance (+10 mins buffer)',
+    desc: 'Live musical performance by SSN Music Club (SMC).',
+  },
+  {
+    time: '11:10 – 11:30 AM',
+    title: 'Hari (+10 mins buffer)',
+    desc: 'Hari Prasath S — Founder, Mahathaan Groups.',
+  },
+  {
+    time: '11:40 AM – 12:00 PM',
+    title: 'Tarun Kumar (+10 mins buffer)',
+    desc: 'Founder & Athlete, Fitx120.',
+  },
+  {
+    time: '12:10 – 1:00 PM',
+    title: 'Panel Discussion',
+    desc: 'Interactive, high-impact panel session exploring real startup journeys, challenges, and insights.',
+  },
+  {
+    time: '1:00 – 2:00 PM',
+    title: 'Lunch',
+    desc: 'Specially arranged lunch for all delegates and networking with peers & speakers.',
+  },
+  {
+    time: '2:10 – 2:20 PM',
+    title: 'N2K',
+    desc: 'Electrifying performance by N2K dance crew.',
+  },
+  {
+    time: '2:25 – 2:45 PM',
+    title: 'Shalini Robert (+10 mins buffer)',
+    desc: 'Founder, The Roberts Trust Foundation.',
+  },
+  {
+    time: '2:55 – 3:15 PM',
+    title: 'Vishal (+10 mins buffer)',
+    desc: 'Founder & CEO, CredO.',
+  },
+  {
+    time: '3:20 – 3:30 PM',
+    title: 'Vote of Thanks / Award Distribution',
+    desc: 'Valedictory address, felicitation of teams, and concluding remarks.',
+  },
 ]
 
 export const GALLERY_IMAGES = [

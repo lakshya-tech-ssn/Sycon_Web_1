@@ -345,28 +345,12 @@ export default function Home() {
         <div className="mx-auto max-w-6xl px-6 sm:px-8">
           <SectionHeading
             index="04"
-            eyebrow="Nov 6, 2026"
+            eyebrow="Schedule"
             title="How the day runs"
             light
           />
-          <div className="relative mt-14 overflow-hidden rounded-2xl border border-white/5 bg-navy-950/40 p-4 sm:p-8">
-            {/* Blurred timeline preview without text visible */}
-            <div className="filter blur-md select-none pointer-events-none opacity-30">
-              <Timeline events={TIMELINE} dark />
-            </div>
-
-            {/* Disclaimer Overlay */}
-            <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center z-20 bg-ink/40 backdrop-blur-sm">
-              <div className="inline-flex items-center gap-3 rounded-full border border-accent-500/50 bg-navy-950/90 px-6 py-3.5 shadow-[0_0_35px_rgba(249,98,44,0.3)] backdrop-blur-xl">
-                <span className="h-2.5 w-2.5 rounded-full bg-accent-500 animate-pulse" />
-                <span className="font-mono text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-accent-400">
-                  TO BE FINALIZED SHORTLY
-                </span>
-              </div>
-              <p className="mt-4 font-mono text-xs text-slate-300 max-w-md">
-                The session schedule and event timeline are currently being finalized and will be published soon.
-              </p>
-            </div>
+          <div className="mt-14">
+            <Timeline events={TIMELINE} dark />
           </div>
         </div>
       </section>
