@@ -67,8 +67,8 @@ export const TIMELINE = [
   },
   {
     time: '9:25 – 9:35 AM',
-    title: 'Aarudhra Performance',
-    desc: 'An inspiring and energetic cultural performance by Aarudhra.',
+    title: 'Arudhra Performance',
+    desc: 'An inspiring and energetic cultural performance by Arudhra.',
   },
   {
     time: '9:40 – 10:00 AM',
