@@ -13,7 +13,7 @@ export default function Timeline({ events, dark = false }) {
           }
         })
       },
-      { threshold: 0.2 }
+      { threshold: 0.1 }
     )
 
     itemsRef.current.forEach((item) => {
@@ -21,44 +21,64 @@ export default function Timeline({ events, dark = false }) {
     })
 
     return () => observer.disconnect()
-  }, [])
+  }, [events])
 
   return (
     <div className="relative mx-auto max-w-3xl">
       {/* Vertical line */}
-      <div className={`absolute left-1/2 top-0 bottom-0 w-0.5 -translate-x-1/2 ${dark ? 'bg-white/10' : 'bg-line'}`} />
+      <div
+        className={`absolute top-0 bottom-0 w-0.5 max-sm:left-4 sm:left-1/2 sm:-translate-x-1/2 ${
+          dark ? 'bg-white/10' : 'bg-line'
+        }`}
+      />
 
       {/* Timeline items */}
-      <div className="space-y-6 px-4 py-8 sm:px-0">
+      <div className="space-y-6 px-0 py-4">
         {events.map((event, i) => (
           <div
-            key={event.title}
+            key={event.time + '-' + i}
             ref={(el) => (itemsRef.current[i] = el)}
-            className={`timeline-item group flex ${
-              i % 2 === 0 ? 'justify-end' : 'justify-start'
-            }`}
+            style={{ animationDelay: `${Math.min(i * 0.04 + 0.05, 0.5).toFixed(2)}s` }}
+            className={`timeline-item group relative flex ${
+              i % 2 === 0 ? 'sm:justify-end' : 'sm:justify-start'
+            } justify-start`}
           >
             {/* Dot */}
-            <div className="absolute left-1/2 top-6 z-10 flex -translate-x-1/2 items-center justify-center">
-              <div className={`h-4 w-4 rounded-full border-3 border-accent-500 ${dark ? 'bg-ink' : 'bg-paper'} transition-shadow group-hover:shadow-[0_0_12px_rgba(249,98,44,0.4)]`} />
+            <div className="absolute top-6 z-10 flex items-center justify-center max-sm:left-4 max-sm:-translate-x-1/2 sm:left-1/2 sm:-translate-x-1/2">
+              <div
+                className={`h-3.5 w-3.5 rounded-full border-2 border-accent-500 ${
+                  dark ? 'bg-ink' : 'bg-paper'
+                } transition-all duration-300 group-hover:scale-125 group-hover:shadow-[0_0_14px_rgba(249,98,44,0.6)]`}
+              />
             </div>
 
             {/* Content card */}
             <div
-              className={`w-full sm:w-[calc(50%-2rem)] ${
+              className={`w-full max-sm:pl-10 sm:w-[calc(50%-2rem)] ${
                 i % 2 === 0 ? 'sm:pr-8' : 'sm:pl-8'
               }`}
             >
-              <div className={`relative rounded-lg border p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-sm sm:p-6 ${dark ? 'border-white/10 bg-navy-900' : 'border-line bg-paper'}`}>
-                <div className="kicker text-xs font-semibold uppercase tracking-wide text-accent-500">
-                  {event.time}
+              <div
+                className={`relative rounded-xl border p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg sm:p-6 ${
+                  dark
+                    ? 'border-white/10 bg-navy-900/90 backdrop-blur-sm hover:border-accent-500/40 hover:bg-navy-900'
+                    : 'border-line bg-paper'
+                }`}
+              >
+                <div className="inline-flex items-center gap-2">
+                  <span className="h-1.5 w-1.5 rounded-full bg-accent-500" />
+                  <span className="font-mono text-xs font-semibold uppercase tracking-wider text-accent-400">
+                    {event.time}
+                  </span>
                 </div>
-                <h3 className={`mt-2 font-display text-lg font-bold ${dark ? 'text-white' : 'text-ink'}`}>
+                <h3 className={`mt-2 font-display text-base sm:text-lg font-bold ${dark ? 'text-white' : 'text-ink'}`}>
                   {event.title}
                 </h3>
-                <p className={`mt-1.5 text-sm leading-relaxed ${dark ? 'text-slate-300' : 'text-navy-700/70'}`}>
-                  {event.desc}
-                </p>
+                {event.desc && (
+                  <p className={`mt-1.5 text-xs sm:text-sm leading-relaxed ${dark ? 'text-slate-300' : 'text-navy-700/70'}`}>
+                    {event.desc}
+                  </p>
+                )}
               </div>
             </div>
           </div>
@@ -69,20 +89,11 @@ export default function Timeline({ events, dark = false }) {
         .timeline-item {
           opacity: 0;
           transform: translateY(20px);
-          transition: none;
         }
 
         .timeline-item.timeline-animate {
-          animation: slideUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+          animation: slideUp 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
         }
-
-        .timeline-item:nth-child(1).timeline-animate { animation-delay: 0.1s; }
-        .timeline-item:nth-child(2).timeline-animate { animation-delay: 0.15s; }
-        .timeline-item:nth-child(3).timeline-animate { animation-delay: 0.2s; }
-        .timeline-item:nth-child(4).timeline-animate { animation-delay: 0.25s; }
-        .timeline-item:nth-child(5).timeline-animate { animation-delay: 0.3s; }
-        .timeline-item:nth-child(6).timeline-animate { animation-delay: 0.35s; }
-        .timeline-item:nth-child(7).timeline-animate { animation-delay: 0.4s; }
 
         @keyframes slideUp {
           from {
@@ -92,16 +103,6 @@ export default function Timeline({ events, dark = false }) {
           to {
             opacity: 1;
             transform: translateY(0);
-          }
-        }
-
-        @media (max-width: 640px) {
-          .timeline-item {
-            justify-content: flex-start !important;
-          }
-
-          .timeline-item .absolute {
-            left: 0 !important;
           }
         }
       `}</style>
